@@ -1,4 +1,4 @@
-# Starter kit for single page app.
+# Starter kit for single page app
 
 
 ### Installation
@@ -26,29 +26,30 @@ That's pretty ugly, but we are waiting for a [new release](https://github.com/we
 ```shell
 npm run start
 ```
-Build app and launch the dev-server.
+Build app and launch the dev-server with hot reload.
+You have to open your browser and go to *http://localhost:8080/*.
 
 
 ```shell
 npm run test
 ```
-Run tests with karma
+Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* inside *src/* directory will be executed, with hot reload.
 
 
 
 
 ### Features
 
-* ES6 syntax with [Babel](https://babeljs.io/)
+* ES6 syntax and JSX with [Babel](https://babeljs.io/)
 
 * Code quality with [ESLint](http://eslint.org/)
 
-* smart auto-build with [WebPack](https://webpack.github.io/)
+* smart auto-build and reload with [WebPack](https://webpack.github.io/)
 
 * [React](https://facebook.github.io/react/) components
 
 * [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
 
-* Testing environment with [Karma](https://karma-runner.github.io/)
+* Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
 
 
