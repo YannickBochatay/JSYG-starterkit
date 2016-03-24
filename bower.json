@@ -1,0 +1,27 @@
+{
+  "name": "my-jsyg-app",
+  "description": "awesome jsyg app",
+  "main": "index.html",
+  "authors": ["Yannick Bochatay"],
+  "license": "MIT",
+  "keywords": [
+    "jsyg", "svg", "starterkit", "webpack", "react"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "builds"
+  ],
+  "dependencies": {
+    "jsyg": "^0.6.6",
+    "bootstrap": "^3.3.6",
+    "roboto-fontface": "^0.4.5",
+    "es6-promise": "^3.2.1"
+  }
+}
