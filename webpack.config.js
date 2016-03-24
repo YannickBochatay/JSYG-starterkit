@@ -5,8 +5,9 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
+var autoprefixer = require("autoprefixer");
 
-var production = false; //process.env.NODE_ENV === 'production';
+var production = process.env.NODE_ENV === 'production';
 
 var plugins = [
 
@@ -20,8 +21,8 @@ var plugins = [
     name: 'main', // Move dependencies to our main file
     children: true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
-  }),
-/*
+  })/*,
+
   new webpack.ProvidePlugin({
     'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
   }),
@@ -82,39 +83,57 @@ module.exports = {
    },*/
 
   entry: ['./src'],
+
   output: {
     path: path.resolve(__dirname, "builds"),
     filename: 'bundle.js',
     publicPath: '/builds/'
   },
+
   //devServer: {},
 
   debug: !production,
+
   devtool: production ? false : 'source-map',
+
   plugins: plugins,
+
+  resolve : {
+
+    extensions : ["", ".webpack.js", ".web.js", ".js", ".css", ".scss", ".less"]
+  },
+
   module: {
+
     preLoaders: [{
+
         test: /\.jsx?$/,
+
         loaders: ['eslint'],
+
         include: __dirname + '/src'
+
       }],
+
     loaders: [
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        include: [path.join(__dirname, "src"), path.join(__dirname, "test")]
+        query : {
+          presets : ["es2015","react"]
+        }
       },
       {
         test: /\.css$/,
-        loader: ExtractPlugin.extract('style', 'css')
+        loader: ExtractPlugin.extract('style', 'css?modules')
       },
       {
         test: /\.scss$/,
-        loader: ExtractPlugin.extract('style', 'css!sass')
+        loader: ExtractPlugin.extract('style', 'css?modules!sass')
       },
       {
         test: /\.less$/,
-        loader: ExtractPlugin.extract('style', 'css!less')
+        loader: ExtractPlugin.extract('style', 'css?modules!less')
       },
       {
         test: /\.html$/,
@@ -145,5 +164,7 @@ module.exports = {
         loader: "exports?fetch"
       }
     ],
-  }
+  },
+
+  postcss: [autoprefixer]
 };

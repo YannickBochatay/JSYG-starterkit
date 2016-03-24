@@ -26,7 +26,7 @@ That's pretty ugly, but we are waiting for a [new release](https://github.com/we
 ```shell
 npm run start
 ```
-Build app and launch the dev-server with hot reload.
+Build app (in memory) and launch the dev-server with hot reload.
 You have to open your browser and go to *http://localhost:8080/*.
 
 
@@ -40,7 +40,9 @@ Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* insid
 
 ### Features
 
-* ES6 syntax and JSX with [Babel](https://babeljs.io/)
+* ES6 and JSX with [Babel](https://babeljs.io/)
+
+* [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) support.
 
 * Code quality with [ESLint](http://eslint.org/)
 

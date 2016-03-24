@@ -1,6 +1,9 @@
 "use strict";
 
 import React from "react";
+import Input from "react-toolbox/lib/input";
+import Button from "react-toolbox/lib/button";
+
 
 class CommentForm extends React.Component {
 
@@ -14,12 +17,12 @@ class CommentForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleAuthorChange(e) {
+    handleAuthorChange(value,e) {
 
         this.setState({author:e.target.value});
     }
 
-    handleTextChange(e) {
+    handleTextChange(value,e) {
 
         this.setState({text:e.target.value});
     }
@@ -41,9 +44,8 @@ class CommentForm extends React.Component {
     render() {
         return (
           <form className="commentForm" onSubmit={this.handleSubmit}>
-            <fieldset>
             <label htmlFor="commentName">Nom</label>
-            <input
+            <Input
                 id="commentName"
                 type="text"
                 className="form-control"
@@ -53,7 +55,8 @@ class CommentForm extends React.Component {
             />
 
             <label htmlFor="commentText">Message</label>
-            <textarea
+            <Input
+                multiline
                 id="commentText"
                 className="form-control"
                 placeholder="Say something..."
@@ -61,11 +64,10 @@ class CommentForm extends React.Component {
                 value={this.state.text}
             />
             <br/>
-            <button type="submit" className="btn btn-primary">
+            <Button type="submit" className="btn btn-primary" raised accent>
               <i className="glyphicon glyphicon-ok"></i>
               Valider
-            </button>
-            </fieldset>
+            </Button>
           </form>
         );
     }

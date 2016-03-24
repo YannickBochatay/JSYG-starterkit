@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Router, hashHistory } from 'react-router';
 
-import './stubs/COURSES';
 import App from "./components/App";
 import Calendar from "./routes/Calendar/";
 import Course from "./routes/Course/";
