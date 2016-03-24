@@ -14,7 +14,8 @@ npm install
 It can takes several minutes
 
 * patch the *extract-text-webpack-plugin*.
-Open *node_modules/extract-text-webpack-plugin/index.js* add the following line after line 21
+
+Open *node_modules/extract-text-webpack-plugin/index.js* and add the following line after line 21
 ```javascript
 if (typeof c === 'undefined') return;
 ```
@@ -42,10 +43,12 @@ Run tests with karma
 
 * Code quality with [ESLint](http://eslint.org/)
 
-* smart auto-build application with [webpack](https://webpack.github.io/)
+* smart auto-build with [WebPack](https://webpack.github.io/)
 
 * [React](https://facebook.github.io/react/) components
 
-* Testing environment with [karma](https://karma-runner.github.io/)
+* [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
+
+* Testing environment with [Karma](https://karma-runner.github.io/)
 
 
