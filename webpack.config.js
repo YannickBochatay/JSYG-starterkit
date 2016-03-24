@@ -9,8 +9,11 @@ var path = require("path");
 var production = false; //process.env.NODE_ENV === 'production';
 
 var plugins = [
+
   new webpack.IgnorePlugin(/vertx/),
+
   new BowerWebpackPlugin(),
+
   new ExtractPlugin('bundle.css'), // <=== where should content be piped
 
   new webpack.optimize.CommonsChunkPlugin({
@@ -18,30 +21,40 @@ var plugins = [
     children: true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
   }),
+/*
+  new webpack.ProvidePlugin({
+    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+  }),
+
   new webpack.ProvidePlugin({
     $: "jquery",
     jQuery: "jquery",
     "window.jQuery": "jquery"
-  })
+  })*/
 ];
 
 if (production) {
 
   plugins = plugins.concat([
+
     // Cleanup the builds/ folder before
     // compiling our final assets
     new CleanPlugin('builds/*'),
+
     // This plugin looks for similar chunks and files
     // and merges them for better caching by the user
     new webpack.optimize.DedupePlugin(),
+
     // This plugins optimizes chunks and modules by
     // how much they are used in your app
     new webpack.optimize.OccurenceOrderPlugin(),
+
     // This plugin prevents Webpack from creating chunks
     // that would be too small to be worth loading separately
     new webpack.optimize.MinChunkSizePlugin({
       minChunkSize: 51200, // ~50kb
     }),
+
     // This plugin minifies all the Javascript code of the final bundle
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
