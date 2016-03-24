@@ -14,11 +14,15 @@ styles.sidebar = {
 }
 
 class Course extends React.Component {
+
   render() {
-    let { sidebar, main, children, params } = this.props
-    let course = COURSES[params.courseId]
+
+    let { sidebar, main, children, params } = this.props;
+
+    let course = COURSES[params.courseId];
 
     let content
+
     if (sidebar && main) {
       content = (
         <div>

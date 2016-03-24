@@ -6,12 +6,13 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Router, hashHistory } from 'react-router';
 
+import './stubs/COURSES';
 import App from "./components/App";
-import Calendar from "./route/Calendar/";
-import Course from "./route/Course/";
-import Grades from "./route/Grades/";
-import Messages from "./route/Messages/";
-import Profile from "./route/Profile/";
+import Calendar from "./routes/Calendar/";
+import Course from "./routes/Course/";
+import Grades from "./routes/Grades/";
+import Messages from "./routes/Messages/";
+import Profile from "./routes/Profile/";
 
 const rootRoute = {
 

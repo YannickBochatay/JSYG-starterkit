@@ -1,9 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from 'react';
+import { Link } from 'react-router';
 
 class Dashboard extends React.Component {
+
   render() {
-    const { courses } = this.props
+
+    const { courses } = this.props;
 
     return (
       <div>
@@ -24,8 +26,8 @@ class Dashboard extends React.Component {
           ))}
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default Dashboard
+export default Dashboard;

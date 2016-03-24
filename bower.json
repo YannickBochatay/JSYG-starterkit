@@ -19,9 +19,5 @@
     "builds"
   ],
   "dependencies": {
-    "jsyg": "^0.6.6",
-    "bootstrap": "^3.3.6",
-    "roboto-fontface": "^0.4.5",
-    "es6-promise": "^3.2.1"
   }
 }
