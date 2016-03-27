@@ -68,6 +68,6 @@
   "scripts": {
     "test": "karma start karma.config.js",
     "build" : "webpack",
-    "serve": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot"
   }
 }

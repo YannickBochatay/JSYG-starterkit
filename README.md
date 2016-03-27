@@ -25,14 +25,14 @@ npm run build
 Build app (in builds/ folder).
 
 ```shell
-npm run serve
+npm start
 ```
 Build app (in memory) and launch the dev-server with hot reload.
 You have to open your browser and go to *http://localhost:8080/*.
 
 
 ```shell
-npm run test
+npm test
 ```
 Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* inside *src/* directory will be executed, with hot reload.
 
