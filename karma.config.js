@@ -27,10 +27,15 @@ module.exports = function (config) {
     reporters: ['progress'],
     webpack: {//kind of a copy of your webpack config
       devtool: 'inline-source-map', //just do inline source maps instead of the default
+      resolve : {
+        extensions : ["", ".webpack.js", ".web.js", ".js", ".css", ".scss", ".less"]
+      },
       module: {
         loaders: [
           {test: /\.jsx?$/, loader: 'babel-loader'},
-          {test: /fetch\/fetch\.js$/, loader: "exports-loader?fetch"}
+          {test: /\.css$/, loader:'style-loader!css-loader'},
+          {test: /\.scss$/, loader:'style-loader!css-loader!sass-loader'},
+          {test: /\.less$/, loader:'style-loader!css-loader!less-loader'}
         ]
       },
       plugins: [new webpack.IgnorePlugin(/vertx/), new BowerWebpackPlugin()],

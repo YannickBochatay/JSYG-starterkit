@@ -4,24 +4,29 @@ import React from "react";
 import "react-dom";
 import TestUtils from "react-addons-test-utils";
 import Comment from "./Comment";
+import { Card, CardTitle, CardText } from 'react-toolbox/lib/card';
 
 describe("Comment", () => {
 
   let tree = TestUtils.renderIntoDocument(<Comment author="YB">Salut</Comment>);
 
+/*
   it("has an author property", function() {
 
-    let node = TestUtils.findRenderedDOMComponentWithTag(tree,"h2");
+    let result = TestUtils.findRenderedComponentWithType(tree,Card);
 
-    expect(node.textContent).toEqual("YB");
+    TestUtils.scryRenderedComponentsWithType(result,CardTitle);
 
-  });
+
+    expect(result).toBeTruthy();
+
+  });*/
 
   it("has a text content", function() {
 
-    let node = TestUtils.findRenderedDOMComponentWithTag(tree,"span");
+    let elmt = TestUtils.findRenderedComponentWithType(tree,CardText);
 
-    expect(node.textContent.trim()).toEqual("Salut");
+    expect(elmt).toBeTruthy();
 
   });
 

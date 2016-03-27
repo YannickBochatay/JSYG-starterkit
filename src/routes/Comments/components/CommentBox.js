@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import fetch from "whatwg-fetch";
+import "whatwg-fetch";
 import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
