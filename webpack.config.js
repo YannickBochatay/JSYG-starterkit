@@ -5,7 +5,7 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
-var autoprefixer = require("autoprefixer");
+//var autoprefixer = require("autoprefixer");
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -161,7 +161,7 @@ module.exports = {
         loader: "exports?fetch"
       }
     ],
-  },
+  }/*,
 
-  postcss: [autoprefixer]
+  postcss: [autoprefixer]*/
 };

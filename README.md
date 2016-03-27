@@ -62,3 +62,5 @@ Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* insid
 * [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
 
 * Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
+
+* [material-ui](http://www.material-ui.com/#/)
