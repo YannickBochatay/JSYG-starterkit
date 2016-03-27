@@ -14,8 +14,7 @@
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1",
     "react-toolbox": "^0.14.2",
-    "roboto-fontface": "^0.4.5",
-    "webpack": "^1.12.14"
+    "roboto-fontface": "^0.4.5"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.4",
@@ -69,8 +68,6 @@
   "scripts": {
     "test": "karma start karma.config.js",
     "build" : "webpack",
-    "serve": "webpack-dev-server --hot",
-    "postinstall": "npm run fixDistDebugRef",
-    "fixDistDebugRef": "mkdir -p node_modules/debug/dist && cp node_modules/debug/debug.js node_modules/debug/dist/"
+    "serve": "webpack-dev-server --hot"
   }
 }

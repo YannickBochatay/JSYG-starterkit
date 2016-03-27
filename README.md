@@ -17,14 +17,6 @@ npm install
 ```
 It can takes several minutes
 
-* patch the *extract-text-webpack-plugin*.
-
-Open *node_modules/extract-text-webpack-plugin/index.js* and add the following line after line 21
-```javascript
-if (typeof c === 'undefined') return;
-```
-That's pretty ugly, but we are waiting for a [new release](https://github.com/webpack/extract-text-webpack-plugin/issues/115)
-
 
 ### Get started
 ```shell
