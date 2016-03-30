@@ -21,7 +21,7 @@ class CommentForm extends React.Component {
 
     handleSomethingChange() {
 
-      this.props.onCommentChange(true)
+      if (this.props.onCommentChange) this.props.onCommentChange(true)
     }
 
     handleAuthorChange(e) {
@@ -45,9 +45,8 @@ class CommentForm extends React.Component {
 
         if (!text || !author) return
 
-        this.props.onCommentChange(false)
-
-        this.props.onCommentSubmit({author:author,text:text})
+        if (this.props.onCommentChange) this.props.onCommentChange(false)
+        if (this.props.onCommentSubmit) this.props.onCommentSubmit({author:author,text:text})
 
         this.setState({author:"",text:""})
     }
@@ -59,16 +58,16 @@ class CommentForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h2>Leave a comment</h2>
             <TextField
-              hintText="Name"
+              floatingLabelText="Name"
               onChange={this.handleAuthorChange}
-              defaultValue={this.state.text}
+              value={this.state.author}
             />
             <br/>
             <TextField
-              hintText="Say something..."
+              floatingLabelText="Say something..."
               multiLine={true}
               onChange={this.handleTextChange}
-              defaultValue={this.state.text}
+              value={this.state.text}
             />
             <br/>
             <Button

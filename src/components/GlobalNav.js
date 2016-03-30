@@ -38,18 +38,22 @@ class GlobalNav extends React.Component {
 
   render() {
 
+    let goHome = this.createGoToFct('/')
+
     return (
 
       <AppBar
         title="My App"
         onLeftIconButtonTouchTap={this.toggleMenu}
+        onTitleTouchTap={ goHome }
+        titleStyle={ {cursor:"pointer"} }
       >
       <LeftNav
         open={this.state.menuOpen}
         docked={false}
         onRequestChange={menuOpen => this.setState({menuOpen})}
       >
-        <MenuItem onClick={ this.createGoToFct('/') }>Home</MenuItem>
+        <MenuItem onClick={ goHome }>Home</MenuItem>
         <MenuItem onClick={ this.createGoToFct('/comments') }>Comments</MenuItem>
       </LeftNav>
       </AppBar>

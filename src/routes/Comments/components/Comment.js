@@ -12,7 +12,9 @@ class CommentBox extends React.Component {
         return(
             <Card zDepth={2} style={ {marginTop:20} }>
                 <CardHeader title={this.props.author}></CardHeader>
-                <CardText>{this.props.text}</CardText>
+                <CardText>
+                  <pre>{this.props.text}</pre>
+                </CardText>
             </Card>
         );
     }

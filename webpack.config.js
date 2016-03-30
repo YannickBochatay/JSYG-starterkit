@@ -3,7 +3,6 @@
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractPlugin = require('extract-text-webpack-plugin');
-var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
 
 var production = process.env.NODE_ENV === 'production';
@@ -12,7 +11,7 @@ var plugins = [
 
   new webpack.IgnorePlugin(/vertx/),
 
-  new BowerWebpackPlugin(),
+  new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"]),
 
   new ExtractPlugin('bundle.css'), // <=== where should content be piped
 

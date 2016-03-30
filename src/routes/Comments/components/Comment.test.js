@@ -2,14 +2,13 @@
 
 
 import React from "react";
-import Card from 'material-ui/lib/card/card';
-import CardTitle from 'material-ui/lib/card/card-title';
+import Comment from './Comment';
 import CardText from 'material-ui/lib/card/card-text';
 import TestUtils from "react-addons-test-utils";
 
 describe("Comment", () => {
 
-  let tree = TestUtils.renderIntoDocument(<Comment author="YB">Salut</Comment>);
+  let tree = TestUtils.renderIntoDocument(<Comment author="YB" text="Salut"/>);
 
 /*
   it("has an author property", function() {

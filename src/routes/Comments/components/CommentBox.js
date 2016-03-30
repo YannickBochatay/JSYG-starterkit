@@ -20,7 +20,7 @@ class CommentBox extends React.Component {
 
     loadCommentsFromServer() {
 
-        var that = this;
+        let that = this;
 
         return fetch(this.url)
         .then(function(response) {
@@ -39,14 +39,14 @@ class CommentBox extends React.Component {
 
     handleCommentSubmit(comment) {
 
-        //var that = this;
-        var comments = this.state.data;
+        let comments = this.state.data
 
-        comment.id = Date.now();
+        comment.id = Date.now()
 
-        this.setState({ data : comments.concat([comment]) });
+        this.setState({ data : comments.concat([comment]) })
 
         /*
+        //var that = this;
         return fetch(this.url,{
             method:"post",
             body:JSON.stringify(comment)
@@ -61,7 +61,7 @@ class CommentBox extends React.Component {
 
         if (this.context.router) this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave.bind(this) )
 
-        this.loadCommentsFromServer();
+        this.loadCommentsFromServer()
     }
 
     routerWillLeave() {

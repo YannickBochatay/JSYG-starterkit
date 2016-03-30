@@ -32,13 +32,16 @@ module.exports = function (config) {
       },
       module: {
         loaders: [
-          {test: /\.jsx?$/, loader: 'babel-loader'},
+          {test: /\.jsx?$/, loader: 'babel-loader?babelrc=false,presets[]=react,presets[]=es2015'},
           {test: /\.css$/, loader:'style-loader!css-loader'},
           {test: /\.scss$/, loader:'style-loader!css-loader!sass-loader'},
           {test: /\.less$/, loader:'style-loader!css-loader!less-loader'}
         ]
       },
-      plugins: [new webpack.IgnorePlugin(/vertx/), new BowerWebpackPlugin()],
+      plugins: [
+        new webpack.IgnorePlugin(/vertx/),
+        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+      ],
     },
     webpackServer: {
       noInfo: true //please don't spam the console when running in karma!
