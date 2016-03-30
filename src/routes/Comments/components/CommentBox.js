@@ -1,7 +1,7 @@
 "use strict";
 
-import React from "react";
 import "whatwg-fetch";
+import React from "react";
 import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
@@ -11,11 +11,11 @@ class CommentBox extends React.Component {
 
       super(props);
 
-      this.state = {data:[]};
+      this.state = {
+        data:[]
+      };
 
       this.url = "/src/routes/Comments/data.json";
-
-      this.routerWillLeave = this.routerWillLeave.bind(this);
     }
 
     loadCommentsFromServer() {
@@ -39,13 +39,14 @@ class CommentBox extends React.Component {
 
     handleCommentSubmit(comment) {
 
-        var that = this;
+        //var that = this;
         var comments = this.state.data;
 
         comment.id = Date.now();
 
         this.setState({ data : comments.concat([comment]) });
 
+        /*
         return fetch(this.url,{
             method:"post",
             body:JSON.stringify(comment)
@@ -53,25 +54,24 @@ class CommentBox extends React.Component {
         .catch(function(e) {
             console.error(that.props.url,e)
         });
+        */
     }
 
     componentDidMount() {
 
-        if (this.context.router) this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+        if (this.context.router) this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave.bind(this) )
 
         this.loadCommentsFromServer();
-
-        if (this.props.pollInterval) {
-
-            window.setInterval( this.loadCommentsFromServer.bind(this), this.props.pollInterval);
-        }
     }
 
     routerWillLeave() {
 
-      return true;
+      return this.state.unsaved ? 'Your work is not saved! Are you sure you want to leave?' : true
+    }
 
-      //return 'Your work is not saved! Are you sure you want to leave?'
+    commentIsUnsaved(bool) {
+
+      this.setState({unsaved:bool})
     }
 
     render() {
@@ -79,7 +79,7 @@ class CommentBox extends React.Component {
           <div className="commentBox">
             <h1>Comments</h1>
             <CommentList data={this.state.data} />
-            <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>
+            <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} onCommentChange={this.commentIsUnsaved.bind(this)}/>
           </div>
         );
     }

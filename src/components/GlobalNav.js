@@ -1,56 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router';
-import AppBar from "react-toolbox/lib/app_bar"
-import Navigation from "react-toolbox/lib/navigation"
-import Drawer from 'react-toolbox/lib/drawer';
-import Button from 'react-toolbox/lib/button';
+import React from 'react'
+import LeftNav from 'material-ui/lib/left-nav'
+import AppBar from 'material-ui/lib/app-bar'
+import MenuItem from 'material-ui/lib/menus/menu-item'
 
 class GlobalNav extends React.Component {
 
-  constructor(props, context) {
+  constructor(props) {
 
-    super(props, context)
+    super(props)
 
-    this.state = { active : false }
+    this.state = {
+      menuOpen : false
+    }
 
-    this.handleToggle = this.handleToggle.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this)
   }
 
-  handleToggle() {
+  toggleMenu() {
 
-    this.setState({active:!this.state.active})
+    this.setState({ menuOpen: !this.state.menuOpen })
   }
 
-  logOut() {
+  closeMenu() {
 
-    alert('log out')
+    this.setState({ menuOpen: false })
+  }
+
+  createGoToFct(path) {
+
+    var that = this;
+
+    return () => {
+      that.closeMenu()
+      that.context.router.push(path)
+    }
   }
 
   render() {
 
     return (
-      <AppBar>
-        <Button label="&#9776;" onClick={this.handleToggle}/>
-         <Drawer active={this.state.active} onOverlayClick={this.handleToggle}>
-          <h5>This is your Drawer.</h5>
-          <p>You can embed any content you want, for example a Menu.</p>
-        </Drawer>
-        <Navigation>
-          <Link to="/">Home</Link>{' '}
-          <Link to="/calendar">Calendar</Link>{' '}
-          <Link to="/grades">Grades</Link>{' '}
-          <Link to="/comments">Comments</Link>{' '}
-        </Navigation>
+
+      <AppBar
+        title="My App"
+        onLeftIconButtonTouchTap={this.toggleMenu}
+      >
+      <LeftNav
+        open={this.state.menuOpen}
+        docked={false}
+        onRequestChange={menuOpen => this.setState({menuOpen})}
+      >
+        <MenuItem onClick={ this.createGoToFct('/') }>Home</MenuItem>
+        <MenuItem onClick={ this.createGoToFct('/comments') }>Comments</MenuItem>
+      </LeftNav>
       </AppBar>
+
     )
   }
 }
 
-GlobalNav.defaultProps = {
-  user: {
-    id: 1,
-    name: 'Ryan Florence'
-  }
+GlobalNav.contextTypes = {
+    router: React.PropTypes.object.isRequired
 }
 
 export default GlobalNav

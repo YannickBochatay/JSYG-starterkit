@@ -5,7 +5,6 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
-//var autoprefixer = require("autoprefixer");
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -21,17 +20,7 @@ var plugins = [
     name: 'main', // Move dependencies to our main file
     children: true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
-  })/*,
-
-  new webpack.ProvidePlugin({
-    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-  }),
-
-  new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery",
-    "window.jQuery": "jquery"
-  })*/
+  })
 ];
 
 if (production) {
@@ -78,9 +67,6 @@ if (production) {
 }
 
 module.exports = {
-  /*resolve: {
-   root: [path.join(__dirname, "bower_components")]
-   },*/
 
   entry: ['./src'],
 
@@ -89,8 +75,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/builds/'
   },
-
-  //devServer: {},
 
   debug: !production,
 
@@ -118,7 +102,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel'
+        loader: 'babel?babelrc=false,presets[]=react,presets[]=es2015'
       },
       {
         test: /\.css$/,
@@ -155,13 +139,7 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /fetch\/fetch\.js$/,
-        loader: "exports?fetch"
       }
     ],
-  }/*,
-
-  postcss: [autoprefixer]*/
+  }
 };

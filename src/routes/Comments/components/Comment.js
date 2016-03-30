@@ -1,14 +1,17 @@
 "use strict";
 
 import React from "react";
-import { Card, CardTitle, CardText } from 'react-toolbox/lib/card';
+import Card from 'material-ui/lib/card/card';
+//import CardTitle from 'material-ui/lib/card/card-title';
+import CardText from 'material-ui/lib/card/card-text';
+import CardHeader from 'material-ui/lib/card/card-header';
 
 class CommentBox extends React.Component {
 
     render() {
         return(
-            <Card className="comment">
-                <CardTitle title={this.props.author}></CardTitle>
+            <Card zDepth={2} style={ {marginTop:20} }>
+                <CardHeader title={this.props.author}></CardHeader>
                 <CardText>{this.props.text}</CardText>
             </Card>
         );

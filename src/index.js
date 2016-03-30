@@ -5,11 +5,13 @@ import ReactDOM from "react-dom";
 import { Router, hashHistory } from 'react-router';
 
 import App from "./components/App";
-import Calendar from "./routes/Calendar/";
-import Course from "./routes/Course/";
-import Grades from "./routes/Grades/";
 import Comments from "./routes/Comments/";
-import Profile from "./routes/Profile/";
+import NotFound from "./components/NotFound";
+
+let NotFoundView = {
+  path:"*",
+  component:NotFound
+}
 
 const rootRoute = {
 
@@ -21,7 +23,7 @@ const rootRoute = {
 
     component:App,
 
-    childRoutes:[ Calendar, Course, Grades, Comments, Profile ]
+    childRoutes:[ Comments, NotFoundView ]
 
   }]
 

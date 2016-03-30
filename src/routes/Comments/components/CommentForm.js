@@ -1,8 +1,10 @@
 "use strict";
 
-import React from "react";
-import Input from "react-toolbox/lib/input";
-import Button from "react-toolbox/lib/button";
+import React from "react"
+import FontIcon from 'material-ui/lib/font-icon'
+import Button from 'material-ui/lib/raised-button'
+import Paper from 'material-ui/lib/paper'
+import TextField from 'material-ui/lib/text-field'
 
 
 class CommentForm extends React.Component {
@@ -10,66 +12,74 @@ class CommentForm extends React.Component {
     constructor(props) {
 
       super(props);
-      this.state = {author:"",text:""};
+      this.state = {author:"",text:""}
 
-      this.handleAuthorChange = this.handleAuthorChange.bind(this);
-      this.handleTextChange = this.handleTextChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleAuthorChange = this.handleAuthorChange.bind(this)
+      this.handleTextChange = this.handleTextChange.bind(this)
+      this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleAuthorChange(value,e) {
+    handleSomethingChange() {
 
-        this.setState({author:e.target.value});
+      this.props.onCommentChange(true)
     }
 
-    handleTextChange(value,e) {
+    handleAuthorChange(e) {
 
-        this.setState({text:e.target.value});
+        this.handleSomethingChange()
+        this.setState({author:e.target.value})
+    }
+
+    handleTextChange(e) {
+
+        this.handleSomethingChange()
+        this.setState({text:e.target.value})
     }
 
     handleSubmit(e) {
 
         e.preventDefault();
 
-        var author = this.state.author.trim();
-        var text = this.state.text.trim();
+        var author = this.state.author.trim()
+        var text = this.state.text.trim()
 
-        if (!text || !author) return;
+        if (!text || !author) return
 
-        this.props.onCommentSubmit({author:author,text:text});
+        this.props.onCommentChange(false)
 
-        this.setState({author:"",text:""});
+        this.props.onCommentSubmit({author:author,text:text})
+
+        this.setState({author:"",text:""})
     }
 
     render() {
-        return (
-          <form className="commentForm" onSubmit={this.handleSubmit}>
-            <label htmlFor="commentName">Nom</label>
-            <Input
-                id="commentName"
-                type="text"
-                className="form-control"
-                placeholder="Your name"
-                value={this.state.author}
-                onChange={this.handleAuthorChange}
-            />
 
-            <label htmlFor="commentText">Message</label>
-            <Input
-                multiline
-                id="commentText"
-                className="form-control"
-                placeholder="Say something..."
-                onChange={this.handleTextChange}
-                value={this.state.text}
+      return (
+        <Paper zDepth={1} style={ {marginTop:50,padding:20} }>
+          <form onSubmit={this.handleSubmit}>
+            <h2>Leave a comment</h2>
+            <TextField
+              hintText="Name"
+              onChange={this.handleAuthorChange}
+              defaultValue={this.state.text}
             />
             <br/>
-            <Button type="submit" className="btn btn-primary" raised accent>
-              <i className="glyphicon glyphicon-ok"></i>
-              Valider
-            </Button>
+            <TextField
+              hintText="Say something..."
+              multiLine={true}
+              onChange={this.handleTextChange}
+              defaultValue={this.state.text}
+            />
+            <br/>
+            <Button
+              label="Valider"
+              type="submit"
+              secondary={true}
+              icon={<FontIcon className="muidocs-icon-custom-github"/>}
+            />
           </form>
-        );
+        </Paper>
+      );
     }
 }
 

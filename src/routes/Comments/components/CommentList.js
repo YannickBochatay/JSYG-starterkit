@@ -15,7 +15,7 @@ class CommentList extends React.Component {
     });
 
     return (
-      <div className="commentList">
+       <div>
         {commentNodes}
       </div>
     );

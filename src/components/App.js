@@ -1,27 +1,34 @@
-/*globals COURSES:true */
 import React from 'react'
-import Dashboard from './Dashboard'
+import Welcome from './Welcome'
 import GlobalNav from './GlobalNav'
 
-import "normalize.css"
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import "roboto-fontface"
-import "material-design-icons"
-import "react-toolbox/lib/commons"
-import ToolboxApp from 'react-toolbox/lib/app'
+import 'material-ui/lib/font-icon';
+import 'material-ui/lib/svg-icon';
 
-import '../stubs/COURSES';
+let style = {
+  "fontFamily":"roboto"
+}
+
+// Needed for onTouchTap
+// Can go away when react 1.0 release
+// Check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
+
 
 class App extends React.Component {
 
   render() {
 
     return (
-      <ToolboxApp>
+      <div>
         <GlobalNav />
-        <div style={{ padding: 20 }}>
-          {this.props.children || <Dashboard courses={COURSES} />}
+        <div style={style}>
+        {this.props.children || <Welcome/>}
         </div>
-      </ToolboxApp>
+      </div>
     )
   }
 }

@@ -1,10 +1,11 @@
 "use strict";
 
+
 import React from "react";
-import "react-dom";
+import Card from 'material-ui/lib/card/card';
+import CardTitle from 'material-ui/lib/card/card-title';
+import CardText from 'material-ui/lib/card/card-text';
 import TestUtils from "react-addons-test-utils";
-import Comment from "./Comment";
-import { Card, CardTitle, CardText } from 'react-toolbox/lib/card';
 
 describe("Comment", () => {
 
