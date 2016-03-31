@@ -55,6 +55,7 @@ class GlobalNav extends React.Component {
       >
         <MenuItem onClick={ goHome }>Home</MenuItem>
         <MenuItem onClick={ this.createGoToFct('/comments') }>Comments</MenuItem>
+        <MenuItem onClick={ this.createGoToFct('/mockup') }>Mock-up</MenuItem>
       </LeftNav>
       </AppBar>
 

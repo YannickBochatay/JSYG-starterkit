@@ -73,3 +73,26 @@ Build app (in builds/ folder) for production (clean, optimize, minify)
 
 ### Warning
 If your app is not in the web-root folder (ex : *http://myDomain.fr/myApp/* instead of *http://myDomain.fr/* ) you'll have to change the *publicPath* property in *webpack.config.js* (ex : *publicPath : "/myApp/builds/"* instead of *publicPath : "/builds/"*).
+
+
+
+### Install new dependencies
+
+##### with npm
+```shell
+npm install --save jquery
+```
+
+##### or bower if you prefer
+```shell
+bower install --save jquery
+```
+
+##### in your code
+```javascript
+import $ from "jquery"
+
+$("<div>").appendTo("body");
+```
+
+That's it.

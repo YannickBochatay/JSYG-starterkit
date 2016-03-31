@@ -6,6 +6,7 @@ import { Router, hashHistory } from 'react-router';
 
 import App from "./components/App";
 import Comments from "./routes/Comments/";
+import Mockup from "./routes/Mockup";
 import NotFound from "./components/NotFound";
 
 let NotFoundView = {
@@ -23,7 +24,7 @@ const rootRoute = {
 
     component:App,
 
-    childRoutes:[ Comments, NotFoundView ]
+    childRoutes:[ Comments, Mockup, NotFoundView ]
 
   }]
 
