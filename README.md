@@ -20,11 +20,6 @@ It can takes several minutes
 
 ### Get started
 ```shell
-npm run build
-```
-Build app (in builds/ folder).
-
-```shell
 npm start
 ```
 Build app (in memory) and launch the dev-server with hot reload.
@@ -36,6 +31,15 @@ npm test
 ```
 Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* inside *src/* directory will be executed, with hot reload.
 
+```shell
+npm run build-dev
+```
+Build app (in builds/ folder) for development
+
+```shell
+npm run build-prod
+```
+Build app (in builds/ folder) for production (clean, optimize, minify)
 
 
 
@@ -49,10 +53,12 @@ Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* insid
 
 * smart auto-build and reload with [WebPack](https://webpack.github.io/)
 
+* super easy imports from [bower](http://bower.io/) components and [npm](https://www.npmjs.com/) packages.
+
 * [React](https://facebook.github.io/react/) components
 
 * [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
 
 * Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
 
-* [material-ui](http://www.material-ui.com/#/)
+* [Material-ui](http://www.material-ui.com/#/)
