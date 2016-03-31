@@ -45,7 +45,7 @@ webpackJsonp([1],{
 	            data: []
 	        };
 	
-	        _this.url = "../src/routes/Comments/data.json";
+	        _this.url = "./src/routes/Comments/data.json";
 	        return _this;
 	    }
 	

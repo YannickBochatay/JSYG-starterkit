@@ -29,7 +29,7 @@ You have to open your browser and go to *http://localhost:8080/*.
 ```shell
 npm test
 ```
-Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* inside *src/* directory will be executed, with hot reload.
+Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* extension inside *src/* directory will be executed, with hot reload.
 
 ```shell
 npm run build-dev
@@ -41,6 +41,9 @@ npm run build-prod
 ```
 Build app (in builds/ folder) for production (clean, optimize, minify)
 
+
+### Warning
+If your app is not in the web-root folder (ex : *http://myDomain.fr/myApp/* instead of *http://myDomain.fr/* ) you'll have to change the *publicPath* property in *webpack.config.js* (ex : *publicPath : "/myApp/builds/"* instead of *publicPath : "/builds/"*).
 
 
 ### Features

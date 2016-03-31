@@ -15,7 +15,7 @@ class CommentBox extends React.Component {
         data:[]
       };
 
-      this.url = "../src/routes/Comments/data.json";
+      this.url = "./src/routes/Comments/data.json";
     }
 
     loadCommentsFromServer() {
