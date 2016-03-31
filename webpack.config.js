@@ -3,6 +3,7 @@
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
 
 var production = process.env.NODE_ENV === 'production';
@@ -11,7 +12,10 @@ var plugins = [
 
   new webpack.IgnorePlugin(/vertx/),
 
-  new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"]),
+  new BowerWebpackPlugin(),/*
+   new webpack.ResolverPlugin([
+    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+  ]), // doesn't work if there are more than 1 file in the main property*/
 
   new ExtractTextPlugin('bundle.css'), // <=== where should content be piped
 
@@ -19,6 +23,12 @@ var plugins = [
     name: 'main', // Move dependencies to our main file
     children: true, // Look for common dependencies in all children,
     minChunks: 2, // How many times a dependency must come up before being extracted
+  }),
+
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    "window.jQuery": "jquery"
   })
 ];
 
@@ -79,12 +89,14 @@ module.exports = {
 
   devtool: production ? false : 'source-map',
 
-  plugins: plugins,
-
   resolve : {
+
+    modulesDirectories: ["web_modules", "node_modules", "bower_components"],
 
     extensions : ["", ".webpack.js", ".web.js", ".js", ".css", ".scss", ".less"]
   },
+
+  plugins: plugins,
 
   module: {
 
@@ -105,15 +117,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules')
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules!sass')
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
       },
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules!less')
+        loader: ExtractTextPlugin.extract('style', 'css!less')
       },
       {
         test: /\.html$/,
