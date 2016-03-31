@@ -2,7 +2,7 @@
 
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
-var ExtractPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require("path");
 
 var production = process.env.NODE_ENV === 'production';
@@ -13,7 +13,7 @@ var plugins = [
 
   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"]),
 
-  new ExtractPlugin('bundle.css'), // <=== where should content be piped
+  new ExtractTextPlugin('bundle.css'), // <=== where should content be piped
 
   new webpack.optimize.CommonsChunkPlugin({
     name: 'main', // Move dependencies to our main file
@@ -67,12 +67,12 @@ if (production) {
 
 module.exports = {
 
-  entry: ['./src'],
+  entry: './src/index.js',
 
   output: {
     path: path.resolve(__dirname, "builds"),
     filename: 'bundle.js',
-    publicPath: 'builds/'
+    publicPath: './'
   },
 
   debug: !production,
@@ -105,15 +105,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractPlugin.extract('style', 'css?modules')
+        loader: ExtractTextPlugin.extract('style', 'css?modules')
       },
       {
         test: /\.scss$/,
-        loader: ExtractPlugin.extract('style', 'css?modules!sass')
+        loader: ExtractTextPlugin.extract('style', 'css?modules!sass')
       },
       {
         test: /\.less$/,
-        loader: ExtractPlugin.extract('style', 'css?modules!less')
+        loader: ExtractTextPlugin.extract('style', 'css?modules!less')
       },
       {
         test: /\.html$/,
