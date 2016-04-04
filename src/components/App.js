@@ -4,8 +4,6 @@ import GlobalNav from './GlobalNav'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import "roboto-fontface"
-import 'material-ui/lib/font-icon';
-import 'material-ui/lib/svg-icon';
 
 let style = {
   "fontFamily":"roboto"
