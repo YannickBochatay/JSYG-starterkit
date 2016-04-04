@@ -82,7 +82,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "builds"),
     filename: 'bundle.js',
-    publicPath: '/builds/'
+    publicPath: '/JSYG-starterkit/builds/'
   },
 
   debug: !production,
