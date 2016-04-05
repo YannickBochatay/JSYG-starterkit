@@ -16,7 +16,7 @@ class Loading extends React.Component {
     this.interval = window.setInterval( ()=> that.setState({text: this.state.text+"."}), 10)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
 
     window.clearInterval(this.interval)
   }
