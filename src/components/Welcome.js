@@ -1,7 +1,5 @@
 import React from 'react'
 import RaisedButton from "material-ui/lib/raised-button"
-import FontIcon from 'material-ui/lib/font-icon'
-import { Link } from 'react-router';
 
 class Welcome extends React.Component {
 
@@ -16,13 +14,12 @@ class Welcome extends React.Component {
         <p>
           The comments section is from the <a href="https://facebook.github.io/react/docs/tutorial.html">react tutorial</a>.
         </p>
-        <Link to="/comments/">
+        <a href="comments">
           <RaisedButton
             label="See comments"
             secondary={true}
-            icon={<FontIcon className="muidocs-icon-custom-github"/>}
           />
-        </Link>
+        </a>
       </div>
     );
   }

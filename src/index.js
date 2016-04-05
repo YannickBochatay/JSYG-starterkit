@@ -1,35 +1,32 @@
 "use strict";
 
-import React from 'react';
-import ReactDOM from "react-dom";
-import { Router, hashHistory } from 'react-router';
+import React from 'react'
+import ReactDOM from "react-dom"
 
-import App from "./components/App";
-import Comments from "./routes/Comments/";
-import NotFound from "./components/NotFound";
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import "roboto-fontface"
 
-let NotFoundView = {
-  path:"*",
-  component:NotFound
+import Router from "./components/Router"
+import GlobalNav from "./components/GlobalNav"
+
+let style = {
+  "fontFamily":"roboto"
 }
 
-const rootRoute = {
+injectTapEventPlugin();
 
-  component:"div",
 
-  childRoutes:[{
+class App extends React.Component {
 
-    path:"/",
+  render() {
 
-    component:App,
+    return (
+      <div style={style}>
+        <GlobalNav/>
+        <Router/>
+      </div>
+    )
+  }
+}
 
-    childRoutes:[ Comments, NotFoundView ]
-
-  }]
-
-};
-
-ReactDOM.render(
-  <Router history={hashHistory} routes={rootRoute} />,
-  document.getElementById("content")
-);
+ReactDOM.render( <App/> , document.getElementById("content") )

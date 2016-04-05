@@ -2,7 +2,7 @@
 var webpack = require("webpack");
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 
-var src = 'src/**/*.test.+(js|jsx)';
+var src = 'src/**/*test.+(js|jsx)';
 
 module.exports = function (config) {
 

@@ -20,7 +20,7 @@
 
 * [React](https://facebook.github.io/react/) components
 
-* [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
+* [Page.js](https://github.com/visionmedia/page.js) for routing
 
 * Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
 

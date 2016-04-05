@@ -5,8 +5,7 @@ import MenuItem from 'material-ui/lib/menus/menu-item'
 import IconButton from 'material-ui/lib/icon-button'
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert'
 import IconMenu from 'material-ui/lib/menus/icon-menu'
-
-//import logo from "./logo.png"
+import page from "page"
 
 
 class GlobalNav extends React.Component {
@@ -32,23 +31,11 @@ class GlobalNav extends React.Component {
     this.setState({ menuOpen: false })
   }
 
-  createGoToFct(path) {
-
-    var that = this;
-
-    return () => {
-      that.closeMenu()
-      that.context.router.push(path)
-    }
-  }
-
   signOut() {
     window.alert("Bye bye")
   }
 
   render() {
-
-    let goHome = this.createGoToFct('/')
 
     return (
 
@@ -73,18 +60,14 @@ class GlobalNav extends React.Component {
         docked={false}
         onRequestChange={menuOpen => this.setState({menuOpen})}
       >
-        <MenuItem onClick={ goHome }>Home</MenuItem>
-        <MenuItem onClick={ this.createGoToFct('/comments') }>Comments</MenuItem>
-        <MenuItem onClick={ this.createGoToFct('/this_is_a_bad_link') }>Bad link</MenuItem>
+        <MenuItem onClick={ () => { page('/'); this.closeMenu() } }>Home</MenuItem>
+        <MenuItem onClick={ () => { page('/comments'); this.closeMenu() } }>Comments</MenuItem>
+        <MenuItem onClick={ () => { page('/this_is_a_bad_link'); this.closeMenu() } }>Bad link</MenuItem>
       </LeftNav>
       </AppBar>
 
     )
   }
-}
-
-GlobalNav.contextTypes = {
-    router: React.PropTypes.object.isRequired
 }
 
 export default GlobalNav
