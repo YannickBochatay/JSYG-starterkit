@@ -93,7 +93,7 @@ module.exports = {
 
     modulesDirectories: ["web_modules", "node_modules", "bower_components"],
 
-    extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx", ".ts", ".css", ".scss", ".less"]
+    extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx", ".css", ".scss", ".less"]
   },
 
   plugins: plugins,
@@ -114,10 +114,6 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel?babelrc=false,presets[]=react,presets[]=es2015'
-      },
-      {
-        test: /\.ts$/,
-        loader: 'ts-loader'
       },
       {
         test: /\.css$/,
