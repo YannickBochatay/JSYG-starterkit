@@ -1,21 +1,15 @@
-"use strict";
-
-import React from "react";
-import Card from 'material-ui/lib/card/card';
-//import CardTitle from 'material-ui/lib/card/card-title';
-import CardText from 'material-ui/lib/card/card-text';
-import CardHeader from 'material-ui/lib/card/card-header';
+import React from "react"
+import Tile from "grommet/components/Tile"
+import Header from "grommet/components/Header"
 
 class CommentBox extends React.Component {
 
     render() {
         return(
-            <Card zDepth={2} style={ {marginTop:20} }>
-                <CardHeader title={this.props.author}></CardHeader>
-                <CardText>
-                  <pre>{this.props.text}</pre>
-                </CardText>
-            </Card>
+            <Tile wide={true} colorIndex="light-2" align="start">
+              <Header>{this.props.author}</Header>
+              {this.props.text}
+            </Tile>
         );
     }
 }

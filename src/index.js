@@ -1,32 +1,27 @@
 "use strict";
 
+import "grommet/grommet.min.css"
+
 import React from 'react'
 import ReactDOM from "react-dom"
-
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import "roboto-fontface"
 
 import Router from "./components/Router"
 import GlobalNav from "./components/GlobalNav"
 
-let style = {
-  "fontFamily":"roboto"
-}
+import App from "grommet/components/App"
 
-injectTapEventPlugin();
+import {addLocaleData, IntlProvider} from 'react-intl'
+import frLocaleData from 'react-intl/locale-data/fr'
+import messages from "./localeData/fr"
 
+addLocaleData(frLocaleData)
 
-class App extends React.Component {
+ReactDOM.render(
+  <IntlProvider locale="fr" messages={messages}>
+    <App>
+      <GlobalNav/>
+      <Router/>
+    </App>
+  </IntlProvider>,
 
-  render() {
-
-    return (
-      <div style={style}>
-        <GlobalNav/>
-        <Router/>
-      </div>
-    )
-  }
-}
-
-ReactDOM.render( <App/> , document.getElementById("content") )
+document.getElementById("content") )

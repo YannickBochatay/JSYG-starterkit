@@ -20,13 +20,7 @@ class Router extends React.Component {
 
     let that = this
 
-    this.setState({component:<Loading/>})
-
-    window.setTimeout(function() {
-
-      that.setState({component:component})
-
-    },500)
+    that.setState({component:component})
   }
 
   setCommentPage() {
@@ -34,6 +28,8 @@ class Router extends React.Component {
     let that = this
 
     let regComments = /\/comments\/?/
+
+    this.setState({component:<Loading/>})
 
     page(regComments, () => {
 

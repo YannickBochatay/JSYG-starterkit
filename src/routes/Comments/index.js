@@ -4,7 +4,10 @@ import "whatwg-fetch"
 import React from "react"
 import CommentList from "./components/CommentList"
 import CommentForm from "./components/CommentForm"
-import page from "page"
+import { FormattedMessage } from "react-intl"
+import Article from "grommet/components/Article"
+import Header from "grommet/components/Header"
+import Section from "grommet/components/Section"
 
 class Comments extends React.Component {
 
@@ -60,28 +63,20 @@ class Comments extends React.Component {
 
     componentDidMount() {
 
-        if (this.context.router) this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave.bind(this) )
-
         this.loadCommentsFromServer()
-    }
-
-    routerWillLeave() {
-
-      return this.state.unsaved ? 'Your work is not saved! Are you sure you want to leave?' : true
-    }
-
-    commentIsUnsaved(bool) {
-
-      this.setState({unsaved:bool})
     }
 
     render() {
         return (
-          <div className="commentBox">
-            <h1>Comments</h1>
-            <CommentList data={this.state.data} />
-            <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} onCommentChange={this.commentIsUnsaved.bind(this)}/>
-          </div>
+          <Article pad="medium">
+            <Header>
+                <FormattedMessage id="Comments"/>
+            </Header>
+            <Section>
+                <CommentList data={this.state.data} />
+                <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>
+            </Section>
+          </Article>
         );
     }
 
@@ -90,8 +85,6 @@ class Comments extends React.Component {
 Comments.contextTypes = {
   router: React.PropTypes.object
 }
-
-console.log(page)
 
 module.exports = Comments
 

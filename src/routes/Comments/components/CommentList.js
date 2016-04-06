@@ -1,7 +1,6 @@
-"use strict";
-
-import React from "react";
-import Comment from "./Comment";
+import React from "react"
+import Comment from "./Comment"
+import Tiles from "grommet/components/Tiles"
 
 class CommentList extends React.Component {
 
@@ -10,16 +9,16 @@ class CommentList extends React.Component {
     var commentNodes = this.props.data.map(function(comment) {
 
         return (
-            <Comment author={comment.author} key={comment.id} text={comment.text}/>
-        );
-    });
+          <Comment author={comment.author} key={comment.id} text={comment.text}/>
+        )
+    })
 
     return (
-       <div>
+      <Tiles pad="large">
         {commentNodes}
-      </div>
-    );
+      </Tiles>
+    )
   }
 }
 
-export default CommentList;
+export default CommentList
