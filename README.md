@@ -24,7 +24,9 @@
 
 * Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
 
-* [Material-ui](http://www.material-ui.com/#/)
+* [Grommet](http://www.grommet.io) for ui components
+
+* [React-intl](https://github.com/yahoo/react-intl) for internationalization
 
 
 
