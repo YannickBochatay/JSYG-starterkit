@@ -47,7 +47,7 @@ class App extends React.Component {
 
     let that = this
 
-    //require.ensure([],function(require) {
+    require.ensure([],function(require) {
 
       let localeData = require("react-intl/locale-data/en.js")
       let messages = require("grommet/messages/en.js")
@@ -59,7 +59,7 @@ class App extends React.Component {
         lang:"en",
         messages : Object.assign(messages,messagesAPP)
       })
-    //})
+    })
   }
 
   setLang(lang) {
