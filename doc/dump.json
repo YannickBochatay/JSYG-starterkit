@@ -1,0 +1,1989 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/App.js",
+    "memberof": null,
+    "longname": "src/components/App.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import \"grommet/grommet.min.css\"\n\nimport React from 'react'\n\nimport GlobalNav from \"./GlobalNav\"\nimport GrommetApp from \"grommet/components/App\"\nimport Welcome from \"./Welcome\"\n\nimport {addLocaleData, IntlProvider} from 'react-intl'\n\nclass App extends React.Component {\n\n  constructor(props) {\n\n    super(props)\n\n    this.state = {}\n\n    this.mounted = false\n\n    this.setLangToFrench()\n  }\n\n  componentDidMount() {\n\n    this.mounted = true\n  }\n\n\n  setLangToFrench() {\n\n    let localeData = require('react-intl/locale-data/fr')\n    let messages = require(\"../localeData/fr\")\n\n    let state = {\n      lang:\"fr\",\n      messages : messages\n    }\n\n    addLocaleData(localeData)\n\n    if (this.mounted) this.setState(state)\n    else this.state = state\n  }\n\n  setLangToEnglish() {\n\n    let that = this\n\n    require.ensure([],function(require) {\n\n      let localeData = require(\"react-intl/locale-data/en.js\")\n      let messages = require(\"grommet/messages/en.js\")\n      let messagesAPP = require(\"../localeData/en.js\")\n\n      addLocaleData(localeData)\n\n      that.setState({\n        lang:\"en\",\n        messages : Object.assign(messages,messagesAPP)\n      })\n    })\n  }\n\n  setLang(lang) {\n\n    switch (lang) {\n      case \"fr\" : this.setLangToFrench(); break\n      case \"en\" : this.setLangToEnglish(); break\n      default : throw new Error(lang+\" : langue incorrect\")\n    }\n  }\n\n  render() {\n/*\n    let iconStyle = {\n      margin:\"10px\",\n      display:\"inline-block\",\n      cursor:\"pointer\"\n    }\n\n    let iconSelected = {\n      ...iconStyle,\n      \"boxShadow\":\"0 0 4px 2px\"\n    }*/\n\n    return (\n      <IntlProvider locale={this.state.lang} messages={this.state.messages}>\n        <GrommetApp>\n          <GlobalNav onClickFlag={ this.setLang.bind(this) }/>\n          <div>\n            {this.props.children || <Welcome/>}\n          </div>\n        </GrommetApp>\n      </IntlProvider>\n    )\n  }\n\n}\n\nexport default App\n"
+  },
+  {
+    "__docId__": 1,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "App",
+    "memberof": "src/components/App.js",
+    "longname": "src/components/App.js~App",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/App.js",
+    "importStyle": "App",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 2,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 3,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "mounted",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#mounted",
+    "access": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentDidMount",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#componentDidMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 6,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "mounted",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#mounted",
+    "access": null,
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "setLangToFrench",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#setLangToFrench",
+    "access": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 8,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "setLangToEnglish",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#setLangToEnglish",
+    "access": null,
+    "description": null,
+    "lineNumber": 46,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 10,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "setLang",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#setLang",
+    "access": null,
+    "description": null,
+    "lineNumber": 65,
+    "undocument": true,
+    "params": [
+      {
+        "name": "lang",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 11,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/App.js~App",
+    "longname": "src/components/App.js~App#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 74,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 12,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/FlagIcon.js",
+    "memberof": null,
+    "longname": "src/components/FlagIcon.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from \"react\"\n//import \"flag-icon-css\"\n\nexport default class FladIcon extends React.Component {\n\n  render() {\n\n    return (\n      <span\n        className={ \"flag-icon flag-icon-\" + this.props.country }\n        style={ this.props.style }\n        {...this.props}\n      >\n        { this.props.countryLong || this.props.country }\n      </span>\n    )\n  }\n}\n"
+  },
+  {
+    "__docId__": 13,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "FladIcon",
+    "memberof": "src/components/FlagIcon.js",
+    "longname": "src/components/FlagIcon.js~FladIcon",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/FlagIcon.js",
+    "importStyle": "FladIcon",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 14,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/FlagIcon.js~FladIcon",
+    "longname": "src/components/FlagIcon.js~FladIcon#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 15,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/GlobalNav.js",
+    "memberof": null,
+    "longname": "src/components/GlobalNav.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from 'react'\nimport Layer from 'grommet/components/Layer'\nimport Menu from 'grommet/components/Menu'\nimport Header from \"grommet/components/Header\"\n//import Title from \"grommet/components/Title\"\nimport Anchor from \"grommet/components/Anchor\"\nimport IconMenu from \"grommet/components/icons/base/Menu\"\nimport FlagIcon from \"./FlagIcon\"\n\nimport { Link } from 'react-router'\nimport { FormattedMessage } from \"react-intl\"\n\n\nexport default class GlobalNav extends React.Component {\n\n  constructor(props) {\n\n    super(props)\n\n    this.state = { hidden : true }\n  }\n\n  toggleSideBar() {\n\n    this.setState({ hidden : !this.state.hidden })\n  }\n\n  closeSideBar() {\n\n    this.setState({ hidden : true})\n  }\n\n  render() {\n\n    let that = this\n\n    function toggle(e) {\n      e.preventDefault()\n      that.toggleSideBar()\n    }\n\n    let clickFlag = this.props.onClickFlag\n\n    let close = this.closeSideBar.bind(this)\n\n    let flagStyle = {\n      display:\"inline-block\",\n      margin:\"10px\",\n      \"cursor\":\"pointer\"\n    }\n\n    return (\n\n      <Header pad=\"medium\">\n\n        <Anchor href=\"#\" label={<IconMenu/>} onClick={toggle} />\n\n        <h1 style={{marginLeft:\"30px\",marginRight:\"30px\"}}>\n          <FormattedMessage id=\"My App\"/>\n        </h1>\n\n        <FlagIcon country=\"fr\" countryLong=\"Français\" onClick={ () => clickFlag(\"fr\") } style={flagStyle}/>\n        <FlagIcon country=\"gb\" countryLong=\"Anglais\" onClick={ () => clickFlag(\"en\") }  style={flagStyle}/>\n\n        <Layer onClose={close} closer={true} align=\"left\" hidden={this.state.hidden}>\n          <Menu pad={ { vertical:\"large\" } }>\n            <Link to=\"/\" onClick={close}>\n              <FormattedMessage id=\"Home\"/>\n            </Link>\n            <Link to=\"comments\" onClick={close}>\n              <FormattedMessage id=\"Comments\"/>\n            </Link>\n          </Menu>\n        </Layer>\n\n      </Header>\n    )\n  }\n}\n"
+  },
+  {
+    "__docId__": 16,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "GlobalNav",
+    "memberof": "src/components/GlobalNav.js",
+    "longname": "src/components/GlobalNav.js~GlobalNav",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/GlobalNav.js",
+    "importStyle": "GlobalNav",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 17,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/components/GlobalNav.js~GlobalNav",
+    "longname": "src/components/GlobalNav.js~GlobalNav#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 18,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/components/GlobalNav.js~GlobalNav",
+    "longname": "src/components/GlobalNav.js~GlobalNav#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "toggleSideBar",
+    "memberof": "src/components/GlobalNav.js~GlobalNav",
+    "longname": "src/components/GlobalNav.js~GlobalNav#toggleSideBar",
+    "access": null,
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 20,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "closeSideBar",
+    "memberof": "src/components/GlobalNav.js~GlobalNav",
+    "longname": "src/components/GlobalNav.js~GlobalNav#closeSideBar",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 21,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/GlobalNav.js~GlobalNav",
+    "longname": "src/components/GlobalNav.js~GlobalNav#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 22,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/Loading.js",
+    "memberof": null,
+    "longname": "src/components/Loading.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from 'react'\n\nclass Loading extends React.Component {\n\n  constructor(props) {\n\n    super(props)\n\n    this.state = { text: \"loading...\" }\n  }\n\n  componentDidMount() {\n\n    let that = this\n\n    this.interval = window.setInterval( ()=> that.setState({text: this.state.text+\".\"}), 10)\n  }\n\n  componentWillUnmount() {\n\n    window.clearInterval(this.interval)\n  }\n\n  render() {\n\n    return <div>{this.state.text}</div>\n  }\n\n}\n\nexport default Loading\n"
+  },
+  {
+    "__docId__": 23,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Loading",
+    "memberof": "src/components/Loading.js",
+    "longname": "src/components/Loading.js~Loading",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/Loading.js",
+    "importStyle": "Loading",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 24,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 25,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentDidMount",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#componentDidMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 27,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "interval",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#interval",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentWillUnmount",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#componentWillUnmount",
+    "access": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/Loading.js~Loading",
+    "longname": "src/components/Loading.js~Loading#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 30,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/NotFound.js",
+    "memberof": null,
+    "longname": "src/components/NotFound.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from 'react'\nimport { FormattedMessage } from \"react-intl\"\n\nclass NotFound extends React.Component {\n\n  render() {\n\n    return (\n      <h1><FormattedMessage id=\"Page not found\"/></h1>\n    );\n  }\n}\n\nexport default NotFound;\n"
+  },
+  {
+    "__docId__": 31,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "NotFound",
+    "memberof": "src/components/NotFound.js",
+    "longname": "src/components/NotFound.js~NotFound",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/NotFound.js",
+    "importStyle": "NotFound",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 32,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/NotFound.js~NotFound",
+    "longname": "src/components/NotFound.js~NotFound#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 33,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/components/Welcome.js",
+    "memberof": null,
+    "longname": "src/components/Welcome.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from 'react'\nimport Article from 'grommet/components/Article'\nimport Header from 'grommet/components/Header'\nimport Section from 'grommet/components/Section'\nimport { Link } from 'react-router'\nimport { FormattedMessage } from \"react-intl\"\n\nclass Welcome extends React.Component {\n\n  render() {\n\n    return (\n      <Article pad=\"medium\">\n        <Header>\n          <h1><FormattedMessage id=\"Welcome\"/></h1>\n        </Header>\n        <Section>\n          <p>\n\n            <FormattedMessage id=\"This is a very simple template built with\"/>&nbsp;\n            <a href=\"http://www.grommet.io\">grommet</a>.\n            <br/>\n\n            <FormattedMessage id=\"The comments section is from the\"/>&nbsp;\n            <a href=\"https://facebook.github.io/react/docs/tutorial.html\">\n              <FormattedMessage id=\"React tutorial\"/>\n            </a>.\n            <br/>\n\n            <Link to=\"/comments/\">\n              <FormattedMessage id=\"See comments\"/>\n            </Link>\n\n          </p>\n        </Section>\n      </Article>\n    );\n  }\n}\n\nexport default Welcome;\n"
+  },
+  {
+    "__docId__": 34,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Welcome",
+    "memberof": "src/components/Welcome.js",
+    "longname": "src/components/Welcome.js~Welcome",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/components/Welcome.js",
+    "importStyle": "Welcome",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 35,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/components/Welcome.js~Welcome",
+    "longname": "src/components/Welcome.js~Welcome#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 36,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/index.js",
+    "memberof": null,
+    "longname": "src/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport \"grommet/grommet.min.css\"\n\nimport React from 'react'\nimport ReactDOM from \"react-dom\"\nimport { Router, hashHistory } from 'react-router';\n\nimport App from \"./components/App\"\nimport NotFound from \"./components/NotFound\"\nimport Comments from \"./routes/Comments/\"\n\nconst rootRoute = {\n\n  component:\"div\",\n\n  childRoutes:[{\n\n    path:\"/\",\n\n    component:App,\n\n    childRoutes:[{\n\n      path:\"comments\",\n      component:Comments\n\n    },{\n\n      path:\"*\",\n      component:NotFound\n\n    }]\n\n  }]\n\n}\n\nReactDOM.render( <Router history={hashHistory} routes={rootRoute} />, document.getElementById(\"content\") )\n"
+  },
+  {
+    "__docId__": 37,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "rootRoute",
+    "memberof": "src/index.js",
+    "longname": "src/index.js~rootRoute",
+    "access": null,
+    "export": false,
+    "importPath": "my-jsyg-app/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 38,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/localeData/en.js",
+    "memberof": null,
+    "longname": "src/localeData/en.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "module.exports = {\n\n  //messages manquants\n  \"Close  Layer\" : \"Close  Layer\",\n\n  //App messages\n  \"Home\" : \"Home\",\n  \"Page not found\" : \"Page not found\",\n  \"My App\" : \"My App\",\n  \"Welcome\" : \"Welcome\",\n  \"Comments\" : \"Comments\",\n  \"Leave a comment\" : \"Leave a comment\",\n  \"See comments\" : \"See comments\",\n  \"This is a very simple template built with\" : \"This is a very simple template built with\",\n  \"The comments section is from the\" : \"The comments section is from the\",\n  \"React tutorial\" : \"React tutorial\"\n}\n"
+  },
+  {
+    "__docId__": 39,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/localeData/fr.js",
+    "memberof": null,
+    "longname": "src/localeData/fr.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "module.exports = {\n\n  //Grommet messages\n\n  IndexFilters: {\n    filters: '{quantity, plural,\\n  =0 {Filters}\\n  =1 {one filter}\\n  other {# filters}\\n}'\n  },\n  Active: 'Active',\n  add: 'ajouter',\n  Alerts: 'Alertes',\n  All: 'Tous',\n  archive: 'archive',\n  area: 'zone',\n  Bar: 'Barre',\n  bar: 'barre',\n  Box: 'Boîte',\n  calendar: 'calendrier',\n  camera: 'appareil photo',\n  Category: 'Categorie',\n  Circle: 'Cercle',\n  Chart: 'Graphique',\n  Clear: 'Nettoyer',\n  Cleared: 'Nettoyé',\n  Close: 'Fermer',\n  close: 'fermer',\n  'Close Menu': 'Fermer le menu',\n  'command-line': 'ligne de commande',\n  Completed: 'Terminé',\n  created: 'Créé',\n  Critical: 'Critique',\n  Disabled: 'Désactivé',\n  Distribution: 'Distribution',\n  down: 'bas',\n  download: 'télécharger',\n  edit: 'éditer',\n  Email: 'Email',\n  Error: 'Erreur',\n  Filter: 'Filtre',\n  filter: 'filtre',\n  Footer: 'Pied de page',\n  'Grommet Logo': 'Logo Grommet',\n  'Layer': 'Couche',\n  line: 'ligne',\n  'link-next': 'lien suivant',\n  'link-previous': 'lien précédent',\n  'Loading': 'Chargement en cours',\n  loginInvalidPassword: 'Veuillez rentrer un nom d\\'utilisateur et un mot de passe',\n  'Log In': 'Se connecter',\n  Logout: 'Se déconnecter',\n  'Main Content': 'Contenu principal',\n  Max: 'Max',\n  Menu: 'Menu',\n  menu: 'menu',\n  Meter: 'Metre',\n  Min: 'Min',\n  model: 'Modèle',\n  modified: 'Modifié',\n  monitor: 'moniteur',\n  more: 'plus',\n  Name: 'Nom',\n  next:'suivant',\n  OK: 'OK',\n  Open: 'Ouvert',\n  Password: 'Mot de passe',\n  power: 'énergie',\n  'Remember me': 'Se rappeler de moi',\n  Resource: 'Ressource',\n  Running: 'Travail en cours',\n  Search: 'Recherche',\n  search: 'recherche',\n  'Skip to': 'Passer',\n  State: 'Etat',\n  Status: 'Etat',\n  subtract: 'soustraire',\n  support: 'support',\n  sync: 'synchroniser',\n  'Tab Contents': '{activeTitle} Onglet Contenus',\n  Tasks: 'Tâches',\n  Time: 'Temps',\n  Title: 'Titre',\n  Total: 'Total',\n  trash: 'corbeille',\n  Threshold: 'Seuil',\n  Unknown: 'Inconnu',\n  upload: 'téléverser',\n  user: 'utilisateur',\n  Username: 'nom d\\'utilisateur',\n  uri: 'URI',\n  validation: 'validation',\n  Value: 'Valeur',\n  Warning: 'Avertissement',\n\n  //messages manquants\n  \"Close  Layer\" : \"Fermer\",\n\n\n  //App messages\n  \"Home\" : \"Accueil\",\n  \"Page not found\" : \"Page introuvable\",\n  \"My App\" : \"Mon application\",\n  \"Welcome\" : \"Bienvenue\",\n  \"Comments\" : \"Commentaires\",\n  \"Leave a comment\" : \"Laisser un commentaire\",\n  \"See comments\" : \"Voir les commentaires\",\n  \"This is a very simple template built with\" : \"Ceci est un modèle très simple fait avec\",\n  \"The comments section is from the\" : \"La section commentaires est tirée du\",\n  \"React tutorial\" : \"tutoriel React\"\n}\n"
+  },
+  {
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/Comment.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/Comment.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from \"react\"\nimport Tile from \"grommet/components/Tile\"\nimport Header from \"grommet/components/Header\"\n\nclass CommentBox extends React.Component {\n\n    render() {\n        return(\n            <Tile wide={true} colorIndex=\"light-2\" align=\"start\">\n              <Header>{this.props.author}</Header>\n              {this.props.text}\n            </Tile>\n        );\n    }\n}\n\nexport default CommentBox;\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "CommentBox",
+    "memberof": "src/routes/Comments/components/Comment.js",
+    "longname": "src/routes/Comments/components/Comment.js~CommentBox",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/routes/Comments/components/Comment.js",
+    "importStyle": "CommentBox",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 42,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/routes/Comments/components/Comment.js~CommentBox",
+    "longname": "src/routes/Comments/components/Comment.js~CommentBox#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 43,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/Comment.test.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/Comment.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\n\nimport React from \"react\";\nimport Comment from './Comment';\nimport CardText from 'material-ui/lib/card/card-text';\nimport TestUtils from \"react-addons-test-utils\";\n\ndescribe(\"Comment\", () => {\n\n  let tree = TestUtils.renderIntoDocument(<Comment author=\"YB\" text=\"Salut\"/>);\n\n/*\n  it(\"has an author property\", function() {\n\n    let result = TestUtils.findRenderedComponentWithType(tree,Card);\n\n    TestUtils.scryRenderedComponentsWithType(result,CardTitle);\n\n\n    expect(result).toBeTruthy();\n\n  });*/\n\n  it(\"has a text content\", function() {\n\n    let elmt = TestUtils.findRenderedComponentWithType(tree,CardText);\n\n    expect(elmt).toBeTruthy();\n\n  });\n\n});\n"
+  },
+  {
+    "__docId__": 44,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/CommentForm.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/CommentForm.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport React from \"react\"\nimport Form from \"grommet/components/Form\"\nimport FormField from \"grommet/components/FormField\"\nimport Button from \"grommet/components/Button\"\nimport { FormattedMessage } from \"react-intl\"\n\n\nclass CommentForm extends React.Component {\n\n    constructor(props) {\n\n      super(props);\n      this.state = {author:\"\",text:\"\"}\n\n      this.handleAuthorChange = this.handleAuthorChange.bind(this)\n      this.handleTextChange = this.handleTextChange.bind(this)\n      this.handleSubmit = this.handleSubmit.bind(this)\n    }\n\n    handleSomethingChange() {\n\n      if (this.props.onCommentChange) this.props.onCommentChange(true)\n    }\n\n    handleAuthorChange(e) {\n\n        this.handleSomethingChange()\n        this.setState({author:e.target.value})\n    }\n\n    handleTextChange(e) {\n\n        this.handleSomethingChange()\n        this.setState({text:e.target.value})\n    }\n\n    handleSubmit(e) {\n\n        e.preventDefault();\n\n        var author = this.state.author.trim()\n        var text = this.state.text.trim()\n\n        if (!text || !author) return\n\n        if (this.props.onCommentChange) this.props.onCommentChange(false)\n        if (this.props.onCommentSubmit) this.props.onCommentSubmit({author:author,text:text})\n\n        this.setState({author:\"\",text:\"\"})\n    }\n\n    render() {\n\n      return (\n\n        <Form onSubmit={this.handleSubmit} pad={ {vertical:\"large\",horizontal:\"none\"} }>\n\n          <fieldset>\n            <legend>\n              <FormattedMessage id=\"Leave a comment\"/>\n            </legend>\n\n            <FormField label=\"Name\" htmlFor=\"inputAuthor\">\n              <input id=\"inputAuthor\" type=\"text\" onChange={this.handleAuthorChange} value={this.state.author}/>\n            </FormField>\n\n            <FormField label=\"Say something...\" htmlFor=\"inputText\">\n              <textarea id=\"inputText\" onChange={this.handleTextChange} value={this.state.text}/>\n            </FormField>\n\n          </fieldset>\n\n          <Button label=\"Valider\" type=\"submit\" onClick={ ()=>true }/>\n\n        </Form>\n      )\n    }\n}\n\nexport default CommentForm;\n"
+  },
+  {
+    "__docId__": 45,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "CommentForm",
+    "memberof": "src/routes/Comments/components/CommentForm.js",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/routes/Comments/components/CommentForm.js",
+    "importStyle": "CommentForm",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 46,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 47,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "handleAuthorChange",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleAuthorChange",
+    "access": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "handleTextChange",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleTextChange",
+    "access": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "handleSubmit",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleSubmit",
+    "access": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "handleSomethingChange",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleSomethingChange",
+    "access": null,
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "handleAuthorChange",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleAuthorChange",
+    "access": null,
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "params": [
+      {
+        "name": "e",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "handleTextChange",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleTextChange",
+    "access": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "params": [
+      {
+        "name": "e",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "handleSubmit",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#handleSubmit",
+    "access": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "params": [
+      {
+        "name": "e",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/routes/Comments/components/CommentForm.js~CommentForm",
+    "longname": "src/routes/Comments/components/CommentForm.js~CommentForm#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 54,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/CommentForm.test.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/CommentForm.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport React from \"react\";\nimport \"react-dom\";\nimport TestUtils from \"react-addons-test-utils\";\nimport CommentForm from \"./CommentForm\";\nimport TextField from 'material-ui/lib/text-field'\n\ndescribe(\"CommentForm\", () => {\n\n  let component = TestUtils.renderIntoDocument(<CommentForm/>);\n\n  let fields = TestUtils.scryRenderedComponentsWithType(component,TextField);\n\n  it(\"has 2 fields\", function() {\n\n    expect(fields.length).toEqual(2);\n  });\n\n});\n"
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/CommentList.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/CommentList.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import React from \"react\"\nimport Comment from \"./Comment\"\nimport Tiles from \"grommet/components/Tiles\"\n\nclass CommentList extends React.Component {\n\n  render() {\n\n    var commentNodes = this.props.data.map(function(comment) {\n\n        return (\n          <Comment author={comment.author} key={comment.id} text={comment.text}/>\n        )\n    })\n\n    return (\n      <Tiles pad=\"large\">\n        {commentNodes}\n      </Tiles>\n    )\n  }\n}\n\nexport default CommentList\n"
+  },
+  {
+    "__docId__": 58,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "CommentList",
+    "memberof": "src/routes/Comments/components/CommentList.js",
+    "longname": "src/routes/Comments/components/CommentList.js~CommentList",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/routes/Comments/components/CommentList.js",
+    "importStyle": "CommentList",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/routes/Comments/components/CommentList.js~CommentList",
+    "longname": "src/routes/Comments/components/CommentList.js~CommentList#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/components/CommentList.test.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/components/CommentList.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport React from \"react\";\nimport \"react-dom\";\nimport TestUtils from \"react-addons-test-utils\";\nimport CommentList from \"./CommentList\";\nimport Comment from \"./Comment\";\n\ndescribe(\"CommentList\", () => {\n\n  let data = [{\n    author:\"YB\",\n    text:\"Salut\",\n    id:1\n  },{\n    author:\"YB\",\n    text:\"Salut à nouveau\",\n    id:2\n  }];\n\n  let component = TestUtils.renderIntoDocument(<CommentList data={data}/>);\n\n  it(\"has 2 comments\", function() {\n\n    let comments = TestUtils.scryRenderedComponentsWithType(component,Comment);\n\n    expect(comments.length).toEqual(2);\n\n  });\n\n\n});\n"
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/index.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport \"whatwg-fetch\"\nimport React from \"react\"\nimport CommentList from \"./components/CommentList\"\nimport CommentForm from \"./components/CommentForm\"\nimport { FormattedMessage } from \"react-intl\"\nimport Article from \"grommet/components/Article\"\nimport Header from \"grommet/components/Header\"\nimport Section from \"grommet/components/Section\"\n\nclass Comments extends React.Component {\n\n    constructor(props) {\n\n      super(props)\n\n      this.state = {\n        data:[]\n      }\n\n      this.url = \"./src/routes/Comments/data.json\"\n    }\n\n    loadCommentsFromServer() {\n\n        let that = this\n\n        return fetch(this.url)\n        .then(function(response) {\n\n            return response.json()\n        })\n        .then(function(data) {\n\n            that.setState({data: data})\n        })\n        .catch(function(e) {\n\n            console.error(that.props.url,e)\n        });\n    }\n\n    handleCommentSubmit(comment) {\n\n        let comments = this.state.data\n\n        comment.id = Date.now()\n\n        this.setState({ data : comments.concat([comment]) })\n\n        /*\n        //var that = this;\n        return fetch(this.url,{\n            method:\"post\",\n            body:JSON.stringify(comment)\n        })\n        .catch(function(e) {\n            console.error(that.props.url,e)\n        });\n        */\n    }\n\n    componentDidMount() {\n\n        this.loadCommentsFromServer()\n    }\n\n    render() {\n        return (\n          <Article pad=\"medium\">\n            <Header>\n                <FormattedMessage id=\"Comments\"/>\n            </Header>\n            <Section>\n                <CommentList data={this.state.data} />\n                <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>\n            </Section>\n          </Article>\n        );\n    }\n\n}\n\nComments.contextTypes = {\n  router: React.PropTypes.object\n}\n\nmodule.exports = Comments\n\nexport default Comments\n"
+  },
+  {
+    "__docId__": 62,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Comments",
+    "memberof": "src/routes/Comments/index.js",
+    "longname": "src/routes/Comments/index.js~Comments",
+    "access": null,
+    "export": true,
+    "importPath": "my-jsyg-app/src/routes/Comments/index.js",
+    "importStyle": "Comments",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 63,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "url",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#url",
+    "access": null,
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "loadCommentsFromServer",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#loadCommentsFromServer",
+    "access": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "handleCommentSubmit",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#handleCommentSubmit",
+    "access": null,
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "params": [
+      {
+        "name": "comment",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentDidMount",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#componentDidMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 64,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/routes/Comments/index.js~Comments",
+    "longname": "src/routes/Comments/index.js~Comments#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 69,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/routes/Comments/test.js",
+    "memberof": null,
+    "longname": "src/routes/Comments/test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nimport React from \"react\";\nimport \"react-dom\";\nimport TestUtils from \"react-addons-test-utils\";\nimport Comments from \"./\";\nimport CommentList from \"./components/CommentList\";\nimport CommentForm from \"./components/CommentForm\";\n\nvar Promise = require('es6-promise').Promise; //nécessaire pour PhantomJS\n\ndescribe(\"Comments\", () => {\n\n  jasmine.Ajax.install();\n\n  let component = TestUtils.renderIntoDocument(<Comments/>);\n\n  let request = jasmine.Ajax.requests.mostRecent();\n\n  request.respondWith({\n    status: 200,\n    responseText: '[{\"author\":\"YB\",\"text\":\"Bonjour\"},{\"author\":\"YB\",\"text\":\"Bonjour à nouveau\"}]'\n  });\n\n  it(\"fetchs data\", function() {\n\n    expect(component.state.data.length).toEqual(2);\n\n    expect(component.state.data[0].author).toEqual(\"YB\");\n\n  });\n\n  it(\"has 1 commentList component\", function() {\n\n    let commentList = TestUtils.findRenderedComponentWithType(component,CommentList);\n\n    expect(commentList).toBeTruthy();\n\n  });\n\n  it(\"has 1 commentForm component\", function() {\n\n    let commentForm = TestUtils.findRenderedComponentWithType(component,CommentForm);\n\n    expect(commentForm).toBeTruthy();\n\n  });\n\n});\n"
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "memberof": "src/routes/Comments/test.js",
+    "longname": "src/routes/Comments/test.js~Promise",
+    "access": null,
+    "export": false,
+    "importPath": "my-jsyg-app/src/routes/Comments/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 126,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 127,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  }
+]

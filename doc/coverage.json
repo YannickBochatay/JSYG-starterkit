@@ -1,0 +1,115 @@
+{
+  "coverage": "0%",
+  "expectCount": 48,
+  "actualCount": 0,
+  "files": {
+    "src/components/App.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        24,
+        13,
+        19,
+        74,
+        65,
+        46,
+        30,
+        17
+      ]
+    },
+    "src/routes/Comments/components/Comment.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        7
+      ]
+    },
+    "src/routes/Comments/components/CommentForm.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        12,
+        27,
+        22,
+        39,
+        33,
+        54,
+        15
+      ]
+    },
+    "src/routes/Comments/components/CommentList.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        7
+      ]
+    },
+    "src/routes/Comments/index.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        12,
+        64,
+        14,
+        44,
+        25,
+        69,
+        18,
+        22
+      ]
+    },
+    "src/components/FlagIcon.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        6
+      ]
+    },
+    "src/components/GlobalNav.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        14,
+        28,
+        16,
+        33,
+        20,
+        23
+      ]
+    },
+    "src/components/Loading.js": {
+      "expectCount": 7,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        12,
+        19,
+        5,
+        16,
+        24,
+        9
+      ]
+    },
+    "src/components/NotFound.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        6
+      ]
+    },
+    "src/components/Welcome.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        10
+      ]
+    }
+  }
+}

@@ -18,15 +18,17 @@
 
 * easy imports from [bower](http://bower.io/) components and [npm](https://www.npmjs.com/) packages
 
+* Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
+
+* [Esdoc](https://esdoc.org/) for generating documentation
+
 * [React](https://facebook.github.io/react/) components
 
 * [React-router](https://github.com/visionmedia/page.js) for dynamic routing
 
-* Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
+* [React-intl](https://github.com/yahoo/react-intl) for internationalization
 
 * [Grommet](http://www.grommet.io) for ui components
-
-* [React-intl](https://github.com/yahoo/react-intl) for internationalization
 
 
 
@@ -71,6 +73,10 @@ npm run build-prod
 ```
 Build app (in builds/ folder) for production (clean, optimize, minify)
 
+```shell
+npm run doc
+```
+Generate documentation (in doc/ folder)
 
 
 ### Warning
