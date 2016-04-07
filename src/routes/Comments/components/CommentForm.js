@@ -72,7 +72,12 @@ class CommentForm extends React.Component {
 
           </fieldset>
 
-          <Button label="Valider" type="submit" onClick={ ()=>true }/>
+          <FormattedMessage id="Submit">
+            {
+              (label) => ( <Button label={label} type="submit" onClick={ ()=>true }/> )
+            }
+          </FormattedMessage>
+
 
         </Form>
       )

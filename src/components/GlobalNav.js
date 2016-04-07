@@ -59,8 +59,13 @@ export default class GlobalNav extends React.Component {
           <FormattedMessage id="My App"/>
         </h1>
 
-        <FlagIcon country="fr" countryLong="Français" onClick={ () => clickFlag("fr") } style={flagStyle}/>
-        <FlagIcon country="gb" countryLong="Anglais" onClick={ () => clickFlag("en") }  style={flagStyle}/>
+        <FormattedMessage id="French">
+          { (country)=> <FlagIcon country="fr" countryLong={country} onClick={ () => clickFlag("fr") } style={flagStyle}/> }
+        </FormattedMessage>
+
+        <FormattedMessage id="English">
+          { (country)=> <FlagIcon country="en" countryLong={country} onClick={ () => clickFlag("en") } style={flagStyle}/> }
+        </FormattedMessage>
 
         <Layer onClose={close} closer={true} align="left" hidden={this.state.hidden}>
           <Menu pad={ { vertical:"large" } }>

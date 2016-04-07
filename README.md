@@ -4,6 +4,10 @@
 
 [http://yannickbochatay.github.io/JSYG-starterkit/](http://yannickbochatay.github.io/JSYG-starterkit/)
 
+##### Documentation generated with [esdoc](https://esdoc.org/)
+
+[http://yannickbochatay.github.io/JSYG-starterkit/doc](http://yannickbochatay.github.io/JSYG-starterkit/doc)
+
 
 
 ### Features
