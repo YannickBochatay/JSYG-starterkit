@@ -1,90 +1,79 @@
 import React from 'react'
-import LeftNav from 'material-ui/lib/left-nav'
-import AppBar from 'material-ui/lib/app-bar'
-import MenuItem from 'material-ui/lib/menus/menu-item'
-import IconButton from 'material-ui/lib/icon-button'
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert'
-import IconMenu from 'material-ui/lib/menus/icon-menu'
+import Layer from 'grommet/components/Layer'
+import Menu from 'grommet/components/Menu'
+import Header from "grommet/components/Header"
+//import Title from "grommet/components/Title"
+import Anchor from "grommet/components/Anchor"
+import IconMenu from "grommet/components/icons/base/Menu"
+import FlagIcon from "./FlagIcon"
 
-//import logo from "./logo.png"
+import { Link } from 'react-router'
+import { FormattedMessage } from "react-intl"
 
 
-class GlobalNav extends React.Component {
+export default class GlobalNav extends React.Component {
 
   constructor(props) {
 
     super(props)
 
-    this.state = {
-      menuOpen : false
-    }
-
-    this.toggleMenu = this.toggleMenu.bind(this)
+    this.state = { hidden : true }
   }
 
-  toggleMenu() {
+  toggleSideBar() {
 
-    this.setState({ menuOpen: !this.state.menuOpen })
+    this.setState({ hidden : !this.state.hidden })
   }
 
-  closeMenu() {
+  closeSideBar() {
 
-    this.setState({ menuOpen: false })
-  }
-
-  createGoToFct(path) {
-
-    var that = this;
-
-    return () => {
-      that.closeMenu()
-      that.context.router.push(path)
-    }
-  }
-
-  signOut() {
-    window.alert("Bye bye")
+    this.setState({ hidden : true})
   }
 
   render() {
 
-    let goHome = this.createGoToFct('/')
+    let that = this
+
+    function toggle(e) {
+      e.preventDefault()
+      that.toggleSideBar()
+    }
+
+    let clickFlag = this.props.onClickFlag
+
+    let close = this.closeSideBar.bind(this)
+
+    let flagStyle = {
+      display:"inline-block",
+      margin:"10px",
+      "cursor":"pointer"
+    }
 
     return (
 
-      <AppBar
-        title="My App"
-        onLeftIconButtonTouchTap={this.toggleMenu}
-        //onTitleTouchTap={ goHome }
-        //titleStyle={ {cursor:"pointer"} }
+      <Header pad="medium">
 
-        iconElementRight={
-          <IconMenu
-            iconButtonElement={ <IconButton><MoreVertIcon /></IconButton> }
-            targetOrigin={{horizontal: 'right', vertical: 'top'}}
-            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-          >
-            <MenuItem primaryText="Sign out" onClick={this.signOut} />
-          </IconMenu>
-        }
-      >
-      <LeftNav
-        open={this.state.menuOpen}
-        docked={false}
-        onRequestChange={menuOpen => this.setState({menuOpen})}
-      >
-        <MenuItem onClick={ goHome }>Home</MenuItem>
-        <MenuItem onClick={ this.createGoToFct('/comments') }>Comments</MenuItem>
-        <MenuItem onClick={ this.createGoToFct('/mockup') }>Mock-up</MenuItem>
-      </LeftNav>
-      </AppBar>
+        <Anchor href="#" label={<IconMenu/>} onClick={toggle} />
 
+        <h1 style={{marginLeft:"30px",marginRight:"30px"}}>
+          <FormattedMessage id="My App"/>
+        </h1>
+
+        <FlagIcon country="fr" countryLong="Français" onClick={ () => clickFlag("fr") } style={flagStyle}/>
+        <FlagIcon country="gb" countryLong="Anglais" onClick={ () => clickFlag("en") }  style={flagStyle}/>
+
+        <Layer onClose={close} closer={true} align="left" hidden={this.state.hidden}>
+          <Menu pad={ { vertical:"large" } }>
+            <Link to="/" onClick={close}>
+              <FormattedMessage id="Home"/>
+            </Link>
+            <Link to="comments" onClick={close}>
+              <FormattedMessage id="Comments"/>
+            </Link>
+          </Menu>
+        </Layer>
+
+      </Header>
     )
   }
 }
-
-GlobalNav.contextTypes = {
-    router: React.PropTypes.object.isRequired
-}
-
-export default GlobalNav

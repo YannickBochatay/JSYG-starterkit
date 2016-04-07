@@ -10,21 +10,23 @@
 
 * ES6 and JSX with [Babel](https://babeljs.io/)
 
-* [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) support.
+* [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) support
 
 * Code quality with [ESLint](http://eslint.org/)
 
 * smart auto-build and reload with [WebPack](https://webpack.github.io/)
 
-* easy imports from [bower](http://bower.io/) components and [npm](https://www.npmjs.com/) packages.
+* easy imports from [bower](http://bower.io/) components and [npm](https://www.npmjs.com/) packages
 
 * [React](https://facebook.github.io/react/) components
 
-* [React-router](https://github.com/reactjs/react-router/) with dynamic loading for [huge apps](https://github.com/reactjs/react-router/tree/master/examples/huge-apps)
+* [React-router](https://github.com/visionmedia/page.js) for dynamic routing
 
 * Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
 
-* [Material-ui](http://www.material-ui.com/#/)
+* [Grommet](http://www.grommet.io) for ui components
+
+* [React-intl](https://github.com/yahoo/react-intl) for internationalization
 
 
 

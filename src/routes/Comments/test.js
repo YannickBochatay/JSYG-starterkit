@@ -3,17 +3,17 @@
 import React from "react";
 import "react-dom";
 import TestUtils from "react-addons-test-utils";
-import CommentBox from "./CommentBox";
-import CommentList from "./CommentList";
-import CommentForm from "./CommentForm";
+import Comments from "./";
+import CommentList from "./components/CommentList";
+import CommentForm from "./components/CommentForm";
 
 var Promise = require('es6-promise').Promise; //nécessaire pour PhantomJS
 
-describe("CommentBox", () => {
+describe("Comments", () => {
 
   jasmine.Ajax.install();
 
-  let component = TestUtils.renderIntoDocument(<CommentBox pollInterval={1200000}/>);
+  let component = TestUtils.renderIntoDocument(<Comments/>);
 
   let request = jasmine.Ajax.requests.mostRecent();
 

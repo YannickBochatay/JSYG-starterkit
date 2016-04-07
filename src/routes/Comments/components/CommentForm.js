@@ -1,10 +1,10 @@
 "use strict";
 
 import React from "react"
-import FontIcon from 'material-ui/lib/font-icon'
-import Button from 'material-ui/lib/raised-button'
-import Paper from 'material-ui/lib/paper'
-import TextField from 'material-ui/lib/text-field'
+import Form from "grommet/components/Form"
+import FormField from "grommet/components/FormField"
+import Button from "grommet/components/Button"
+import { FormattedMessage } from "react-intl"
 
 
 class CommentForm extends React.Component {
@@ -54,31 +54,28 @@ class CommentForm extends React.Component {
     render() {
 
       return (
-        <Paper zDepth={1} style={ {marginTop:50,padding:20} }>
-          <form onSubmit={this.handleSubmit}>
-            <h2>Leave a comment</h2>
-            <TextField
-              floatingLabelText="Name"
-              onChange={this.handleAuthorChange}
-              value={this.state.author}
-            />
-            <br/>
-            <TextField
-              floatingLabelText="Say something..."
-              multiLine={true}
-              onChange={this.handleTextChange}
-              value={this.state.text}
-            />
-            <br/>
-            <Button
-              label="Valider"
-              type="submit"
-              secondary={true}
-              icon={<FontIcon className="muidocs-icon-custom-github"/>}
-            />
-          </form>
-        </Paper>
-      );
+
+        <Form onSubmit={this.handleSubmit} pad={ {vertical:"large",horizontal:"none"} }>
+
+          <fieldset>
+            <legend>
+              <FormattedMessage id="Leave a comment"/>
+            </legend>
+
+            <FormField label="Name" htmlFor="inputAuthor">
+              <input id="inputAuthor" type="text" onChange={this.handleAuthorChange} value={this.state.author}/>
+            </FormField>
+
+            <FormField label="Say something..." htmlFor="inputText">
+              <textarea id="inputText" onChange={this.handleTextChange} value={this.state.text}/>
+            </FormField>
+
+          </fieldset>
+
+          <Button label="Valider" type="submit" onClick={ ()=>true }/>
+
+        </Form>
+      )
     }
 }
 

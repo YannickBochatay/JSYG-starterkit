@@ -3,7 +3,6 @@
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var BowerWebpackPlugin = require("bower-webpack-plugin");
 var path = require("path");
 
 var production = process.env.NODE_ENV === 'production';
@@ -11,11 +10,6 @@ var production = process.env.NODE_ENV === 'production';
 var plugins = [
 
   new webpack.IgnorePlugin(/vertx/),
-
-  new BowerWebpackPlugin(),/*
-   new webpack.ResolverPlugin([
-    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-  ]), // doesn't work if there are more than 1 file in the main property*/
 
   new ExtractTextPlugin('bundle.css'), // <=== where should content be piped
 
@@ -29,7 +23,11 @@ var plugins = [
     $: "jquery",
     jQuery: "jquery",
     "window.jQuery": "jquery"
-  })
+  }),
+
+  new webpack.ResolverPlugin(
+    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main", ["main", 0]])
+  )
 ];
 
 if (production) {
@@ -91,9 +89,9 @@ module.exports = {
 
   resolve : {
 
-    modulesDirectories: ["web_modules", "node_modules", "bower_components"],
+    modulesDirectories: ["web_modules", "node_modules", "bower_components"]/*,
 
-    extensions : ["", ".webpack.js", ".web.js", ".js", ".css", ".scss", ".less"]
+    extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx", ".css", ".scss", ".less"]*/
   },
 
   plugins: plugins,
@@ -112,8 +110,12 @@ module.exports = {
 
     loaders: [
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.jsx?$/,
-        loader: 'babel?babelrc=false,presets[]=react,presets[]=es2015'
+        loader: 'babel?babelrc=false,presets[]=react,presets[]=es2015,plugins[]=transform-object-rest-spread'
       },
       {
         test: /\.css$/,

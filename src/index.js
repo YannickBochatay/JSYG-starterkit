@@ -1,18 +1,14 @@
 "use strict";
 
-import React from 'react';
-import ReactDOM from "react-dom";
+import "grommet/grommet.min.css"
+
+import React from 'react'
+import ReactDOM from "react-dom"
 import { Router, hashHistory } from 'react-router';
 
-import App from "./components/App";
-import Comments from "./routes/Comments/";
-import Mockup from "./routes/Mockup";
-import NotFound from "./components/NotFound";
-
-let NotFoundView = {
-  path:"*",
-  component:NotFound
-}
+import App from "./components/App"
+import NotFound from "./components/NotFound"
+import Comments from "./routes/Comments/"
 
 const rootRoute = {
 
@@ -24,13 +20,20 @@ const rootRoute = {
 
     component:App,
 
-    childRoutes:[ Comments, Mockup, NotFoundView ]
+    childRoutes:[{
+
+      path:"comments",
+      component:Comments
+
+    },{
+
+      path:"*",
+      component:NotFound
+
+    }]
 
   }]
 
-};
+}
 
-ReactDOM.render(
-  <Router history={hashHistory} routes={rootRoute} />,
-  document.getElementById("content")
-);
+ReactDOM.render( <Router history={hashHistory} routes={rootRoute} />, document.getElementById("content") )
