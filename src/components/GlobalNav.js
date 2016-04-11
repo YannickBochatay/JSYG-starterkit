@@ -5,7 +5,6 @@ import Header from "grommet/components/Header"
 //import Title from "grommet/components/Title"
 import Anchor from "grommet/components/Anchor"
 import IconMenu from "grommet/components/icons/base/Menu"
-import FlagIcon from "./FlagIcon"
 
 import { Link } from 'react-router'
 import { FormattedMessage } from "react-intl"
@@ -60,11 +59,11 @@ export default class GlobalNav extends React.Component {
         </h1>
 
         <FormattedMessage id="French">
-          { (country)=> <FlagIcon country="fr" countryLong={country} onClick={ () => clickFlag("fr") } style={flagStyle}/> }
+          { (country)=> <span onClick={ () => clickFlag("fr") } style={flagStyle}>{country}</span> }
         </FormattedMessage>
 
         <FormattedMessage id="English">
-          { (country)=> <FlagIcon country="en" countryLong={country} onClick={ () => clickFlag("en") } style={flagStyle}/> }
+          { (country)=> <span onClick={ () => clickFlag("en") } style={flagStyle}>{country}</span> }
         </FormattedMessage>
 
         <Layer onClose={close} closer={true} align="left" hidden={this.state.hidden}>
