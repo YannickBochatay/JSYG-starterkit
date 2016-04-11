@@ -6,10 +6,10 @@ class CommentBox extends React.Component {
 
     render() {
         return(
-            <Tile wide={true} colorIndex="light-2" align="start">
-              <Header>{this.props.author}</Header>
-              {this.props.text}
-            </Tile>
+          <Tile wide={true} colorIndex="light-2" align="start">
+            <Header>{this.props.author}</Header>
+            {this.props.text}
+          </Tile>
         );
     }
 }

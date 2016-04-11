@@ -9,6 +9,7 @@ import { Router, hashHistory } from 'react-router';
 import App from "./components/App"
 import NotFound from "./components/NotFound"
 import Comments from "./routes/Comments/"
+import Todo from "./routes/Todo/"
 
 const rootRoute = {
 
@@ -21,15 +22,14 @@ const rootRoute = {
     component:App,
 
     childRoutes:[{
-
       path:"comments",
       component:Comments
-
     },{
-
+      path:"todo",
+      component:Todo
+    },{
       path:"*",
       component:NotFound
-
     }]
 
   }]
