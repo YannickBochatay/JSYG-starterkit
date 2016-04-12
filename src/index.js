@@ -8,8 +8,21 @@ import { Router, hashHistory } from 'react-router';
 
 import App from "./components/App"
 import NotFound from "./components/NotFound"
-import Comments from "./routes/Comments/"
-import Todo from "./routes/Todo/"
+
+import { createAndConfigStore, injectAsyncReducer }  from "./store"
+
+import { Provider } from 'react-redux'
+import IntlProvider from "./containers/IntlProvider"
+
+import { addLocaleData } from 'react-intl'
+import en from 'react-intl/locale-data/en'
+import fr from 'react-intl/locale-data/fr'
+
+addLocaleData(en)
+addLocaleData(fr)
+
+
+let store = createAndConfigStore()
 
 const rootRoute = {
 
@@ -22,11 +35,34 @@ const rootRoute = {
     component:App,
 
     childRoutes:[{
+
       path:"comments",
-      component:Comments
+
+      getComponents(location, callback) {
+
+        require.ensure([], function (require) {
+
+          let Comments = require('./routes/Comments')
+          callback(null, Comments)
+        })
+      }
+
     },{
+
       path:"todo",
-      component:Todo
+
+      getComponents : function(location, callback) {
+
+        require.ensure([], function (require) {
+
+          let Todo = require('./routes/Todo')
+          let TodoReducer = require('./routes/Todo/reducers')
+          injectAsyncReducer(store,'todo', TodoReducer)
+
+          callback(null, Todo)
+        })
+      }
+
     },{
       path:"*",
       component:NotFound
@@ -36,4 +72,12 @@ const rootRoute = {
 
 }
 
-ReactDOM.render( <Router history={hashHistory} routes={rootRoute} />, document.getElementById("content") )
+ReactDOM.render(
+
+  <Provider store={store}>
+    <IntlProvider>
+      <Router history={hashHistory} routes={rootRoute} />
+    </IntlProvider>
+  </Provider>,
+
+document.getElementById("content") )

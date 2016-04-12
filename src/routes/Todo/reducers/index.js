@@ -8,3 +8,5 @@ const todoApp = combineReducers({
 })
 
 export default todoApp
+
+module.exports = todoApp
