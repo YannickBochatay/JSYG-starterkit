@@ -43,6 +43,8 @@ const rootRoute = {
         require.ensure([], function (require) {
 
           let Comments = require('./routes/Comments')
+          let commentReducer = require('./routes/Comments/reducers')
+          injectAsyncReducer(store,'comments', commentReducer)
           callback(null, Comments)
         })
       }
@@ -56,8 +58,8 @@ const rootRoute = {
         require.ensure([], function (require) {
 
           let Todo = require('./routes/Todo')
-          let TodoReducer = require('./routes/Todo/reducers')
-          injectAsyncReducer(store,'todo', TodoReducer)
+          let todoReducer = require('./routes/Todo/reducers')
+          injectAsyncReducer(store,'todo', todoReducer)
 
           callback(null, Todo)
         })
