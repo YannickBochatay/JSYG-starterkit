@@ -32,6 +32,8 @@
 
 * [React-intl](https://github.com/yahoo/react-intl) for internationalization
 
+* [React-redux](https://github.com/reactjs/react-redux) for state container
+
 * [Grommet](http://www.grommet.io) for ui components
 
 

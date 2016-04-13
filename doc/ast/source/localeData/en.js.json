@@ -1,54 +1,52 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 723,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ExpressionStatement",
+      "start": 0,
+      "end": 722,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 1
+        }
+      },
       "expression": {
         "type": "AssignmentExpression",
+        "start": 0,
+        "end": 722,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 27,
+            "column": 1
+          }
+        },
         "operator": "=",
         "left": {
           "type": "MemberExpression",
-          "computed": false,
-          "object": {
-            "type": "Identifier",
-            "name": "module",
-            "range": [
-              0,
-              6
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 0
-              },
-              "end": {
-                "line": 1,
-                "column": 6
-              }
-            }
-          },
-          "property": {
-            "type": "Identifier",
-            "name": "exports",
-            "range": [
-              7,
-              14
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 7
-              },
-              "end": {
-                "line": 1,
-                "column": 14
-              }
-            }
-          },
-          "range": [
-            0,
-            14
-          ],
+          "start": 0,
+          "end": 14,
           "loc": {
             "start": {
               "line": 1,
@@ -58,59 +56,60 @@
               "line": 1,
               "column": 14
             }
-          }
+          },
+          "object": {
+            "type": "Identifier",
+            "start": 0,
+            "end": 6,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 6
+              }
+            },
+            "name": "module"
+          },
+          "property": {
+            "type": "Identifier",
+            "start": 7,
+            "end": 14,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 7
+              },
+              "end": {
+                "line": 1,
+                "column": 14
+              }
+            },
+            "name": "exports"
+          },
+          "computed": false
         },
         "right": {
           "type": "ObjectExpression",
+          "start": 17,
+          "end": 722,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 17
+            },
+            "end": {
+              "line": 27,
+              "column": 1
+            }
+          },
           "properties": [
             {
               "type": "Property",
-              "key": {
-                "type": "Literal",
-                "value": "Close  Layer",
-                "raw": "\"Close  Layer\"",
-                "range": [
-                  45,
-                  59
-                ],
-                "loc": {
-                  "start": {
-                    "line": 4,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 16
-                  }
-                }
-              },
-              "value": {
-                "type": "Literal",
-                "value": "Close  Layer",
-                "raw": "\"Close  Layer\"",
-                "range": [
-                  62,
-                  76
-                ],
-                "loc": {
-                  "start": {
-                    "line": 4,
-                    "column": 19
-                  },
-                  "end": {
-                    "line": 4,
-                    "column": 33
-                  }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                45,
-                76
-              ],
+              "start": 45,
+              "end": 76,
               "loc": {
                 "start": {
                   "line": 4,
@@ -121,14 +120,53 @@
                   "column": 33
                 }
               },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 45,
+                "end": 59,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 16
+                  }
+                },
+                "value": "Close  Layer",
+                "rawValue": "Close  Layer",
+                "raw": "\"Close  Layer\"",
+                "leadingComments": null
+              },
+              "value": {
+                "type": "Literal",
+                "start": 62,
+                "end": 76,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 33
+                  }
+                },
+                "value": "Close  Layer",
+                "rawValue": "Close  Layer",
+                "raw": "\"Close  Layer\""
+              },
+              "kind": "init",
               "leadingComments": [
                 {
-                  "type": "Line",
+                  "type": "CommentLine",
                   "value": "messages manquants",
-                  "range": [
-                    22,
-                    42
-                  ],
+                  "start": 22,
+                  "end": 42,
                   "loc": {
                     "start": {
                       "line": 3,
@@ -138,58 +176,18 @@
                       "line": 3,
                       "column": 22
                     }
-                  }
+                  },
+                  "range": [
+                    22,
+                    42
+                  ]
                 }
               ]
             },
             {
               "type": "Property",
-              "key": {
-                "type": "Literal",
-                "value": "Home",
-                "raw": "\"Home\"",
-                "range": [
-                  98,
-                  104
-                ],
-                "loc": {
-                  "start": {
-                    "line": 7,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 7,
-                    "column": 8
-                  }
-                }
-              },
-              "value": {
-                "type": "Literal",
-                "value": "Home",
-                "raw": "\"Home\"",
-                "range": [
-                  107,
-                  113
-                ],
-                "loc": {
-                  "start": {
-                    "line": 7,
-                    "column": 11
-                  },
-                  "end": {
-                    "line": 7,
-                    "column": 17
-                  }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                98,
-                113
-              ],
+              "start": 98,
+              "end": 113,
               "loc": {
                 "start": {
                   "line": 7,
@@ -200,14 +198,53 @@
                   "column": 17
                 }
               },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 98,
+                "end": 104,
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 8
+                  }
+                },
+                "value": "Home",
+                "rawValue": "Home",
+                "raw": "\"Home\"",
+                "leadingComments": null
+              },
+              "value": {
+                "type": "Literal",
+                "start": 107,
+                "end": 113,
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 11
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 17
+                  }
+                },
+                "value": "Home",
+                "rawValue": "Home",
+                "raw": "\"Home\""
+              },
+              "kind": "init",
               "leadingComments": [
                 {
-                  "type": "Line",
+                  "type": "CommentLine",
                   "value": "App messages",
-                  "range": [
-                    81,
-                    95
-                  ],
+                  "start": 81,
+                  "end": 95,
                   "loc": {
                     "start": {
                       "line": 6,
@@ -217,58 +254,18 @@
                       "line": 6,
                       "column": 16
                     }
-                  }
+                  },
+                  "range": [
+                    81,
+                    95
+                  ]
                 }
               ]
             },
             {
               "type": "Property",
-              "key": {
-                "type": "Literal",
-                "value": "Page not found",
-                "raw": "\"Page not found\"",
-                "range": [
-                  117,
-                  133
-                ],
-                "loc": {
-                  "start": {
-                    "line": 8,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 8,
-                    "column": 18
-                  }
-                }
-              },
-              "value": {
-                "type": "Literal",
-                "value": "Page not found",
-                "raw": "\"Page not found\"",
-                "range": [
-                  136,
-                  152
-                ],
-                "loc": {
-                  "start": {
-                    "line": 8,
-                    "column": 21
-                  },
-                  "end": {
-                    "line": 8,
-                    "column": 37
-                  }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                117,
-                152
-              ],
+              "start": 117,
+              "end": 152,
               "loc": {
                 "start": {
                   "line": 8,
@@ -278,56 +275,52 @@
                   "line": 8,
                   "column": 37
                 }
-              }
-            },
-            {
-              "type": "Property",
-              "key": {
-                "type": "Literal",
-                "value": "My App",
-                "raw": "\"My App\"",
-                "range": [
-                  156,
-                  164
-                ],
-                "loc": {
-                  "start": {
-                    "line": 9,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 9,
-                    "column": 10
-                  }
-                }
               },
-              "value": {
-                "type": "Literal",
-                "value": "My App",
-                "raw": "\"My App\"",
-                "range": [
-                  167,
-                  175
-                ],
-                "loc": {
-                  "start": {
-                    "line": 9,
-                    "column": 13
-                  },
-                  "end": {
-                    "line": 9,
-                    "column": 21
-                  }
-                }
-              },
-              "kind": "init",
               "method": false,
               "shorthand": false,
               "computed": false,
-              "range": [
-                156,
-                175
-              ],
+              "key": {
+                "type": "Literal",
+                "start": 117,
+                "end": 133,
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 18
+                  }
+                },
+                "value": "Page not found",
+                "rawValue": "Page not found",
+                "raw": "\"Page not found\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 136,
+                "end": 152,
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 37
+                  }
+                },
+                "value": "Page not found",
+                "rawValue": "Page not found",
+                "raw": "\"Page not found\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 156,
+              "end": 175,
               "loc": {
                 "start": {
                   "line": 9,
@@ -337,18 +330,69 @@
                   "line": 9,
                   "column": 21
                 }
-              }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 156,
+                "end": 164,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 10
+                  }
+                },
+                "value": "My App",
+                "rawValue": "My App",
+                "raw": "\"My App\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 167,
+                "end": 175,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 21
+                  }
+                },
+                "value": "My App",
+                "rawValue": "My App",
+                "raw": "\"My App\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 179,
+              "end": 198,
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 2
+                },
+                "end": {
+                  "line": 10,
+                  "column": 21
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "Welcome",
-                "raw": "\"Welcome\"",
-                "range": [
-                  179,
-                  188
-                ],
+                "start": 179,
+                "end": 187,
                 "loc": {
                   "start": {
                     "line": 10,
@@ -356,498 +400,859 @@
                   },
                   "end": {
                     "line": 10,
-                    "column": 11
+                    "column": 10
                   }
-                }
+                },
+                "value": "Submit",
+                "rawValue": "Submit",
+                "raw": "\"Submit\""
               },
               "value": {
                 "type": "Literal",
-                "value": "Welcome",
-                "raw": "\"Welcome\"",
-                "range": [
-                  191,
-                  200
-                ],
+                "start": 190,
+                "end": 198,
                 "loc": {
                   "start": {
                     "line": 10,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 21
+                  }
+                },
+                "value": "Submit",
+                "rawValue": "Submit",
+                "raw": "\"Submit\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 202,
+              "end": 221,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 2
+                },
+                "end": {
+                  "line": 11,
+                  "column": 21
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 202,
+                "end": 210,
+                "loc": {
+                  "start": {
+                    "line": 11,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 10
+                  }
+                },
+                "value": "French",
+                "rawValue": "French",
+                "raw": "\"French\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 213,
+                "end": 221,
+                "loc": {
+                  "start": {
+                    "line": 11,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 21
+                  }
+                },
+                "value": "French",
+                "rawValue": "French",
+                "raw": "\"French\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 225,
+              "end": 246,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 2
+                },
+                "end": {
+                  "line": 12,
+                  "column": 23
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 225,
+                "end": 234,
+                "loc": {
+                  "start": {
+                    "line": 12,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 12,
+                    "column": 11
+                  }
+                },
+                "value": "English",
+                "rawValue": "English",
+                "raw": "\"English\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 237,
+                "end": 246,
+                "loc": {
+                  "start": {
+                    "line": 12,
                     "column": 14
                   },
                   "end": {
-                    "line": 10,
+                    "line": 12,
                     "column": 23
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                179,
-                200
-              ],
-              "loc": {
-                "start": {
-                  "line": 10,
-                  "column": 2
                 },
-                "end": {
-                  "line": 10,
-                  "column": 23
-                }
-              }
+                "value": "English",
+                "rawValue": "English",
+                "raw": "\"English\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 250,
+              "end": 271,
+              "loc": {
+                "start": {
+                  "line": 13,
+                  "column": 2
+                },
+                "end": {
+                  "line": 13,
+                  "column": 23
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "Comments",
-                "raw": "\"Comments\"",
-                "range": [
-                  204,
-                  214
-                ],
+                "start": 250,
+                "end": 259,
                 "loc": {
                   "start": {
-                    "line": 11,
+                    "line": 13,
                     "column": 2
                   },
                   "end": {
-                    "line": 11,
-                    "column": 12
+                    "line": 13,
+                    "column": 11
                   }
-                }
+                },
+                "value": "Welcome",
+                "rawValue": "Welcome",
+                "raw": "\"Welcome\""
               },
               "value": {
                 "type": "Literal",
-                "value": "Comments",
-                "raw": "\"Comments\"",
-                "range": [
-                  217,
-                  227
-                ],
+                "start": 262,
+                "end": 271,
                 "loc": {
                   "start": {
-                    "line": 11,
+                    "line": 13,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 13,
+                    "column": 23
+                  }
+                },
+                "value": "Welcome",
+                "rawValue": "Welcome",
+                "raw": "\"Welcome\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 275,
+              "end": 298,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 2
+                },
+                "end": {
+                  "line": 14,
+                  "column": 25
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 275,
+                "end": 285,
+                "loc": {
+                  "start": {
+                    "line": 14,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 14,
+                    "column": 12
+                  }
+                },
+                "value": "Comments",
+                "rawValue": "Comments",
+                "raw": "\"Comments\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 288,
+                "end": 298,
+                "loc": {
+                  "start": {
+                    "line": 14,
                     "column": 15
                   },
                   "end": {
-                    "line": 11,
+                    "line": 14,
                     "column": 25
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                204,
-                227
-              ],
-              "loc": {
-                "start": {
-                  "line": 11,
-                  "column": 2
                 },
-                "end": {
-                  "line": 11,
-                  "column": 25
-                }
-              }
+                "value": "Comments",
+                "rawValue": "Comments",
+                "raw": "\"Comments\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 302,
+              "end": 339,
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 2
+                },
+                "end": {
+                  "line": 15,
+                  "column": 39
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "Leave a comment",
-                "raw": "\"Leave a comment\"",
-                "range": [
-                  231,
-                  248
-                ],
+                "start": 302,
+                "end": 319,
                 "loc": {
                   "start": {
-                    "line": 12,
+                    "line": 15,
                     "column": 2
                   },
                   "end": {
-                    "line": 12,
+                    "line": 15,
                     "column": 19
                   }
-                }
+                },
+                "value": "Leave a comment",
+                "rawValue": "Leave a comment",
+                "raw": "\"Leave a comment\""
               },
               "value": {
                 "type": "Literal",
-                "value": "Leave a comment",
-                "raw": "\"Leave a comment\"",
-                "range": [
-                  251,
-                  268
-                ],
+                "start": 322,
+                "end": 339,
                 "loc": {
                   "start": {
-                    "line": 12,
+                    "line": 15,
                     "column": 22
                   },
                   "end": {
-                    "line": 12,
+                    "line": 15,
                     "column": 39
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                231,
-                268
-              ],
-              "loc": {
-                "start": {
-                  "line": 12,
-                  "column": 2
                 },
-                "end": {
-                  "line": 12,
-                  "column": 39
-                }
-              }
+                "value": "Leave a comment",
+                "rawValue": "Leave a comment",
+                "raw": "\"Leave a comment\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 343,
+              "end": 374,
+              "loc": {
+                "start": {
+                  "line": 16,
+                  "column": 2
+                },
+                "end": {
+                  "line": 16,
+                  "column": 33
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "See comments",
-                "raw": "\"See comments\"",
-                "range": [
-                  272,
-                  286
-                ],
+                "start": 343,
+                "end": 357,
                 "loc": {
                   "start": {
-                    "line": 13,
+                    "line": 16,
                     "column": 2
                   },
                   "end": {
-                    "line": 13,
+                    "line": 16,
                     "column": 16
                   }
-                }
+                },
+                "value": "See comments",
+                "rawValue": "See comments",
+                "raw": "\"See comments\""
               },
               "value": {
                 "type": "Literal",
-                "value": "See comments",
-                "raw": "\"See comments\"",
-                "range": [
-                  289,
-                  303
-                ],
+                "start": 360,
+                "end": 374,
                 "loc": {
                   "start": {
-                    "line": 13,
+                    "line": 16,
                     "column": 19
                   },
                   "end": {
-                    "line": 13,
+                    "line": 16,
                     "column": 33
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                272,
-                303
-              ],
-              "loc": {
-                "start": {
-                  "line": 13,
-                  "column": 2
                 },
-                "end": {
-                  "line": 13,
-                  "column": 33
-                }
-              }
+                "value": "See comments",
+                "rawValue": "See comments",
+                "raw": "\"See comments\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 378,
+              "end": 467,
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 2
+                },
+                "end": {
+                  "line": 17,
+                  "column": 91
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "This is a very simple template built with",
-                "raw": "\"This is a very simple template built with\"",
-                "range": [
-                  307,
-                  350
-                ],
+                "start": 378,
+                "end": 421,
                 "loc": {
                   "start": {
-                    "line": 14,
+                    "line": 17,
                     "column": 2
                   },
                   "end": {
-                    "line": 14,
+                    "line": 17,
                     "column": 45
                   }
-                }
+                },
+                "value": "This is a very simple template built with",
+                "rawValue": "This is a very simple template built with",
+                "raw": "\"This is a very simple template built with\""
               },
               "value": {
                 "type": "Literal",
-                "value": "This is a very simple template built with",
-                "raw": "\"This is a very simple template built with\"",
-                "range": [
-                  353,
-                  396
-                ],
+                "start": 424,
+                "end": 467,
                 "loc": {
                   "start": {
-                    "line": 14,
+                    "line": 17,
                     "column": 48
                   },
                   "end": {
-                    "line": 14,
+                    "line": 17,
                     "column": 91
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                307,
-                396
-              ],
-              "loc": {
-                "start": {
-                  "line": 14,
-                  "column": 2
                 },
-                "end": {
-                  "line": 14,
-                  "column": 91
-                }
-              }
+                "value": "This is a very simple template built with",
+                "rawValue": "This is a very simple template built with",
+                "raw": "\"This is a very simple template built with\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
+              "start": 471,
+              "end": 542,
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 2
+                },
+                "end": {
+                  "line": 18,
+                  "column": 73
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
               "key": {
                 "type": "Literal",
-                "value": "The comments section is from the",
-                "raw": "\"The comments section is from the\"",
-                "range": [
-                  400,
-                  434
-                ],
+                "start": 471,
+                "end": 505,
                 "loc": {
                   "start": {
-                    "line": 15,
+                    "line": 18,
                     "column": 2
                   },
                   "end": {
-                    "line": 15,
+                    "line": 18,
                     "column": 36
                   }
-                }
+                },
+                "value": "The comments section is from the",
+                "rawValue": "The comments section is from the",
+                "raw": "\"The comments section is from the\""
               },
               "value": {
                 "type": "Literal",
-                "value": "The comments section is from the",
-                "raw": "\"The comments section is from the\"",
-                "range": [
-                  437,
-                  471
-                ],
+                "start": 508,
+                "end": 542,
                 "loc": {
                   "start": {
-                    "line": 15,
+                    "line": 18,
                     "column": 39
                   },
                   "end": {
-                    "line": 15,
+                    "line": 18,
                     "column": 73
                   }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                400,
-                471
-              ],
-              "loc": {
-                "start": {
-                  "line": 15,
-                  "column": 2
                 },
-                "end": {
-                  "line": 15,
-                  "column": 73
-                }
-              }
+                "value": "The comments section is from the",
+                "rawValue": "The comments section is from the",
+                "raw": "\"The comments section is from the\""
+              },
+              "kind": "init"
             },
             {
               "type": "Property",
-              "key": {
-                "type": "Literal",
-                "value": "React tutorial",
-                "raw": "\"React tutorial\"",
-                "range": [
-                  475,
-                  491
-                ],
-                "loc": {
-                  "start": {
-                    "line": 16,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 16,
-                    "column": 18
-                  }
-                }
-              },
-              "value": {
-                "type": "Literal",
-                "value": "React tutorial",
-                "raw": "\"React tutorial\"",
-                "range": [
-                  494,
-                  510
-                ],
-                "loc": {
-                  "start": {
-                    "line": 16,
-                    "column": 21
-                  },
-                  "end": {
-                    "line": 16,
-                    "column": 37
-                  }
-                }
-              },
-              "kind": "init",
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "range": [
-                475,
-                510
-              ],
+              "start": 546,
+              "end": 581,
               "loc": {
                 "start": {
-                  "line": 16,
+                  "line": 19,
                   "column": 2
                 },
                 "end": {
-                  "line": 16,
+                  "line": 19,
                   "column": 37
                 }
-              }
-            }
-          ],
-          "range": [
-            17,
-            512
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 17
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 546,
+                "end": 562,
+                "loc": {
+                  "start": {
+                    "line": 19,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 18
+                  }
+                },
+                "value": "React tutorial",
+                "rawValue": "React tutorial",
+                "raw": "\"React tutorial\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 565,
+                "end": 581,
+                "loc": {
+                  "start": {
+                    "line": 19,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 37
+                  }
+                },
+                "value": "React tutorial",
+                "rawValue": "React tutorial",
+                "raw": "\"React tutorial\""
+              },
+              "kind": "init"
             },
-            "end": {
-              "line": 17,
-              "column": 1
+            {
+              "type": "Property",
+              "start": 586,
+              "end": 601,
+              "loc": {
+                "start": {
+                  "line": 21,
+                  "column": 2
+                },
+                "end": {
+                  "line": 21,
+                  "column": 17
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 586,
+                "end": 593,
+                "loc": {
+                  "start": {
+                    "line": 21,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 21,
+                    "column": 9
+                  }
+                },
+                "value": "To do",
+                "rawValue": "To do",
+                "raw": "\"To do\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 594,
+                "end": 601,
+                "loc": {
+                  "start": {
+                    "line": 21,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 21,
+                    "column": 17
+                  }
+                },
+                "value": "To do",
+                "rawValue": "To do",
+                "raw": "\"To do\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 605,
+              "end": 628,
+              "loc": {
+                "start": {
+                  "line": 22,
+                  "column": 2
+                },
+                "end": {
+                  "line": 22,
+                  "column": 25
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 605,
+                "end": 616,
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 13
+                  }
+                },
+                "value": "Todo List",
+                "rawValue": "Todo List",
+                "raw": "\"Todo List\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 617,
+                "end": 628,
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 25
+                  }
+                },
+                "value": "Todo List",
+                "rawValue": "Todo List",
+                "raw": "\"Todo List\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 632,
+              "end": 645,
+              "loc": {
+                "start": {
+                  "line": 23,
+                  "column": 2
+                },
+                "end": {
+                  "line": 23,
+                  "column": 15
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 632,
+                "end": 638,
+                "loc": {
+                  "start": {
+                    "line": 23,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 8
+                  }
+                },
+                "value": "Show",
+                "rawValue": "Show",
+                "raw": "\"Show\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 639,
+                "end": 645,
+                "loc": {
+                  "start": {
+                    "line": 23,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 15
+                  }
+                },
+                "value": "Show",
+                "rawValue": "Show",
+                "raw": "\"Show\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 649,
+              "end": 670,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 2
+                },
+                "end": {
+                  "line": 24,
+                  "column": 23
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 649,
+                "end": 661,
+                "loc": {
+                  "start": {
+                    "line": 24,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 24,
+                    "column": 14
+                  }
+                },
+                "value": "TodoActive",
+                "rawValue": "TodoActive",
+                "raw": "\"TodoActive\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 662,
+                "end": 670,
+                "loc": {
+                  "start": {
+                    "line": 24,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 24,
+                    "column": 23
+                  }
+                },
+                "value": "Active",
+                "rawValue": "Active",
+                "raw": "\"Active\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 674,
+              "end": 701,
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 2
+                },
+                "end": {
+                  "line": 25,
+                  "column": 29
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 674,
+                "end": 689,
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 17
+                  }
+                },
+                "value": "TodoCompleted",
+                "rawValue": "TodoCompleted",
+                "raw": "\"TodoCompleted\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 690,
+                "end": 701,
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 29
+                  }
+                },
+                "value": "Completed",
+                "rawValue": "Completed",
+                "raw": "\"Completed\""
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 705,
+              "end": 720,
+              "loc": {
+                "start": {
+                  "line": 26,
+                  "column": 2
+                },
+                "end": {
+                  "line": 26,
+                  "column": 17
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Literal",
+                "start": 705,
+                "end": 714,
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 11
+                  }
+                },
+                "value": "TodoAll",
+                "rawValue": "TodoAll",
+                "raw": "\"TodoAll\""
+              },
+              "value": {
+                "type": "Literal",
+                "start": 715,
+                "end": 720,
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 17
+                  }
+                },
+                "value": "All",
+                "rawValue": "All",
+                "raw": "\"All\""
+              },
+              "kind": "init"
             }
-          }
-        },
-        "range": [
-          0,
-          512
-        ],
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
-          },
-          "end": {
-            "line": 17,
-            "column": 1
-          }
-        }
-      },
-      "range": [
-        0,
-        513
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 18,
-          "column": 0
-        }
-      }
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    0,
-    513
-  ],
-  "loc": {
-    "start": {
-      "line": 1,
-      "column": 0
-    },
-    "end": {
-      "line": 18,
-      "column": 0
-    }
-  },
-  "comments": [
-    {
-      "type": "Line",
-      "value": "messages manquants",
-      "range": [
-        22,
-        42
-      ],
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 2
-        },
-        "end": {
-          "line": 3,
-          "column": 22
-        }
-      }
-    },
-    {
-      "type": "Line",
-      "value": "App messages",
-      "range": [
-        81,
-        95
-      ],
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 2
-        },
-        "end": {
-          "line": 6,
-          "column": 16
+          ]
         }
       }
     }
