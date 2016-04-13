@@ -4,7 +4,6 @@ import { addComment } from '../actions'
 
 import Form from "grommet/components/Form"
 import FormField from "grommet/components/FormField"
-import Footer from "grommet/components/Footer"
 import Button from "grommet/components/Button"
 import { FormattedMessage } from "react-intl"
 

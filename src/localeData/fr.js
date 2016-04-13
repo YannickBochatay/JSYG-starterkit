@@ -109,5 +109,10 @@ module.exports = {
   "The comments section is from the" : "La section commentaires est tirée du",
   "React tutorial" : "tutoriel React",
 
-  "To do":"A faire"
+  "To do":"A faire",
+  "Todo List":"Liste des choses à faire",
+  "Show":"Afficher",
+  "TodoActive":"Actives",
+  "TodoCompleted":"Terminées",
+  "TodoAll":"Toutes"
 }

@@ -6,6 +6,7 @@ import VisibleTodoList from './containers/VisibleTodoList'
 import Article from "grommet/components/Article"
 import Header from "grommet/components/Header"
 import Section from "grommet/components/Section"
+import { FormattedMessage } from "react-intl"
 
 export default class Todo extends React.Component {
 
@@ -14,7 +15,7 @@ export default class Todo extends React.Component {
     return (
       <Article pad="medium">
         <Header>
-          TodoList
+          <FormattedMessage id="Todo List"/>
         </Header>
         <Section>
           <VisibleTodoList />

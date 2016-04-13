@@ -5,6 +5,7 @@ import Form from "grommet/components/Form"
 import FormField from "grommet/components/FormField"
 import Footer from "grommet/components/Footer"
 import Button from "grommet/components/Button"
+import { FormattedMessage } from "react-intl"
 
 let AddTodo = ({ dispatch }) => {
 
@@ -25,7 +26,12 @@ let AddTodo = ({ dispatch }) => {
         }} />
       </FormField>
       <Footer pad={ { vertical:"large" } }>
-        <Button type="submit" label="Add todo" onClick={ ()=>1 }/>
+
+        <FormattedMessage id="Submit">{
+          (label) => (<Button type="submit" label={label} onClick={ ()=>1 }/>)
+        }
+        </FormattedMessage>
+
       </Footer>
     </Form>
   )

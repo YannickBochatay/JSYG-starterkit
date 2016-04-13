@@ -1,25 +1,27 @@
 import React from 'react'
 import FilterLink from '../containers/FilterLink'
+import {FormattedMessage} from "react-intl"
 
 export default class Footer extends React.Component {
 
   render() {
 
-    return (
-      <p>
-        Show:
-        {" "}
+    return (<p>
+
+        <FormattedMessage id="Show"/>&nbsp;:&nbsp;
+
         <FilterLink filter="SHOW_ALL">
-          All
-        </FilterLink>
-        {", "}
+          <FormattedMessage id="TodoAll"/>
+        </FilterLink>&nbsp;
+
         <FilterLink filter="SHOW_ACTIVE">
-          Active
-        </FilterLink>
-        {", "}
+          <FormattedMessage id="TodoActive"/>
+        </FilterLink>&nbsp;
+
         <FilterLink filter="SHOW_COMPLETED">
-          Completed
+          <FormattedMessage id="TodoCompleted"/>
         </FilterLink>
+
       </p>
     )
   }
