@@ -1,4 +1,4 @@
-import "whatwg-fetch"
+import "isomorphic-fetch"
 
 export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
 

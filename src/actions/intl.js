@@ -11,17 +11,24 @@ export const setLocaleToFrench = () => {
   }
 }
 
+
 export const setLocaleToEnglish = () => {
 
-  let messages = require("grommet/messages/en")
-  let messagesAPP = require("../localeData/en")
+  return (dispatch) => {
 
-  return {
-    type:"SET_LOCALE",
-    data : {
-      locale : "en",
-      messages :  Object.assign({},messages,messagesAPP)
-    }
+    require.ensure([],(require)=>{
+
+      let messages = require("grommet/messages/en")
+      let messagesAPP = require("../localeData/en")
+
+      return dispatch({
+        type:"SET_LOCALE",
+        data : {
+          locale : "en",
+          messages :  Object.assign({},messages,messagesAPP)
+        }
+      })
+    })
   }
 }
 
