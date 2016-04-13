@@ -1,6 +1,5 @@
 // Karma configuration
 var webpack = require("webpack");
-var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 var src = 'src/**/*test.+(js|jsx)';
 
@@ -40,7 +39,9 @@ module.exports = function (config) {
       },
       plugins: [
         new webpack.IgnorePlugin(/vertx/),
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+        new webpack.ResolverPlugin(
+          new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main", ["main", 0]])
+        )
       ],
     },
     webpackServer: {

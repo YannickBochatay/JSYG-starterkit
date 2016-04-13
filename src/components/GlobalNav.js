@@ -5,10 +5,11 @@ import Header from "grommet/components/Header"
 //import Title from "grommet/components/Title"
 import Anchor from "grommet/components/Anchor"
 import IconMenu from "grommet/components/icons/base/Menu"
-import FlagIcon from "./FlagIcon"
 
 import { Link } from 'react-router'
 import { FormattedMessage } from "react-intl"
+
+import LangChoice from "../containers/LangChoice"
 
 
 export default class GlobalNav extends React.Component {
@@ -39,15 +40,7 @@ export default class GlobalNav extends React.Component {
       that.toggleSideBar()
     }
 
-    let clickFlag = this.props.onClickFlag
-
     let close = this.closeSideBar.bind(this)
-
-    let flagStyle = {
-      display:"inline-block",
-      margin:"10px",
-      "cursor":"pointer"
-    }
 
     return (
 
@@ -59,13 +52,8 @@ export default class GlobalNav extends React.Component {
           <FormattedMessage id="My App"/>
         </h1>
 
-        <FormattedMessage id="French">
-          { (country)=> <FlagIcon country="fr" countryLong={country} onClick={ () => clickFlag("fr") } style={flagStyle}/> }
-        </FormattedMessage>
-
-        <FormattedMessage id="English">
-          { (country)=> <FlagIcon country="en" countryLong={country} onClick={ () => clickFlag("en") } style={flagStyle}/> }
-        </FormattedMessage>
+        <LangChoice lang="French" locale="fr"/>
+        <LangChoice lang="English" locale="en"/>
 
         <Layer onClose={close} closer={true} align="left" hidden={this.state.hidden}>
           <Menu pad={ { vertical:"large" } }>
@@ -74,6 +62,9 @@ export default class GlobalNav extends React.Component {
             </Link>
             <Link to="comments" onClick={close}>
               <FormattedMessage id="Comments"/>
+            </Link>
+            <Link to="todo" onClick={close}>
+              <FormattedMessage id="To do"/>
             </Link>
           </Menu>
         </Layer>

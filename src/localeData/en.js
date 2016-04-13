@@ -16,5 +16,12 @@ module.exports = {
   "See comments" : "See comments",
   "This is a very simple template built with" : "This is a very simple template built with",
   "The comments section is from the" : "The comments section is from the",
-  "React tutorial" : "React tutorial"
+  "React tutorial" : "React tutorial",
+
+  "To do":"To do",
+  "Todo List":"Todo List",
+  "Show":"Show",
+  "TodoActive":"Active",
+  "TodoCompleted":"Completed",
+  "TodoAll":"All"
 }

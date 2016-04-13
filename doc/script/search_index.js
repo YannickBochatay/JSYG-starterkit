@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "my-jsyg-app/src/routes/todo/containers/addtodo.js~addtodo",
+    "variable/index.html#static-variable-AddTodo",
+    "<span>AddTodo</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/containers/AddTodo.js</span>",
+    "variable"
+  ],
+  [
     "my-jsyg-app/src/components/app.js~app",
     "class/src/components/App.js~App.html",
     "<span>App</span> <span class=\"search-result-import-path\">my-jsyg-app/src/components/App.js</span>",
@@ -9,12 +15,6 @@ window.esdocSearchIndex = [
     "my-jsyg-app/src/routes/comments/components/comment.js~commentbox",
     "class/src/routes/Comments/components/Comment.js~CommentBox.html",
     "<span>CommentBox</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Comments/components/Comment.js</span>",
-    "class"
-  ],
-  [
-    "my-jsyg-app/src/routes/comments/components/commentform.js~commentform",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html",
-    "<span>CommentForm</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Comments/components/CommentForm.js</span>",
     "class"
   ],
   [
@@ -30,15 +30,27 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "my-jsyg-app/src/components/flagicon.js~fladicon",
-    "class/src/components/FlagIcon.js~FladIcon.html",
-    "<span>FladIcon</span> <span class=\"search-result-import-path\">my-jsyg-app/src/components/FlagIcon.js</span>",
+    "my-jsyg-app/src/routes/todo/containers/filterlink.js~filterlink",
+    "variable/index.html#static-variable-FilterLink",
+    "<span>FilterLink</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/containers/FilterLink.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/components/footer.js~footer",
+    "class/src/routes/Todo/components/Footer.js~Footer.html",
+    "<span>Footer</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/components/Footer.js</span>",
     "class"
   ],
   [
     "my-jsyg-app/src/components/globalnav.js~globalnav",
     "class/src/components/GlobalNav.js~GlobalNav.html",
     "<span>GlobalNav</span> <span class=\"search-result-import-path\">my-jsyg-app/src/components/GlobalNav.js</span>",
+    "class"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/components/link.js~link",
+    "class/src/routes/Todo/components/Link.js~Link.html",
+    "<span>Link</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/components/Link.js</span>",
     "class"
   ],
   [
@@ -54,10 +66,106 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "my-jsyg-app/src/routes/todo/components/todo.js~todo",
+    "class/src/routes/Todo/components/Todo.js~Todo.html",
+    "<span>Todo</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/components/Todo.js</span>",
+    "class"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/index.js~todo",
+    "class/src/routes/Todo/index.js~Todo.html",
+    "<span>Todo</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/index.js</span>",
+    "class"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/components/todolist.js~todolist",
+    "class/src/routes/Todo/components/TodoList.js~TodoList.html",
+    "<span>TodoList</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/components/TodoList.js</span>",
+    "class"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/containers/visibletodolist.js~visibletodolist",
+    "variable/index.html#static-variable-VisibleTodoList",
+    "<span>VisibleTodoList</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/containers/VisibleTodoList.js</span>",
+    "variable"
+  ],
+  [
     "my-jsyg-app/src/components/welcome.js~welcome",
     "class/src/components/Welcome.js~Welcome.html",
     "<span>Welcome</span> <span class=\"search-result-import-path\">my-jsyg-app/src/components/Welcome.js</span>",
     "class"
+  ],
+  [
+    "my-jsyg-app/src/routes/comments/actions/index.js~addcomment",
+    "variable/index.html#static-variable-addComment",
+    "<span>addComment</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Comments/actions/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/actions/index.js~addtodo",
+    "variable/index.html#static-variable-addTodo",
+    "<span>addTodo</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/actions/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/comments/reducers/index.js~comments",
+    "variable/index.html#static-variable-comments",
+    "<span>comments</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Comments/reducers/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/store/index.js~createandconfigstore",
+    "variable/index.html#static-variable-createAndConfigStore",
+    "<span>createAndConfigStore</span> <span class=\"search-result-import-path\">my-jsyg-app/src/store/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/store/index.js~injectasyncreducer",
+    "variable/index.html#static-variable-injectAsyncReducer",
+    "<span>injectAsyncReducer</span> <span class=\"search-result-import-path\">my-jsyg-app/src/store/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/actions/intl.js~setlocaletoenglish",
+    "variable/index.html#static-variable-setLocaleToEnglish",
+    "<span>setLocaleToEnglish</span> <span class=\"search-result-import-path\">my-jsyg-app/src/actions/intl.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/actions/intl.js~setlocaletofrench",
+    "variable/index.html#static-variable-setLocaleToFrench",
+    "<span>setLocaleToFrench</span> <span class=\"search-result-import-path\">my-jsyg-app/src/actions/intl.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/actions/index.js~setvisibilityfilter",
+    "variable/index.html#static-variable-setVisibilityFilter",
+    "<span>setVisibilityFilter</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/actions/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/reducers/index.js~todoapp",
+    "variable/index.html#static-variable-todoApp",
+    "<span>todoApp</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/reducers/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/reducers/todos.js~todos",
+    "variable/index.html#static-variable-todos",
+    "<span>todos</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/reducers/todos.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/actions/index.js~toggletodo",
+    "variable/index.html#static-variable-toggleTodo",
+    "<span>toggleTodo</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/actions/index.js</span>",
+    "variable"
+  ],
+  [
+    "my-jsyg-app/src/routes/todo/reducers/visibilityfilter.js~visibilityfilter",
+    "variable/index.html#static-variable-visibilityFilter",
+    "<span>visibilityFilter</span> <span class=\"search-result-import-path\">my-jsyg-app/src/routes/Todo/reducers/visibilityFilter.js</span>",
+    "variable"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~array",
@@ -390,69 +498,21 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/actions/intl.js",
+    "file/src/actions/intl.js.html",
+    "src/actions/intl.js",
+    "file"
+  ],
+  [
     "src/components/app.js",
     "file/src/components/App.js.html",
     "src/components/App.js",
     "file"
   ],
   [
-    "src/components/app.js~app#componentdidmount",
-    "class/src/components/App.js~App.html#instance-method-componentDidMount",
-    "src/components/App.js~App#componentDidMount",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#constructor",
-    "class/src/components/App.js~App.html#instance-constructor-constructor",
-    "src/components/App.js~App#constructor",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#mounted",
-    "class/src/components/App.js~App.html#instance-member-mounted",
-    "src/components/App.js~App#mounted",
-    "member"
-  ],
-  [
     "src/components/app.js~app#render",
     "class/src/components/App.js~App.html#instance-method-render",
     "src/components/App.js~App#render",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#setlang",
-    "class/src/components/App.js~App.html#instance-method-setLang",
-    "src/components/App.js~App#setLang",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#setlangtoenglish",
-    "class/src/components/App.js~App.html#instance-method-setLangToEnglish",
-    "src/components/App.js~App#setLangToEnglish",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#setlangtofrench",
-    "class/src/components/App.js~App.html#instance-method-setLangToFrench",
-    "src/components/App.js~App#setLangToFrench",
-    "method"
-  ],
-  [
-    "src/components/app.js~app#state",
-    "class/src/components/App.js~App.html#instance-member-state",
-    "src/components/App.js~App#state",
-    "member"
-  ],
-  [
-    "src/components/flagicon.js",
-    "file/src/components/FlagIcon.js.html",
-    "src/components/FlagIcon.js",
-    "file"
-  ],
-  [
-    "src/components/flagicon.js~fladicon#render",
-    "class/src/components/FlagIcon.js~FladIcon.html#instance-method-render",
-    "src/components/FlagIcon.js~FladIcon#render",
     "method"
   ],
   [
@@ -558,6 +618,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/containers/intlprovider.js",
+    "file/src/containers/IntlProvider.js.html",
+    "src/containers/IntlProvider.js",
+    "file"
+  ],
+  [
+    "src/containers/langchoice.js",
+    "file/src/containers/LangChoice.js.html",
+    "src/containers/LangChoice.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -576,6 +648,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/reducers/intl.js",
+    "file/src/reducers/intl.js.html",
+    "src/reducers/intl.js",
+    "file"
+  ],
+  [
+    "src/routes/comments/actions/index.js",
+    "file/src/routes/Comments/actions/index.js.html",
+    "src/routes/Comments/actions/index.js",
+    "file"
+  ],
+  [
     "src/routes/comments/components/comment.js",
     "file/src/routes/Comments/components/Comment.js.html",
     "src/routes/Comments/components/Comment.js",
@@ -586,66 +670,6 @@ window.esdocSearchIndex = [
     "class/src/routes/Comments/components/Comment.js~CommentBox.html#instance-method-render",
     "src/routes/Comments/components/Comment.js~CommentBox#render",
     "method"
-  ],
-  [
-    "src/routes/comments/components/comment.test.js",
-    "file/src/routes/Comments/components/Comment.test.js.html",
-    "src/routes/Comments/components/Comment.test.js",
-    "file"
-  ],
-  [
-    "src/routes/comments/components/commentform.js",
-    "file/src/routes/Comments/components/CommentForm.js.html",
-    "src/routes/Comments/components/CommentForm.js",
-    "file"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#constructor",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-constructor-constructor",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#constructor",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#handleauthorchange",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-method-handleAuthorChange",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#handleAuthorChange",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#handlesomethingchange",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-method-handleSomethingChange",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#handleSomethingChange",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#handlesubmit",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-method-handleSubmit",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#handleSubmit",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#handletextchange",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-method-handleTextChange",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#handleTextChange",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#render",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-method-render",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#render",
-    "method"
-  ],
-  [
-    "src/routes/comments/components/commentform.js~commentform#state",
-    "class/src/routes/Comments/components/CommentForm.js~CommentForm.html#instance-member-state",
-    "src/routes/Comments/components/CommentForm.js~CommentForm#state",
-    "member"
-  ],
-  [
-    "src/routes/comments/components/commentform.test.js",
-    "file/src/routes/Comments/components/CommentForm.test.js.html",
-    "src/routes/Comments/components/CommentForm.test.js",
-    "file"
   ],
   [
     "src/routes/comments/components/commentlist.js",
@@ -660,9 +684,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/routes/comments/components/commentlist.test.js",
-    "file/src/routes/Comments/components/CommentList.test.js.html",
-    "src/routes/Comments/components/CommentList.test.js",
+    "src/routes/comments/containers/commentform.js",
+    "file/src/routes/Comments/containers/CommentForm.js.html",
+    "src/routes/Comments/containers/CommentForm.js",
+    "file"
+  ],
+  [
+    "src/routes/comments/containers/commentlist.js",
+    "file/src/routes/Comments/containers/CommentList.js.html",
+    "src/routes/Comments/containers/CommentList.js",
     "file"
   ],
   [
@@ -672,51 +702,123 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/routes/comments/index.js~comments#componentdidmount",
-    "class/src/routes/Comments/index.js~Comments.html#instance-method-componentDidMount",
-    "src/routes/Comments/index.js~Comments#componentDidMount",
-    "method"
-  ],
-  [
-    "src/routes/comments/index.js~comments#constructor",
-    "class/src/routes/Comments/index.js~Comments.html#instance-constructor-constructor",
-    "src/routes/Comments/index.js~Comments#constructor",
-    "method"
-  ],
-  [
-    "src/routes/comments/index.js~comments#handlecommentsubmit",
-    "class/src/routes/Comments/index.js~Comments.html#instance-method-handleCommentSubmit",
-    "src/routes/Comments/index.js~Comments#handleCommentSubmit",
-    "method"
-  ],
-  [
-    "src/routes/comments/index.js~comments#loadcommentsfromserver",
-    "class/src/routes/Comments/index.js~Comments.html#instance-method-loadCommentsFromServer",
-    "src/routes/Comments/index.js~Comments#loadCommentsFromServer",
-    "method"
-  ],
-  [
     "src/routes/comments/index.js~comments#render",
     "class/src/routes/Comments/index.js~Comments.html#instance-method-render",
     "src/routes/Comments/index.js~Comments#render",
     "method"
   ],
   [
-    "src/routes/comments/index.js~comments#state",
-    "class/src/routes/Comments/index.js~Comments.html#instance-member-state",
-    "src/routes/Comments/index.js~Comments#state",
-    "member"
+    "src/routes/comments/reducers/index.js",
+    "file/src/routes/Comments/reducers/index.js.html",
+    "src/routes/Comments/reducers/index.js",
+    "file"
   ],
   [
-    "src/routes/comments/index.js~comments#url",
-    "class/src/routes/Comments/index.js~Comments.html#instance-member-url",
-    "src/routes/Comments/index.js~Comments#url",
-    "member"
+    "src/routes/todo/actions/index.js",
+    "file/src/routes/Todo/actions/index.js.html",
+    "src/routes/Todo/actions/index.js",
+    "file"
   ],
   [
-    "src/routes/comments/test.js",
-    "file/src/routes/Comments/test.js.html",
-    "src/routes/Comments/test.js",
+    "src/routes/todo/components/footer.js",
+    "file/src/routes/Todo/components/Footer.js.html",
+    "src/routes/Todo/components/Footer.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/components/footer.js~footer#render",
+    "class/src/routes/Todo/components/Footer.js~Footer.html#instance-method-render",
+    "src/routes/Todo/components/Footer.js~Footer#render",
+    "method"
+  ],
+  [
+    "src/routes/todo/components/link.js",
+    "file/src/routes/Todo/components/Link.js.html",
+    "src/routes/Todo/components/Link.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/components/link.js~link#render",
+    "class/src/routes/Todo/components/Link.js~Link.html#instance-method-render",
+    "src/routes/Todo/components/Link.js~Link#render",
+    "method"
+  ],
+  [
+    "src/routes/todo/components/todo.js",
+    "file/src/routes/Todo/components/Todo.js.html",
+    "src/routes/Todo/components/Todo.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/components/todo.js~todo#render",
+    "class/src/routes/Todo/components/Todo.js~Todo.html#instance-method-render",
+    "src/routes/Todo/components/Todo.js~Todo#render",
+    "method"
+  ],
+  [
+    "src/routes/todo/components/todolist.js",
+    "file/src/routes/Todo/components/TodoList.js.html",
+    "src/routes/Todo/components/TodoList.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/components/todolist.js~todolist#render",
+    "class/src/routes/Todo/components/TodoList.js~TodoList.html#instance-method-render",
+    "src/routes/Todo/components/TodoList.js~TodoList#render",
+    "method"
+  ],
+  [
+    "src/routes/todo/containers/addtodo.js",
+    "file/src/routes/Todo/containers/AddTodo.js.html",
+    "src/routes/Todo/containers/AddTodo.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/containers/filterlink.js",
+    "file/src/routes/Todo/containers/FilterLink.js.html",
+    "src/routes/Todo/containers/FilterLink.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/containers/visibletodolist.js",
+    "file/src/routes/Todo/containers/VisibleTodoList.js.html",
+    "src/routes/Todo/containers/VisibleTodoList.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/index.js",
+    "file/src/routes/Todo/index.js.html",
+    "src/routes/Todo/index.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/index.js~todo#render",
+    "class/src/routes/Todo/index.js~Todo.html#instance-method-render",
+    "src/routes/Todo/index.js~Todo#render",
+    "method"
+  ],
+  [
+    "src/routes/todo/reducers/index.js",
+    "file/src/routes/Todo/reducers/index.js.html",
+    "src/routes/Todo/reducers/index.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/reducers/todos.js",
+    "file/src/routes/Todo/reducers/todos.js.html",
+    "src/routes/Todo/reducers/todos.js",
+    "file"
+  ],
+  [
+    "src/routes/todo/reducers/visibilityfilter.js",
+    "file/src/routes/Todo/reducers/visibilityFilter.js.html",
+    "src/routes/Todo/reducers/visibilityFilter.js",
+    "file"
+  ],
+  [
+    "src/store/index.js",
+    "file/src/store/index.js.html",
+    "src/store/index.js",
     "file"
   ]
 ]

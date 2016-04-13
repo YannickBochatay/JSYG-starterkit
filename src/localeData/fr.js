@@ -107,5 +107,12 @@ module.exports = {
   "See comments" : "Voir les commentaires",
   "This is a very simple template built with" : "Ceci est un modèle très simple fait avec",
   "The comments section is from the" : "La section commentaires est tirée du",
-  "React tutorial" : "tutoriel React"
+  "React tutorial" : "tutoriel React",
+
+  "To do":"A faire",
+  "Todo List":"Liste des choses à faire",
+  "Show":"Afficher",
+  "TodoActive":"Actives",
+  "TodoCompleted":"Terminées",
+  "TodoAll":"Toutes"
 }
