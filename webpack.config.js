@@ -5,6 +5,9 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require("path");
 
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+
 var production = process.env.NODE_ENV === 'production';
 
 var plugins = [
@@ -119,7 +122,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        loader: ExtractTextPlugin.extract('style', 'css!postcss')
       },
       {
         test: /\.scss$/,
@@ -154,5 +157,9 @@ module.exports = {
         loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ],
+  },
+
+  postcss : function() {
+    return [autoprefixer, precss];
   }
 };

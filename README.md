@@ -14,7 +14,7 @@
 
 * ES6 and JSX with [Babel](https://babeljs.io/)
 
-* [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) support
+* [Less](http://lesscss.org/), [Sass](http://sass-lang.com/), [PostCSS](http://postcss.org/) and [cssnext](http://cssnext.io/) support
 
 * Code quality with [ESLint](http://eslint.org/)
 
