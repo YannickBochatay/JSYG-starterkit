@@ -28,9 +28,9 @@
 
 * [React](https://facebook.github.io/react/) components
 
-* [React-router](https://github.com/visionmedia/page.js) for dynamic routing
+* [React-router](https://github.com/visionmedia/page.js) for routing with optional dynamic loading
 
-* [React-intl](https://github.com/yahoo/react-intl) for internationalization
+* [React-intl](https://github.com/yahoo/react-intl) for internationalization with optional dynamic loading
 
 * [React-redux](https://github.com/reactjs/react-redux) for state container
 
