@@ -1,9 +1,4 @@
-const initialState = [
-  {"id": 1, "author": "Yannick Bochatay", "text": "Bonjour tout le monde"},
-  {"id": 2, "author": "Yannick", "text": "Bonjour à nouveau"}
-]
-
-export const comments = (state = initialState, action) => {
+export const comments = (state = [], action) => {
 
   switch (action.type) {
 
@@ -17,6 +12,10 @@ export const comments = (state = initialState, action) => {
           text: action.text
         }
       ]
+
+    case 'ADD_COMMENTS':
+
+      return state.concat(action.comments)
 
     default:
       return state
