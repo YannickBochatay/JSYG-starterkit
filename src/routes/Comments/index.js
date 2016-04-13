@@ -10,45 +10,20 @@ import Header from "grommet/components/Header"
 import Section from "grommet/components/Section"
 
 class Comments extends React.Component {
-/*
-    loadCommentsFromServer() {
 
-        let that = this
-
-        return fetch(this.url)
-        .then(function(response) {
-
-            return response.json()
-        })
-        .then(function(data) {
-
-            that.setState({data: data})
-        })
-        .catch(function(e) {
-
-            console.error(that.props.url,e)
-        });
-    }
-
-    componentDidMount() {
-
-        this.loadCommentsFromServer()
-    }
-*/
     render() {
-        return (
-          <Article pad="medium">
-            <Header>
-                <FormattedMessage id="Comments"/>
-            </Header>
-            <Section>
-                <CommentList/>
-                <CommentForm/>
-            </Section>
-          </Article>
-        );
+      return (
+        <Article pad="medium">
+          <Header>
+              <FormattedMessage id="Comments"/>
+          </Header>
+          <Section>
+              <CommentList/>
+              <CommentForm/>
+          </Section>
+        </Article>
+      )
     }
-
 }
 
 Comments.contextTypes = {

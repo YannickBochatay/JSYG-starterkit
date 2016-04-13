@@ -1,8 +1,10 @@
-const initialState = {
+import Immutable from 'immutable'
+
+const initialState = Immutable.Map({
   locale: null,
   messages: null,
   formats: null
-}
+})
 
 export default (state = initialState, action) => {
 
@@ -10,8 +12,11 @@ export default (state = initialState, action) => {
 
     case "SET_LOCALE":
 
-      // Locale data will override IntlProvider props
-      return { ...state, ...action.data }
+      return state.merge(action.data)
+
+    case "ADD_MESSAGES":
+
+      return state.updateIn(['messages'], list => list.push(...action.messages));
 
     default:
 

@@ -3,10 +3,12 @@ import { connect } from "react-redux"
 
 function mapStateToProps(state) {
 
+  let { intl } = state
+
   return {
-    locale: state.intl.locale,
-    messages:state.intl.messages,
-    key:state.intl.locale
+    locale: intl.get("locale"),
+    messages: intl.get("messages").toJS(),
+    key: intl.get("locale")
   }
 }
 

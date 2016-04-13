@@ -1,4 +1,4 @@
-export const setLocaleToFrench = () => {
+export function setLocaleToFrench() {
 
   let messages = require("../localeData/fr")
 
@@ -12,7 +12,7 @@ export const setLocaleToFrench = () => {
 }
 
 
-export const setLocaleToEnglish = () => {
+export function setLocaleToEnglish() {
 
   return (dispatch) => {
 
@@ -30,5 +30,14 @@ export const setLocaleToEnglish = () => {
       })
     })
   }
+}
+
+export function addMessages(messages) {
+
+  return dispatch({
+    type:"ADD_MESSAGES",
+    messages
+  })
+
 }
 

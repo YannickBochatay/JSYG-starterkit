@@ -28,7 +28,7 @@ class LangChoice extends React.Component {
 const mapStateToProps = (state,ownProps) => {
 
   return {
-    style : state.intl.locale == ownProps.locale ? { ...style, textDecoration:"underline"} : style
+    style : state.intl.get("locale") == ownProps.locale ? { ...style, textDecoration:"underline"} : style
   }
 }
 
