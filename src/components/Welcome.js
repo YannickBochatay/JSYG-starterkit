@@ -2,7 +2,6 @@ import React from 'react'
 import Article from 'grommet/components/Article'
 import Header from 'grommet/components/Header'
 import Section from 'grommet/components/Section'
-import { Link } from 'react-router'
 import { FormattedMessage } from "react-intl"
 
 class Welcome extends React.Component {
@@ -27,9 +26,11 @@ class Welcome extends React.Component {
             </a>.
             <br/>
 
-            <Link to="/comments/">
-              <FormattedMessage id="See comments"/>
-            </Link>
+            <FormattedMessage id="The todo section is from the"/>&nbsp;
+            <a href="http://redux.js.org/docs/basics/ExampleTodoList.html">
+              <FormattedMessage id="Redux tutorial"/>
+            </a>.
+            <br/>
 
           </p>
         </Section>

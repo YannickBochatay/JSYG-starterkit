@@ -49,7 +49,7 @@ export default class GlobalNav extends React.Component {
         <Anchor href="#" label={<IconMenu/>} onClick={toggle} />
 
         <h1 style={{marginLeft:"30px",marginRight:"30px"}}>
-          <FormattedMessage id="My App"/>
+            <FormattedMessage id="My App"/>
         </h1>
 
         <LangChoice lang="French" locale="fr"/>
@@ -65,6 +65,9 @@ export default class GlobalNav extends React.Component {
             </Link>
             <Link to="todo" onClick={close}>
               <FormattedMessage id="To do"/>
+            </Link>
+            <Link to="reddit" onClick={close}>
+              Reddit
             </Link>
           </Menu>
         </Layer>

@@ -42,10 +42,10 @@ const rootRoute = {
 
         require.ensure([], function (require) {
 
-          let Comments = require('./routes/Comments')
-          let commentReducer = require('./routes/Comments/reducers')
-          injectAsyncReducer(store,'comments', commentReducer)
-          callback(null, Comments)
+          let Component = require('./routes/Comments')
+          let reducer = require('./routes/Comments/reducers')
+          injectAsyncReducer(store,'comments', reducer)
+          callback(null, Component)
         })
       }
 
@@ -57,11 +57,27 @@ const rootRoute = {
 
         require.ensure([], function (require) {
 
-          let Todo = require('./routes/Todo')
-          let todoReducer = require('./routes/Todo/reducers')
-          injectAsyncReducer(store,'todo', todoReducer)
+          let Component = require('./routes/Todo')
+          let reducer = require('./routes/Todo/reducers')
+          injectAsyncReducer(store,'todo', reducer)
 
-          callback(null, Todo)
+          callback(null, Component)
+        })
+      }
+
+    },{
+
+      path:"reddit",
+
+      getComponents : function(location, callback) {
+
+        require.ensure([], function (require) {
+
+          let Component = require('./routes/Reddit')
+          let reducer = require('./routes/Reddit/reducers')
+          injectAsyncReducer(store,'reddit', reducer)
+
+          callback(null, Component)
         })
       }
 

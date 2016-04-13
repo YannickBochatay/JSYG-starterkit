@@ -7,12 +7,15 @@
   "main": "index.html",
   "dependencies": {
     "grommet": "^0.5.5",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-intl": "^2.0.0-rc-1",
     "react-redux": "^4.4.1",
     "react-router": "^2.0.1",
-    "redux": "^3.4.0"
+    "redux": "^3.4.0",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
@@ -68,8 +71,8 @@
   },
   "scripts": {
     "test": "karma start karma.config.js",
-    "build-dev": "NODE_ENV=development webpack",
-    "build-prod": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=development webpack",
+    "build:prod": "NODE_ENV=production webpack",
     "start": "webpack-dev-server --hot --inline",
     "doc": "esdoc -c esdoc.json",
     "postinstall": "npm run fixDistDebugRef",

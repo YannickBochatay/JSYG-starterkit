@@ -1,10 +1,21 @@
-import { createStore, combineReducers } from "redux"
+import { createStore, combineReducers, applyMiddleware } from "redux"
+import thunkMiddleware from 'redux-thunk'
 import { setLocaleToFrench } from "../actions/intl"
 
 import intl from '../reducers/intl'
 
 
-let asyncReducers = {}
+const middlewares = [thunkMiddleware];
+
+if (process.env.NODE_ENV !== "production") {
+
+  const createLogger = require(`redux-logger`);
+  const logger = createLogger();
+  middlewares.push(logger);
+}
+
+
+const asyncReducers = {}
 
 
 function createReducer() {
@@ -18,7 +29,12 @@ function createReducer() {
 
 export const createAndConfigStore = () => {
 
-  let store = createStore( combineReducers({intl,...{}}) )
+  let store = createStore(
+
+    combineReducers({intl,...{}}),
+
+    applyMiddleware(...middlewares)
+  )
 
   store.dispatch(setLocaleToFrench())
 
