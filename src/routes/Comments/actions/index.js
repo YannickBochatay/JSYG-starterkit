@@ -1,4 +1,4 @@
-import "isomorphic-fetch"
+import "whatwg-fetch"
 
 let nextCommentId = 0
 
