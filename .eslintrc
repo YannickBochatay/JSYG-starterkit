@@ -11,7 +11,7 @@
   "env": {
     "browser": true,
     "node": true,
-    "jasmine": true,
+    "mocha": true,
     "es6": true
   },
   "plugins": [

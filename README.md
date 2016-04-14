@@ -22,7 +22,7 @@
 
 * easy imports from [bower](http://bower.io/) components and [npm](https://www.npmjs.com/) packages
 
-* Testing environment with [Karma](https://karma-runner.github.io/) and [Jasmine](http://jasmine.github.io/)
+* Testing environment with [Karma](https://karma-runner.github.io/) and [Mocha](https://mochajs.org/)
 
 * [Esdoc](https://esdoc.org/) for generating documentation
 
@@ -67,15 +67,15 @@ You have to open your browser and go to *http://localhost:8080/*.
 ```shell
 npm test
 ```
-Run tests with Karma and Jasmine. All files with *.test.js* or *.test.jsx* extension inside *src/* directory will be executed, with hot reload.
+Run tests with Karma and Jasmine. All files inside *test/* directory will be executed, with hot reload.
 
 ```shell
-npm run build-dev
+npm run build:dev
 ```
 Build app (in builds/ folder) for development
 
 ```shell
-npm run build-prod
+npm run build:prod
 ```
 Build app (in builds/ folder) for production (clean, optimize, minify)
 

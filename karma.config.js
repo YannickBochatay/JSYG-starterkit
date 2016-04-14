@@ -1,7 +1,7 @@
 // Karma configuration
 var webpack = require("webpack");
 
-var src = 'src/**/*test.+(js|jsx)';
+var src = 'test/**/*.js';
 
 module.exports = function (config) {
 
@@ -10,7 +10,7 @@ module.exports = function (config) {
     basePath: '',
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine-ajax', 'jasmine'],
+    frameworks: ['mocha', 'chai'],
     // list of files / patterns to load in the browser
     files: [src],
     // list of files to exclude
@@ -32,7 +32,7 @@ module.exports = function (config) {
       module: {
         loaders: [
           {test: /\.jsx?$/, loader: 'babel-loader?babelrc=false,presets[]=react,presets[]=es2015,plugins[]=transform-object-rest-spread'},
-          {test: /\.css$/, loader:'style-loader!css-loader'},
+          {test: /\.css$/, loader:'style-loader!css-loader!postcss-loader'},
           {test: /\.scss$/, loader:'style-loader!css-loader!sass-loader'},
           {test: /\.less$/, loader:'style-loader!css-loader!less-loader'}
         ]
