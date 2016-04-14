@@ -34,10 +34,10 @@ export function setLocaleToEnglish() {
 
 export function addMessages(messages) {
 
-  return dispatch({
+  return {
     type:"ADD_MESSAGES",
     messages
-  })
+  }
 
 }
 

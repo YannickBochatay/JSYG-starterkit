@@ -32,7 +32,7 @@
 
 * [React-intl](https://github.com/yahoo/react-intl) for internationalization with optional dynamic loading
 
-* [React-redux](https://github.com/reactjs/react-redux) for state container
+* [React-redux](https://github.com/reactjs/react-redux) and [Immutable](http://facebook.github.io/immutable-js/) for state container
 
 * [Grommet](http://www.grommet.io) for ui components
 
