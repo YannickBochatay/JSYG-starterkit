@@ -76,8 +76,6 @@
     "build:dev": "NODE_ENV=development webpack",
     "build:prod": "NODE_ENV=production webpack",
     "start": "webpack-dev-server --hot --inline",
-    "doc": "esdoc -c esdoc.json",
-    "postinstall": "npm run fixDistDebugRef",
-    "fixDistDebugRef": "mkdir node_modules/debug/dist && cp node_modules/debug/debug.js node_modules/debug/dist/"
+    "doc": "esdoc -c esdoc.json"
   }
 }

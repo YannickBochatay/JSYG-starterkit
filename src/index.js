@@ -40,6 +40,7 @@ const rootRoute = {
 
       getComponents(location, callback) {
 
+        //this way the code is loaded dynamically when accessing this route
         require.ensure([], function (require) {
 
           let Component = require('./routes/Comments')
