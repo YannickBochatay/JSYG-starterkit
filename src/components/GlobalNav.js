@@ -52,9 +52,6 @@ export default class GlobalNav extends React.Component {
             <FormattedMessage id="My App"/>
         </h1>
 
-        <LangChoice lang="French" locale="fr"/>
-        <LangChoice lang="English" locale="en"/>
-
         <Layer onClose={close} closer={true} align="left" hidden={this.state.hidden}>
           <Menu pad={ { vertical:"large" } }>
             <Link to="/" onClick={close}>
@@ -69,6 +66,10 @@ export default class GlobalNav extends React.Component {
             <Link to="reddit" onClick={close}>
               Reddit
             </Link>
+          </Menu>
+          <Menu>
+            <LangChoice lang="French" locale="fr"/>
+            <LangChoice lang="English" locale="en"/>
           </Menu>
         </Layer>
 
