@@ -4,47 +4,64 @@
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/actions/intl.js",
+    "name": "src/index.js",
     "memberof": null,
-    "longname": "src/actions/intl.js",
+    "longname": "src/index.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export const setLocaleToFrench = () => {\n\n  let messages = require(\"../localeData/fr\")\n\n  return {\n    type:\"SET_LOCALE\",\n    data : {\n      locale : \"fr\",\n      messages : messages\n    }\n  }\n}\n\nexport const setLocaleToEnglish = () => {\n\n  let messages = require(\"grommet/messages/en\")\n  let messagesAPP = require(\"../localeData/en\")\n\n  return {\n    type:\"SET_LOCALE\",\n    data : {\n      locale : \"en\",\n      messages :  Object.assign({},messages,messagesAPP)\n    }\n  }\n}\n\n"
+    "content": "import \"./styles.css\"\n\n/**\n* My demo class\n*/\nexport default class HelloWorld {\n\n  /**\n  * Constructor\n  * @param {string} text message you want to display (optional)\n  */\n  constructor(text = \"Hello world\") {\n\n    this.text = text\n  }\n\n  /**\n  * html rendering\n  */\n  render() {\n\n    var div = document.createElement(\"div\")\n\n    div.textContent = this.text\n\n    return div\n  }\n}\n\ndocument.body.appendChild( new HelloWorld().render() )\n"
   },
   {
     "__docId__": 1,
-    "kind": "variable",
+    "kind": "class",
     "static": true,
     "variation": null,
-    "name": "setLocaleToFrench",
-    "memberof": "src/actions/intl.js",
-    "longname": "src/actions/intl.js~setLocaleToFrench",
+    "name": "HelloWorld",
+    "memberof": "src/index.js",
+    "longname": "src/index.js~HelloWorld",
     "access": null,
     "export": true,
-    "importPath": "my-jsyg-app/src/actions/intl.js",
-    "importStyle": "{setLocaleToFrench}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
+    "importPath": "my-app/src/index.js",
+    "importStyle": "HelloWorld",
+    "description": "My demo class",
+    "lineNumber": 6,
+    "interface": false
   },
   {
     "__docId__": 2,
-    "kind": "variable",
-    "static": true,
+    "kind": "constructor",
+    "static": false,
     "variation": null,
-    "name": "setLocaleToEnglish",
-    "memberof": "src/actions/intl.js",
-    "longname": "src/actions/intl.js~setLocaleToEnglish",
+    "name": "constructor",
+    "memberof": "src/index.js~HelloWorld",
+    "longname": "src/index.js~HelloWorld#constructor",
     "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/actions/intl.js",
-    "importStyle": "{setLocaleToEnglish}",
+    "description": "Constructor",
+    "lineNumber": 12,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text",
+        "description": "message you want to display (optional)"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 3,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "text",
+    "memberof": "src/index.js~HelloWorld",
+    "longname": "src/index.js~HelloWorld#text",
+    "access": null,
     "description": null,
     "lineNumber": 14,
     "undocument": true,
@@ -55,50 +72,16 @@
     }
   },
   {
-    "__docId__": 3,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/components/App.js",
-    "memberof": null,
-    "longname": "src/components/App.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import \"grommet/grommet.min.css\"\n\nimport React from 'react'\n\nimport GlobalNav from \"./GlobalNav\"\nimport GrommetApp from \"grommet/components/App\"\nimport Welcome from \"./Welcome\"\n\nclass App extends React.Component {\n\n  render() {\n\n    return (\n      <GrommetApp>\n        <GlobalNav/>\n        <div>\n          {this.props.children || <Welcome/>}\n        </div>\n      </GrommetApp>\n    )\n  }\n\n}\n\nexport default App\n"
-  },
-  {
     "__docId__": 4,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "App",
-    "memberof": "src/components/App.js",
-    "longname": "src/components/App.js~App",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/components/App.js",
-    "importStyle": "App",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 5,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "render",
-    "memberof": "src/components/App.js~App",
-    "longname": "src/components/App.js~App#render",
+    "memberof": "src/index.js~HelloWorld",
+    "longname": "src/index.js~HelloWorld#render",
     "access": null,
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
+    "description": "html rendering",
+    "lineNumber": 20,
     "params": [],
     "return": {
       "types": [
@@ -109,1778 +92,6 @@
   },
   {
     "__docId__": 6,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/components/GlobalNav.js",
-    "memberof": null,
-    "longname": "src/components/GlobalNav.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport Layer from 'grommet/components/Layer'\nimport Menu from 'grommet/components/Menu'\nimport Header from \"grommet/components/Header\"\n//import Title from \"grommet/components/Title\"\nimport Anchor from \"grommet/components/Anchor\"\nimport IconMenu from \"grommet/components/icons/base/Menu\"\n\nimport { Link } from 'react-router'\nimport { FormattedMessage } from \"react-intl\"\n\nimport LangChoice from \"../containers/LangChoice\"\n\n\nexport default class GlobalNav extends React.Component {\n\n  constructor(props) {\n\n    super(props)\n\n    this.state = { hidden : true }\n  }\n\n  toggleSideBar() {\n\n    this.setState({ hidden : !this.state.hidden })\n  }\n\n  closeSideBar() {\n\n    this.setState({ hidden : true})\n  }\n\n  render() {\n\n    let that = this\n\n    function toggle(e) {\n      e.preventDefault()\n      that.toggleSideBar()\n    }\n\n    let close = this.closeSideBar.bind(this)\n\n    return (\n\n      <Header pad=\"medium\">\n\n        <Anchor href=\"#\" label={<IconMenu/>} onClick={toggle} />\n\n        <h1 style={{marginLeft:\"30px\",marginRight:\"30px\"}}>\n          <FormattedMessage id=\"My App\"/>\n        </h1>\n\n        <LangChoice lang=\"French\" locale=\"fr\"/>\n        <LangChoice lang=\"English\" locale=\"en\"/>\n\n        <Layer onClose={close} closer={true} align=\"left\" hidden={this.state.hidden}>\n          <Menu pad={ { vertical:\"large\" } }>\n            <Link to=\"/\" onClick={close}>\n              <FormattedMessage id=\"Home\"/>\n            </Link>\n            <Link to=\"comments\" onClick={close}>\n              <FormattedMessage id=\"Comments\"/>\n            </Link>\n            <Link to=\"todo\" onClick={close}>\n              <FormattedMessage id=\"To do\"/>\n            </Link>\n          </Menu>\n        </Layer>\n\n      </Header>\n    )\n  }\n}\n"
-  },
-  {
-    "__docId__": 7,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "GlobalNav",
-    "memberof": "src/components/GlobalNav.js",
-    "longname": "src/components/GlobalNav.js~GlobalNav",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/components/GlobalNav.js",
-    "importStyle": "GlobalNav",
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 8,
-    "kind": "constructor",
-    "static": false,
-    "variation": null,
-    "name": "constructor",
-    "memberof": "src/components/GlobalNav.js~GlobalNav",
-    "longname": "src/components/GlobalNav.js~GlobalNav#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 17,
-    "undocument": true,
-    "params": [
-      {
-        "name": "props",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 9,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "state",
-    "memberof": "src/components/GlobalNav.js~GlobalNav",
-    "longname": "src/components/GlobalNav.js~GlobalNav#state",
-    "access": null,
-    "description": null,
-    "lineNumber": 21,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 10,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "toggleSideBar",
-    "memberof": "src/components/GlobalNav.js~GlobalNav",
-    "longname": "src/components/GlobalNav.js~GlobalNav#toggleSideBar",
-    "access": null,
-    "description": null,
-    "lineNumber": 24,
-    "undocument": true,
-    "params": [],
-    "generator": false
-  },
-  {
-    "__docId__": 11,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "closeSideBar",
-    "memberof": "src/components/GlobalNav.js~GlobalNav",
-    "longname": "src/components/GlobalNav.js~GlobalNav#closeSideBar",
-    "access": null,
-    "description": null,
-    "lineNumber": 29,
-    "undocument": true,
-    "params": [],
-    "generator": false
-  },
-  {
-    "__docId__": 12,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/components/GlobalNav.js~GlobalNav",
-    "longname": "src/components/GlobalNav.js~GlobalNav#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 34,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 13,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/components/Loading.js",
-    "memberof": null,
-    "longname": "src/components/Loading.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\n\nclass Loading extends React.Component {\n\n  constructor(props) {\n\n    super(props)\n\n    this.state = { text: \"loading...\" }\n  }\n\n  componentDidMount() {\n\n    let that = this\n\n    this.interval = window.setInterval( ()=> that.setState({text: this.state.text+\".\"}), 10)\n  }\n\n  componentWillUnmount() {\n\n    window.clearInterval(this.interval)\n  }\n\n  render() {\n\n    return <div>{this.state.text}</div>\n  }\n\n}\n\nexport default Loading\n"
-  },
-  {
-    "__docId__": 14,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Loading",
-    "memberof": "src/components/Loading.js",
-    "longname": "src/components/Loading.js~Loading",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/components/Loading.js",
-    "importStyle": "Loading",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 15,
-    "kind": "constructor",
-    "static": false,
-    "variation": null,
-    "name": "constructor",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#constructor",
-    "access": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "params": [
-      {
-        "name": "props",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 16,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "state",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#state",
-    "access": null,
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 17,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "componentDidMount",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#componentDidMount",
-    "access": null,
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
-    "params": [],
-    "generator": false
-  },
-  {
-    "__docId__": 18,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "interval",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#interval",
-    "access": null,
-    "description": null,
-    "lineNumber": 16,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 19,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "componentWillUnmount",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#componentWillUnmount",
-    "access": null,
-    "description": null,
-    "lineNumber": 19,
-    "undocument": true,
-    "params": [],
-    "generator": false
-  },
-  {
-    "__docId__": 20,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/components/Loading.js~Loading",
-    "longname": "src/components/Loading.js~Loading#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 24,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 21,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/components/NotFound.js",
-    "memberof": null,
-    "longname": "src/components/NotFound.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport { FormattedMessage } from \"react-intl\"\n\nclass NotFound extends React.Component {\n\n  render() {\n\n    return (\n      <h1><FormattedMessage id=\"Page not found\"/></h1>\n    );\n  }\n}\n\nexport default NotFound;\n"
-  },
-  {
-    "__docId__": 22,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "NotFound",
-    "memberof": "src/components/NotFound.js",
-    "longname": "src/components/NotFound.js~NotFound",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/components/NotFound.js",
-    "importStyle": "NotFound",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 23,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/components/NotFound.js~NotFound",
-    "longname": "src/components/NotFound.js~NotFound#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 24,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/components/Welcome.js",
-    "memberof": null,
-    "longname": "src/components/Welcome.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport Article from 'grommet/components/Article'\nimport Header from 'grommet/components/Header'\nimport Section from 'grommet/components/Section'\nimport { Link } from 'react-router'\nimport { FormattedMessage } from \"react-intl\"\n\nclass Welcome extends React.Component {\n\n  render() {\n\n    return (\n      <Article pad=\"medium\">\n        <Header>\n          <h1><FormattedMessage id=\"Welcome\"/></h1>\n        </Header>\n        <Section>\n          <p>\n\n            <FormattedMessage id=\"This is a very simple template built with\"/>&nbsp;\n            <a href=\"http://www.grommet.io\">grommet</a>.\n            <br/>\n\n            <FormattedMessage id=\"The comments section is from the\"/>&nbsp;\n            <a href=\"https://facebook.github.io/react/docs/tutorial.html\">\n              <FormattedMessage id=\"React tutorial\"/>\n            </a>.\n            <br/>\n\n            <Link to=\"/comments/\">\n              <FormattedMessage id=\"See comments\"/>\n            </Link>\n\n          </p>\n        </Section>\n      </Article>\n    );\n  }\n}\n\nexport default Welcome;\n"
-  },
-  {
-    "__docId__": 25,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Welcome",
-    "memberof": "src/components/Welcome.js",
-    "longname": "src/components/Welcome.js~Welcome",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/components/Welcome.js",
-    "importStyle": "Welcome",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 26,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/components/Welcome.js~Welcome",
-    "longname": "src/components/Welcome.js~Welcome#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 27,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/containers/IntlProvider.js",
-    "memberof": null,
-    "longname": "src/containers/IntlProvider.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { IntlProvider } from \"react-intl\"\nimport { connect } from \"react-redux\"\n\nfunction mapStateToProps(state) {\n\n  return {\n    locale: state.intl.locale,\n    messages:state.intl.messages,\n    key:state.intl.locale\n  }\n}\n\nexport default connect(mapStateToProps)(IntlProvider)\n"
-  },
-  {
-    "__docId__": 28,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "mapStateToProps",
-    "memberof": "src/containers/IntlProvider.js",
-    "longname": "src/containers/IntlProvider.js~mapStateToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/containers/IntlProvider.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "params": [
-      {
-        "name": "state",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 29,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/containers/LangChoice.js",
-    "memberof": null,
-    "longname": "src/containers/LangChoice.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from \"react\"\nimport { connect } from 'react-redux'\nimport * as actions from '../actions/intl'\nimport { FormattedMessage } from \"react-intl\"\n\nlet style = {\n  display:\"inline-block\",\n  margin:\"10px\",\n  \"cursor\":\"pointer\"\n}\n\n\nclass LangChoice extends React.Component {\n\n  render() {\n\n    return (\n\n      <div {...this.props}>\n        <FormattedMessage id={ this.props.lang }/>\n      </div>\n\n    )\n  }\n}\n\n\nconst mapStateToProps = (state,ownProps) => {\n\n  return {\n    style : state.intl.locale == ownProps.locale ? { ...style, textDecoration:\"underline\"} : style\n  }\n}\n\nconst mapDispatchToProps = (dispatch,ownProps) => {\n\n  return {\n\n    onClick: () => {\n\n      dispatch( ownProps.lang == \"English\" ? actions.setLocaleToEnglish() : actions.setLocaleToFrench() )\n\n    }\n  }\n}\n\nexport default connect(\n  mapStateToProps,\n  mapDispatchToProps\n)(LangChoice)\n"
-  },
-  {
-    "__docId__": 30,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "style",
-    "memberof": "src/containers/LangChoice.js",
-    "longname": "src/containers/LangChoice.js~style",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/containers/LangChoice.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 31,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "LangChoice",
-    "memberof": "src/containers/LangChoice.js",
-    "longname": "src/containers/LangChoice.js~LangChoice",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/containers/LangChoice.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 32,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/containers/LangChoice.js~LangChoice",
-    "longname": "src/containers/LangChoice.js~LangChoice#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 33,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapStateToProps",
-    "memberof": "src/containers/LangChoice.js",
-    "longname": "src/containers/LangChoice.js~mapStateToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/containers/LangChoice.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 28,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 34,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapDispatchToProps",
-    "memberof": "src/containers/LangChoice.js",
-    "longname": "src/containers/LangChoice.js~mapDispatchToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/containers/LangChoice.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 35,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 35,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/index.js",
-    "memberof": null,
-    "longname": "src/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "\"use strict\";\n\nimport \"grommet/grommet.min.css\"\n\nimport React from 'react'\nimport ReactDOM from \"react-dom\"\nimport { Router, hashHistory } from 'react-router';\n\nimport App from \"./components/App\"\nimport NotFound from \"./components/NotFound\"\n\nimport { createAndConfigStore, injectAsyncReducer }  from \"./store\"\n\nimport { Provider } from 'react-redux'\nimport IntlProvider from \"./containers/IntlProvider\"\n\nimport { addLocaleData } from 'react-intl'\nimport en from 'react-intl/locale-data/en'\nimport fr from 'react-intl/locale-data/fr'\n\naddLocaleData(en)\naddLocaleData(fr)\n\n\nlet store = createAndConfigStore()\n\nconst rootRoute = {\n\n  component:\"div\",\n\n  childRoutes:[{\n\n    path:\"/\",\n\n    component:App,\n\n    childRoutes:[{\n\n      path:\"comments\",\n\n      getComponents(location, callback) {\n\n        require.ensure([], function (require) {\n\n          let Comments = require('./routes/Comments')\n          let commentReducer = require('./routes/Comments/reducers')\n          injectAsyncReducer(store,'comments', commentReducer)\n          callback(null, Comments)\n        })\n      }\n\n    },{\n\n      path:\"todo\",\n\n      getComponents : function(location, callback) {\n\n        require.ensure([], function (require) {\n\n          let Todo = require('./routes/Todo')\n          let todoReducer = require('./routes/Todo/reducers')\n          injectAsyncReducer(store,'todo', todoReducer)\n\n          callback(null, Todo)\n        })\n      }\n\n    },{\n      path:\"*\",\n      component:NotFound\n    }]\n\n  }]\n\n}\n\nReactDOM.render(\n\n  <Provider store={store}>\n    <IntlProvider>\n      <Router history={hashHistory} routes={rootRoute} />\n    </IntlProvider>\n  </Provider>,\n\ndocument.getElementById(\"content\") )\n"
-  },
-  {
-    "__docId__": 36,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "store",
-    "memberof": "src/index.js",
-    "longname": "src/index.js~store",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 25,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 37,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "rootRoute",
-    "memberof": "src/index.js",
-    "longname": "src/index.js~rootRoute",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 27,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 38,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/localeData/en.js",
-    "memberof": null,
-    "longname": "src/localeData/en.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "module.exports = {\n\n  //messages manquants\n  \"Close  Layer\" : \"Close  Layer\",\n\n  //App messages\n  \"Home\" : \"Home\",\n  \"Page not found\" : \"Page not found\",\n  \"My App\" : \"My App\",\n  \"Submit\" : \"Submit\",\n  \"French\" : \"French\",\n  \"English\" : \"English\",\n  \"Welcome\" : \"Welcome\",\n  \"Comments\" : \"Comments\",\n  \"Leave a comment\" : \"Leave a comment\",\n  \"See comments\" : \"See comments\",\n  \"This is a very simple template built with\" : \"This is a very simple template built with\",\n  \"The comments section is from the\" : \"The comments section is from the\",\n  \"React tutorial\" : \"React tutorial\",\n\n  \"To do\":\"To do\",\n  \"Todo List\":\"Todo List\",\n  \"Show\":\"Show\",\n  \"TodoActive\":\"Active\",\n  \"TodoCompleted\":\"Completed\",\n  \"TodoAll\":\"All\"\n}\n"
-  },
-  {
-    "__docId__": 39,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/localeData/fr.js",
-    "memberof": null,
-    "longname": "src/localeData/fr.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "module.exports = {\n\n  //Grommet messages\n\n  IndexFilters: {\n    filters: '{quantity, plural,\\n  =0 {Filters}\\n  =1 {one filter}\\n  other {# filters}\\n}'\n  },\n  Active: 'Active',\n  add: 'ajouter',\n  Alerts: 'Alertes',\n  All: 'Tous',\n  archive: 'archive',\n  area: 'zone',\n  Bar: 'Barre',\n  bar: 'barre',\n  Box: 'Boîte',\n  calendar: 'calendrier',\n  camera: 'appareil photo',\n  Category: 'Categorie',\n  Circle: 'Cercle',\n  Chart: 'Graphique',\n  Clear: 'Nettoyer',\n  Cleared: 'Nettoyé',\n  Close: 'Fermer',\n  close: 'fermer',\n  'Close Menu': 'Fermer le menu',\n  'command-line': 'ligne de commande',\n  Completed: 'Terminé',\n  created: 'Créé',\n  Critical: 'Critique',\n  Disabled: 'Désactivé',\n  Distribution: 'Distribution',\n  down: 'bas',\n  download: 'télécharger',\n  edit: 'éditer',\n  Email: 'Email',\n  Error: 'Erreur',\n  Filter: 'Filtre',\n  filter: 'filtre',\n  Footer: 'Pied de page',\n  'Grommet Logo': 'Logo Grommet',\n  'Layer': 'Couche',\n  line: 'ligne',\n  'link-next': 'lien suivant',\n  'link-previous': 'lien précédent',\n  'Loading': 'Chargement en cours',\n  loginInvalidPassword: 'Veuillez rentrer un nom d\\'utilisateur et un mot de passe',\n  'Log In': 'Se connecter',\n  Logout: 'Se déconnecter',\n  'Main Content': 'Contenu principal',\n  Max: 'Max',\n  Menu: 'Menu',\n  menu: 'menu',\n  Meter: 'Metre',\n  Min: 'Min',\n  model: 'Modèle',\n  modified: 'Modifié',\n  monitor: 'moniteur',\n  more: 'plus',\n  Name: 'Nom',\n  next:'suivant',\n  OK: 'OK',\n  Open: 'Ouvert',\n  Password: 'Mot de passe',\n  power: 'énergie',\n  'Remember me': 'Se rappeler de moi',\n  Resource: 'Ressource',\n  Running: 'Travail en cours',\n  Search: 'Recherche',\n  search: 'recherche',\n  'Skip to': 'Passer',\n  State: 'Etat',\n  Status: 'Etat',\n  subtract: 'soustraire',\n  support: 'support',\n  sync: 'synchroniser',\n  'Tab Contents': '{activeTitle} Onglet Contenus',\n  Tasks: 'Tâches',\n  Time: 'Temps',\n  Title: 'Titre',\n  Total: 'Total',\n  trash: 'corbeille',\n  Threshold: 'Seuil',\n  Unknown: 'Inconnu',\n  upload: 'téléverser',\n  user: 'utilisateur',\n  Username: 'nom d\\'utilisateur',\n  uri: 'URI',\n  validation: 'validation',\n  Value: 'Valeur',\n  Warning: 'Avertissement',\n\n  //messages manquants\n  \"Close  Layer\" : \"Fermer\",\n\n\n  //App messages\n  \"Home\" : \"Accueil\",\n  \"Page not found\" : \"Page introuvable\",\n  \"My App\" : \"Mon application\",\n  \"Submit\" : \"Valider\",\n  \"French\" : \"Français\",\n  \"English\" : \"Anglais\",\n  \"Welcome\" : \"Bienvenue\",\n  \"Comments\" : \"Commentaires\",\n  \"Leave a comment\" : \"Laisser un commentaire\",\n  \"See comments\" : \"Voir les commentaires\",\n  \"This is a very simple template built with\" : \"Ceci est un modèle très simple fait avec\",\n  \"The comments section is from the\" : \"La section commentaires est tirée du\",\n  \"React tutorial\" : \"tutoriel React\",\n\n  \"To do\":\"A faire\",\n  \"Todo List\":\"Liste des choses à faire\",\n  \"Show\":\"Afficher\",\n  \"TodoActive\":\"Actives\",\n  \"TodoCompleted\":\"Terminées\",\n  \"TodoAll\":\"Toutes\"\n}\n"
-  },
-  {
-    "__docId__": 40,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/reducers/intl.js",
-    "memberof": null,
-    "longname": "src/reducers/intl.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "const initialState = {\n  locale: null,\n  messages: null,\n  formats: null\n}\n\nexport default (state = initialState, action) => {\n\n  switch (action.type) {\n\n    case \"SET_LOCALE\":\n\n      // Locale data will override IntlProvider props\n      return { ...state, ...action.data }\n\n    default:\n\n      return state\n  }\n}\n"
-  },
-  {
-    "__docId__": 41,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "initialState",
-    "memberof": "src/reducers/intl.js",
-    "longname": "src/reducers/intl.js~initialState",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/reducers/intl.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 42,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/actions/index.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/actions/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "let nextCommentId = 3\n\nexport const addComment = (author,text) => {\n  return {\n    type: 'ADD_COMMENT',\n    author,\n    text,\n    id: nextCommentId++\n  }\n}\n"
-  },
-  {
-    "__docId__": 43,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "nextCommentId",
-    "memberof": "src/routes/Comments/actions/index.js",
-    "longname": "src/routes/Comments/actions/index.js~nextCommentId",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Comments/actions/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "number"
-      ]
-    }
-  },
-  {
-    "__docId__": 44,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "addComment",
-    "memberof": "src/routes/Comments/actions/index.js",
-    "longname": "src/routes/Comments/actions/index.js~addComment",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Comments/actions/index.js",
-    "importStyle": "{addComment}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 45,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/components/Comment.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/components/Comment.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from \"react\"\nimport Tile from \"grommet/components/Tile\"\nimport Header from \"grommet/components/Header\"\n\nclass CommentBox extends React.Component {\n\n    render() {\n        return(\n          <Tile wide={true} colorIndex=\"light-2\" align=\"start\">\n            <Header>{this.props.author}</Header>\n            {this.props.text}\n          </Tile>\n        );\n    }\n}\n\nexport default CommentBox;\n"
-  },
-  {
-    "__docId__": 46,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "CommentBox",
-    "memberof": "src/routes/Comments/components/Comment.js",
-    "longname": "src/routes/Comments/components/Comment.js~CommentBox",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Comments/components/Comment.js",
-    "importStyle": "CommentBox",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 47,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Comments/components/Comment.js~CommentBox",
-    "longname": "src/routes/Comments/components/Comment.js~CommentBox#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 48,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/components/CommentList.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/components/CommentList.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from \"react\"\nimport Comment from \"./Comment\"\nimport Tiles from \"grommet/components/Tiles\"\n\nclass CommentList extends React.Component {\n\n  render() {\n\n    var commentNodes = this.props.comments.map(function(comment) {\n\n        return (\n          <Comment author={comment.author} key={comment.id} text={comment.text}/>\n        )\n    })\n\n    return (\n      <Tiles pad=\"large\">\n        {commentNodes}\n      </Tiles>\n    )\n  }\n}\n\nexport default CommentList\n"
-  },
-  {
-    "__docId__": 49,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "CommentList",
-    "memberof": "src/routes/Comments/components/CommentList.js",
-    "longname": "src/routes/Comments/components/CommentList.js~CommentList",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Comments/components/CommentList.js",
-    "importStyle": "CommentList",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 50,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Comments/components/CommentList.js~CommentList",
-    "longname": "src/routes/Comments/components/CommentList.js~CommentList#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 51,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/containers/CommentForm.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/containers/CommentForm.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport { connect } from 'react-redux'\nimport { addComment } from '../actions'\n\nimport Form from \"grommet/components/Form\"\nimport FormField from \"grommet/components/FormField\"\nimport Button from \"grommet/components/Button\"\nimport { FormattedMessage } from \"react-intl\"\n\nlet CommentForm = ({ dispatch }) => {\n\n  let inputAuthor\n  let inputText\n\n  function onSubmit(e)  {\n\n    e.preventDefault();\n\n    let author = inputAuthor.value.trim()\n    let text = inputText.value.trim()\n\n    if (!text || !author) return\n\n    dispatch(addComment(author,text))\n\n    inputAuthor.value = \"\"\n    inputText.value = \"\"\n  }\n\n  return (\n\n    <Form pad={ {vertical:\"large\",horizontal:\"none\"} } onSubmit={onSubmit}>\n\n      <fieldset>\n        <legend>\n          <FormattedMessage id=\"Leave a comment\"/>\n        </legend>\n\n        <FormField label=\"Name\" htmlFor=\"inputAuthor\">\n          <input id=\"inputAuthor\" type=\"text\" ref={node => { inputAuthor = node }}/>\n        </FormField>\n\n        <FormField label=\"Say something...\" htmlFor=\"inputText\">\n          <textarea id=\"inputText\"  ref={node => { inputText = node }}/>\n        </FormField>\n\n      </fieldset>\n\n      <FormattedMessage id=\"Submit\">\n        {\n          (label) => ( <Button label={label} type=\"submit\" onClick={ ()=>1 }/> )\n        }\n      </FormattedMessage>\n\n    </Form>\n  )\n}\n\nexport default connect()(CommentForm)\n"
-  },
-  {
-    "__docId__": 52,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "CommentForm",
-    "memberof": "src/routes/Comments/containers/CommentForm.js",
-    "longname": "src/routes/Comments/containers/CommentForm.js~CommentForm",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Comments/containers/CommentForm.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 53,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/containers/CommentList.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/containers/CommentList.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { connect } from 'react-redux'\nimport CommentList from '../components/CommentList'\n\nconst mapStateToProps = (state) => {\n  return {\n    comments : state.comments\n  }\n}\n\nexport default connect(mapStateToProps)(CommentList)\n"
-  },
-  {
-    "__docId__": 54,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapStateToProps",
-    "memberof": "src/routes/Comments/containers/CommentList.js",
-    "longname": "src/routes/Comments/containers/CommentList.js~mapStateToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Comments/containers/CommentList.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 55,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/index.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "\"use strict\";\n\nimport \"whatwg-fetch\"\nimport React from \"react\"\nimport CommentList from \"./containers/CommentList\"\nimport CommentForm from \"./containers/CommentForm\"\nimport { FormattedMessage } from \"react-intl\"\nimport Article from \"grommet/components/Article\"\nimport Header from \"grommet/components/Header\"\nimport Section from \"grommet/components/Section\"\n\nclass Comments extends React.Component {\n/*\n    loadCommentsFromServer() {\n\n        let that = this\n\n        return fetch(this.url)\n        .then(function(response) {\n\n            return response.json()\n        })\n        .then(function(data) {\n\n            that.setState({data: data})\n        })\n        .catch(function(e) {\n\n            console.error(that.props.url,e)\n        });\n    }\n\n    componentDidMount() {\n\n        this.loadCommentsFromServer()\n    }\n*/\n    render() {\n        return (\n          <Article pad=\"medium\">\n            <Header>\n                <FormattedMessage id=\"Comments\"/>\n            </Header>\n            <Section>\n                <CommentList/>\n                <CommentForm/>\n            </Section>\n          </Article>\n        );\n    }\n\n}\n\nComments.contextTypes = {\n  router: React.PropTypes.object\n}\n\nmodule.exports = Comments\n\nexport default Comments\n"
-  },
-  {
-    "__docId__": 56,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Comments",
-    "memberof": "src/routes/Comments/index.js",
-    "longname": "src/routes/Comments/index.js~Comments",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Comments/index.js",
-    "importStyle": "Comments",
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 57,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Comments/index.js~Comments",
-    "longname": "src/routes/Comments/index.js~Comments#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 38,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 58,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Comments/reducers/index.js",
-    "memberof": null,
-    "longname": "src/routes/Comments/reducers/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "const initialState = [\n  {\"id\": 1, \"author\": \"Yannick Bochatay\", \"text\": \"Bonjour tout le monde\"},\n  {\"id\": 2, \"author\": \"Yannick\", \"text\": \"Bonjour à nouveau\"}\n]\n\nexport const comments = (state = initialState, action) => {\n\n  switch (action.type) {\n\n    case 'ADD_COMMENT':\n\n      return [\n        ...state,\n        {\n          id: action.id,\n          author: action.author,\n          text: action.text\n        }\n      ]\n\n    default:\n      return state\n  }\n}\n\nmodule.exports = comments\n"
-  },
-  {
-    "__docId__": 59,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "initialState",
-    "memberof": "src/routes/Comments/reducers/index.js",
-    "longname": "src/routes/Comments/reducers/index.js~initialState",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Comments/reducers/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 60,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "comments",
-    "memberof": "src/routes/Comments/reducers/index.js",
-    "longname": "src/routes/Comments/reducers/index.js~comments",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Comments/reducers/index.js",
-    "importStyle": "{comments}",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 61,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/actions/index.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/actions/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "let nextTodoId = 0\n\nexport const addTodo = (text) => {\n  return {\n    type: 'ADD_TODO',\n    id: nextTodoId++,\n    text\n  }\n}\n\nexport const setVisibilityFilter = (filter) => {\n  return {\n    type: 'SET_VISIBILITY_FILTER',\n    filter\n  }\n}\n\nexport const toggleTodo = (id) => {\n  return {\n    type: 'TOGGLE_TODO',\n    id\n  }\n}\n"
-  },
-  {
-    "__docId__": 62,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "nextTodoId",
-    "memberof": "src/routes/Todo/actions/index.js",
-    "longname": "src/routes/Todo/actions/index.js~nextTodoId",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/actions/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "number"
-      ]
-    }
-  },
-  {
-    "__docId__": 63,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "addTodo",
-    "memberof": "src/routes/Todo/actions/index.js",
-    "longname": "src/routes/Todo/actions/index.js~addTodo",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/actions/index.js",
-    "importStyle": "{addTodo}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 64,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "setVisibilityFilter",
-    "memberof": "src/routes/Todo/actions/index.js",
-    "longname": "src/routes/Todo/actions/index.js~setVisibilityFilter",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/actions/index.js",
-    "importStyle": "{setVisibilityFilter}",
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 65,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "toggleTodo",
-    "memberof": "src/routes/Todo/actions/index.js",
-    "longname": "src/routes/Todo/actions/index.js~toggleTodo",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/actions/index.js",
-    "importStyle": "{toggleTodo}",
-    "description": null,
-    "lineNumber": 18,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 66,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/components/Footer.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/components/Footer.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport FilterLink from '../containers/FilterLink'\nimport {FormattedMessage} from \"react-intl\"\n\nexport default class Footer extends React.Component {\n\n  render() {\n\n    return (<p>\n\n        <FormattedMessage id=\"Show\"/>&nbsp;:&nbsp;\n\n        <FilterLink filter=\"SHOW_ALL\">\n          <FormattedMessage id=\"TodoAll\"/>\n        </FilterLink>&nbsp;\n\n        <FilterLink filter=\"SHOW_ACTIVE\">\n          <FormattedMessage id=\"TodoActive\"/>\n        </FilterLink>&nbsp;\n\n        <FilterLink filter=\"SHOW_COMPLETED\">\n          <FormattedMessage id=\"TodoCompleted\"/>\n        </FilterLink>\n\n      </p>\n    )\n  }\n}\n\n"
-  },
-  {
-    "__docId__": 67,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Footer",
-    "memberof": "src/routes/Todo/components/Footer.js",
-    "longname": "src/routes/Todo/components/Footer.js~Footer",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/components/Footer.js",
-    "importStyle": "Footer",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 68,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Todo/components/Footer.js~Footer",
-    "longname": "src/routes/Todo/components/Footer.js~Footer#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 69,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/components/Link.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/components/Link.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport Anchor from \"grommet/components/Anchor\"\n\nclass Link extends React.Component {\n\n  render() {\n\n    var that = this\n\n    if (this.props.active) return <span>{this.props.children}</span>\n\n    return (\n      <Anchor href=\"\"\n         onClick={e => {\n           e.preventDefault()\n           that.props.onClick()\n         }}\n      >\n        {this.props.children}\n      </Anchor>\n    )\n\n  }\n}\n\nLink.propTypes = {\n  active: React.PropTypes.bool.isRequired,\n  children: React.PropTypes.node.isRequired,\n  onClick: React.PropTypes.func.isRequired\n}\n\n\nexport default Link\n"
-  },
-  {
-    "__docId__": 70,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Link",
-    "memberof": "src/routes/Todo/components/Link.js",
-    "longname": "src/routes/Todo/components/Link.js~Link",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/components/Link.js",
-    "importStyle": "Link",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 71,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Todo/components/Link.js~Link",
-    "longname": "src/routes/Todo/components/Link.js~Link#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 72,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/components/Todo.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/components/Todo.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from \"react\"\nimport ListItem from \"grommet/components/ListItem\"\nimport CheckBox from \"grommet/components/CheckBox\"\n\n\nclass Todo extends React.Component {\n\n  render() {\n\n    return (\n\n      <ListItem>\n        <CheckBox\n          onChange={ this.props.onClick }\n          checked={this.props.completed}\n          label={this.props.text}\n          id={\"checkbox\"+this.props.key}/>\n      </ListItem>\n    )\n  }\n}\n\nTodo.propTypes = {\n  onClick : React.PropTypes.func.isRequired,\n  completed: React.PropTypes.bool.isRequired,\n  text : React.PropTypes.string.isRequired\n}\n\nexport default Todo\n"
-  },
-  {
-    "__docId__": 73,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Todo",
-    "memberof": "src/routes/Todo/components/Todo.js",
-    "longname": "src/routes/Todo/components/Todo.js~Todo",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/components/Todo.js",
-    "importStyle": "Todo",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 74,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Todo/components/Todo.js~Todo",
-    "longname": "src/routes/Todo/components/Todo.js~Todo#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 75,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/components/TodoList.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/components/TodoList.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React, { PropTypes } from 'react'\nimport Todo from './Todo'\nimport List from \"grommet/components/List\"\n\nclass TodoList extends React.Component {\n\n  render() {\n\n    let onTodoClick = this.props.onTodoClick.bind(this)\n\n    return (\n\n      <List selectable={false}>\n        {this.props.todos.map(todo =>\n\n          <Todo\n            key={todo.id}\n            {...todo}\n            onClick={() => onTodoClick(todo.id)}\n          />\n\n        )}\n      </List>\n\n    )\n\n  }\n\n}\n\nTodoList.propTypes = {\n\n  todos: PropTypes.arrayOf(PropTypes.shape({\n    id: PropTypes.number.isRequired,\n    completed: PropTypes.bool.isRequired,\n    text: PropTypes.string.isRequired\n  }).isRequired).isRequired,\n\n  onTodoClick: PropTypes.func.isRequired\n}\n\nexport default TodoList\n"
-  },
-  {
-    "__docId__": 76,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "TodoList",
-    "memberof": "src/routes/Todo/components/TodoList.js",
-    "longname": "src/routes/Todo/components/TodoList.js~TodoList",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/components/TodoList.js",
-    "importStyle": "TodoList",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 77,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Todo/components/TodoList.js~TodoList",
-    "longname": "src/routes/Todo/components/TodoList.js~TodoList#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 78,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/containers/AddTodo.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/containers/AddTodo.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport { connect } from 'react-redux'\nimport { addTodo } from '../actions'\nimport Form from \"grommet/components/Form\"\nimport FormField from \"grommet/components/FormField\"\nimport Footer from \"grommet/components/Footer\"\nimport Button from \"grommet/components/Button\"\nimport { FormattedMessage } from \"react-intl\"\n\nlet AddTodo = ({ dispatch }) => {\n\n  let input\n\n  return (\n    <Form pad={ {horizontal:\"none\",vertical:\"large\"} }  onSubmit={e => {\n      e.preventDefault()\n      if (!input.value.trim()) {\n        return\n      }\n      dispatch(addTodo(input.value))\n      input.value = ''\n    }}>\n      <FormField htmlFor=\"addTodo\">\n        <input type=\"text\" id=\"addTodo\" ref={node => {\n          input = node\n        }} />\n      </FormField>\n      <Footer pad={ { vertical:\"large\" } }>\n\n        <FormattedMessage id=\"Submit\">{\n          (label) => (<Button type=\"submit\" label={label} onClick={ ()=>1 }/>)\n        }\n        </FormattedMessage>\n\n      </Footer>\n    </Form>\n  )\n}\nAddTodo = connect()(AddTodo)\n\nexport default AddTodo\n"
-  },
-  {
-    "__docId__": 79,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "AddTodo",
-    "memberof": "src/routes/Todo/containers/AddTodo.js",
-    "longname": "src/routes/Todo/containers/AddTodo.js~AddTodo",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/AddTodo.js",
-    "importStyle": "AddTodo",
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 80,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/containers/FilterLink.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/containers/FilterLink.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { connect } from 'react-redux'\nimport { setVisibilityFilter } from '../actions'\nimport Link from '../components/Link'\n\nconst mapStateToProps = (state, ownProps) => {\n  return {\n    active: ownProps.filter === state.todo.visibilityFilter\n  }\n}\n\nconst mapDispatchToProps = (dispatch, ownProps) => {\n  return {\n    onClick: () => {\n      dispatch(setVisibilityFilter(ownProps.filter))\n    }\n  }\n}\n\nconst FilterLink = connect(\n  mapStateToProps,\n  mapDispatchToProps\n)(Link)\n\nexport default FilterLink\n"
-  },
-  {
-    "__docId__": 81,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapStateToProps",
-    "memberof": "src/routes/Todo/containers/FilterLink.js",
-    "longname": "src/routes/Todo/containers/FilterLink.js~mapStateToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/FilterLink.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 82,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapDispatchToProps",
-    "memberof": "src/routes/Todo/containers/FilterLink.js",
-    "longname": "src/routes/Todo/containers/FilterLink.js~mapDispatchToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/FilterLink.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 83,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "FilterLink",
-    "memberof": "src/routes/Todo/containers/FilterLink.js",
-    "longname": "src/routes/Todo/containers/FilterLink.js~FilterLink",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/FilterLink.js",
-    "importStyle": "FilterLink",
-    "description": null,
-    "lineNumber": 19,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 84,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/containers/VisibleTodoList.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/containers/VisibleTodoList.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { connect } from 'react-redux'\nimport { toggleTodo } from '../actions'\nimport TodoList from '../components/TodoList'\n\nconst getVisibleTodos = (todos, filter) => {\n  switch (filter) {\n    case 'SHOW_ALL':\n      return todos\n    case 'SHOW_COMPLETED':\n      return todos.filter(t => t.completed)\n    case 'SHOW_ACTIVE':\n      return todos.filter(t => !t.completed)\n  }\n}\n\nconst mapStateToProps = (state) => {\n  return {\n    todos: getVisibleTodos(state.todo.todos, state.todo.visibilityFilter)\n  }\n}\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    onTodoClick: (id) => {\n      dispatch(toggleTodo(id))\n    }\n  }\n}\n\nconst VisibleTodoList = connect(\n  mapStateToProps,\n  mapDispatchToProps\n)(TodoList)\n\nexport default VisibleTodoList\n"
-  },
-  {
-    "__docId__": 85,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "getVisibleTodos",
-    "memberof": "src/routes/Todo/containers/VisibleTodoList.js",
-    "longname": "src/routes/Todo/containers/VisibleTodoList.js~getVisibleTodos",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/VisibleTodoList.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 86,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapStateToProps",
-    "memberof": "src/routes/Todo/containers/VisibleTodoList.js",
-    "longname": "src/routes/Todo/containers/VisibleTodoList.js~mapStateToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/VisibleTodoList.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 16,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 87,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "mapDispatchToProps",
-    "memberof": "src/routes/Todo/containers/VisibleTodoList.js",
-    "longname": "src/routes/Todo/containers/VisibleTodoList.js~mapDispatchToProps",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/VisibleTodoList.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 22,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 88,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "VisibleTodoList",
-    "memberof": "src/routes/Todo/containers/VisibleTodoList.js",
-    "longname": "src/routes/Todo/containers/VisibleTodoList.js~VisibleTodoList",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/containers/VisibleTodoList.js",
-    "importStyle": "VisibleTodoList",
-    "description": null,
-    "lineNumber": 30,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 89,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/index.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import React from 'react'\nimport Footer from './components/Footer'\nimport AddTodo from './containers/AddTodo'\nimport VisibleTodoList from './containers/VisibleTodoList'\n\nimport Article from \"grommet/components/Article\"\nimport Header from \"grommet/components/Header\"\nimport Section from \"grommet/components/Section\"\nimport { FormattedMessage } from \"react-intl\"\n\nexport default class Todo extends React.Component {\n\n  render() {\n\n    return (\n      <Article pad=\"medium\">\n        <Header>\n          <FormattedMessage id=\"Todo List\"/>\n        </Header>\n        <Section>\n          <VisibleTodoList />\n          <AddTodo />\n          <Footer />\n        </Section>\n      </Article>\n    )\n\n  }\n}\n\nmodule.exports = Todo\n"
-  },
-  {
-    "__docId__": 90,
-    "kind": "class",
-    "static": true,
-    "variation": null,
-    "name": "Todo",
-    "memberof": "src/routes/Todo/index.js",
-    "longname": "src/routes/Todo/index.js~Todo",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/index.js",
-    "importStyle": "Todo",
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
-    "interface": false,
-    "extends": [
-      "react~React.Component"
-    ]
-  },
-  {
-    "__docId__": 91,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "render",
-    "memberof": "src/routes/Todo/index.js~Todo",
-    "longname": "src/routes/Todo/index.js~Todo#render",
-    "access": null,
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 92,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/reducers/index.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/reducers/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { combineReducers } from 'redux'\nimport todos from './todos'\nimport visibilityFilter from './visibilityFilter'\n\nconst todoApp = combineReducers({\n  todos,\n  visibilityFilter\n})\n\nexport default todoApp\n\nmodule.exports = todoApp\n"
-  },
-  {
-    "__docId__": 93,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "todoApp",
-    "memberof": "src/routes/Todo/reducers/index.js",
-    "longname": "src/routes/Todo/reducers/index.js~todoApp",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/reducers/index.js",
-    "importStyle": "todoApp",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 94,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/reducers/todos.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/reducers/todos.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "const todo = (state, action) => {\n  switch (action.type) {\n    case 'ADD_TODO':\n      return {\n        id: action.id,\n        text: action.text,\n        completed: false\n      }\n    case 'TOGGLE_TODO':\n      if (state.id !== action.id) {\n        return state\n      }\n\n      return Object.assign({}, state, {\n        completed: !state.completed\n      })\n\n    default:\n      return state\n  }\n}\n\nconst todos = (state = [], action) => {\n  switch (action.type) {\n    case 'ADD_TODO':\n      return [\n        ...state,\n        todo(undefined, action)\n      ]\n    case 'TOGGLE_TODO':\n      return state.map(t =>\n        todo(t, action)\n      )\n    default:\n      return state\n  }\n}\n\nexport default todos\n"
-  },
-  {
-    "__docId__": 95,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "todo",
-    "memberof": "src/routes/Todo/reducers/todos.js",
-    "longname": "src/routes/Todo/reducers/todos.js~todo",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/routes/Todo/reducers/todos.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 96,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "todos",
-    "memberof": "src/routes/Todo/reducers/todos.js",
-    "longname": "src/routes/Todo/reducers/todos.js~todos",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/reducers/todos.js",
-    "importStyle": "todos",
-    "description": null,
-    "lineNumber": 23,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 97,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/routes/Todo/reducers/visibilityFilter.js",
-    "memberof": null,
-    "longname": "src/routes/Todo/reducers/visibilityFilter.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "const visibilityFilter = (state = 'SHOW_ALL', action) => {\n\n  switch (action.type) {\n    case 'SET_VISIBILITY_FILTER':\n      return action.filter\n    default:\n      return state\n  }\n}\n\nexport default visibilityFilter\n"
-  },
-  {
-    "__docId__": 98,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "visibilityFilter",
-    "memberof": "src/routes/Todo/reducers/visibilityFilter.js",
-    "longname": "src/routes/Todo/reducers/visibilityFilter.js~visibilityFilter",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/routes/Todo/reducers/visibilityFilter.js",
-    "importStyle": "visibilityFilter",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 99,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/store/index.js",
-    "memberof": null,
-    "longname": "src/store/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { createStore, combineReducers } from \"redux\"\nimport { setLocaleToFrench } from \"../actions/intl\"\n\nimport intl from '../reducers/intl'\n\n\nlet asyncReducers = {}\n\n\nfunction createReducer() {\n\n  return combineReducers({\n    intl,\n    ...asyncReducers\n  });\n}\n\n\nexport const createAndConfigStore = () => {\n\n  let store = createStore( combineReducers({intl,...{}}) )\n\n  store.dispatch(setLocaleToFrench())\n\n  return store\n}\n\n\nexport const injectAsyncReducer = (store, name, asyncReducer) => {\n\n  asyncReducers[name] = asyncReducer\n\n  return store.replaceReducer(createReducer(asyncReducers))\n}\n"
-  },
-  {
-    "__docId__": 100,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "asyncReducers",
-    "memberof": "src/store/index.js",
-    "longname": "src/store/index.js~asyncReducers",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/store/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 101,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "createReducer",
-    "memberof": "src/store/index.js",
-    "longname": "src/store/index.js~createReducer",
-    "access": null,
-    "export": false,
-    "importPath": "my-jsyg-app/src/store/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 102,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "createAndConfigStore",
-    "memberof": "src/store/index.js",
-    "longname": "src/store/index.js~createAndConfigStore",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/store/index.js",
-    "importStyle": "{createAndConfigStore}",
-    "description": null,
-    "lineNumber": 19,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 103,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
-    "name": "injectAsyncReducer",
-    "memberof": "src/store/index.js",
-    "longname": "src/store/index.js~injectAsyncReducer",
-    "access": null,
-    "export": true,
-    "importPath": "my-jsyg-app/src/store/index.js",
-    "importStyle": "{injectAsyncReducer}",
-    "description": null,
-    "lineNumber": 29,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1893,7 +104,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 7,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1906,7 +117,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 8,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1919,7 +130,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 9,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1932,7 +143,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 10,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1945,7 +156,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 11,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1958,7 +169,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 12,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1971,7 +182,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 13,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1984,7 +195,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 14,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1997,7 +208,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 15,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2010,7 +221,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 16,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2023,7 +234,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 17,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2036,7 +247,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 18,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2049,7 +260,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 19,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2062,7 +273,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 20,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2075,7 +286,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 120,
+    "__docId__": 21,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2088,7 +299,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 22,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2101,7 +312,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 23,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2114,7 +325,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 24,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2127,7 +338,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 25,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2140,7 +351,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 26,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2153,7 +364,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 27,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2166,7 +377,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 28,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2179,7 +390,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 29,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2192,7 +403,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 129,
+    "__docId__": 30,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2205,7 +416,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 31,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2218,7 +429,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 32,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2231,7 +442,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2244,7 +455,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2257,7 +468,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2270,7 +481,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2283,7 +494,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2296,7 +507,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 137,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2309,7 +520,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 138,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2322,7 +533,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 139,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2335,7 +546,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 140,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2348,7 +559,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 141,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2361,7 +572,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 142,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2374,7 +585,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 143,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2387,7 +598,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 144,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2400,7 +611,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 145,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2413,7 +624,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 146,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2426,7 +637,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 147,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2439,7 +650,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 148,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2452,7 +663,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 149,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2465,7 +676,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 150,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2478,7 +689,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 151,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2491,7 +702,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 153,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2504,7 +715,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 154,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2517,7 +728,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 155,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2530,7 +741,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 156,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2543,7 +754,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 157,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2556,7 +767,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 158,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2569,7 +780,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 159,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2582,7 +793,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 160,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,

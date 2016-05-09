@@ -1,102 +1,30 @@
-"use strict";
+import "./styles.css"
 
-import "grommet/grommet.min.css"
+/**
+* My demo class
+*/
+export default class HelloWorld {
 
-import React from 'react'
-import ReactDOM from "react-dom"
-import { Router, hashHistory } from 'react-router';
+  /**
+  * Constructor
+  * @param {string} text message you want to display (optional)
+  */
+  constructor(text = "Hello world") {
 
-import App from "./components/App"
-import NotFound from "./components/NotFound"
+    this.text = text
+  }
 
-import { createAndConfigStore, injectAsyncReducer }  from "./store"
+  /**
+  * html rendering
+  */
+  render() {
 
-import { Provider } from 'react-redux'
-import IntlProvider from "./containers/IntlProvider"
+    var div = document.createElement("div")
 
-import { addLocaleData } from 'react-intl'
-import en from 'react-intl/locale-data/en'
-import fr from 'react-intl/locale-data/fr'
+    div.textContent = this.text
 
-addLocaleData(en)
-addLocaleData(fr)
-
-
-let store = createAndConfigStore()
-
-const rootRoute = {
-
-  component:"div",
-
-  childRoutes:[{
-
-    path:"/",
-
-    component:App,
-
-    childRoutes:[{
-
-      path:"comments",
-
-      getComponents(location, callback) {
-
-        //this way the code is loaded dynamically when accessing this route
-        require.ensure([], function (require) {
-
-          let Component = require('./routes/Comments')
-          let reducer = require('./routes/Comments/reducers')
-          injectAsyncReducer(store,'comments', reducer)
-          callback(null, Component)
-        })
-      }
-
-    },{
-
-      path:"todo",
-
-      getComponents : function(location, callback) {
-
-        require.ensure([], function (require) {
-
-          let Component = require('./routes/Todo')
-          let reducer = require('./routes/Todo/reducers')
-          injectAsyncReducer(store,'todo', reducer)
-
-          callback(null, Component)
-        })
-      }
-
-    },{
-
-      path:"reddit",
-
-      getComponents : function(location, callback) {
-
-        require.ensure([], function (require) {
-
-          let Component = require('./routes/Reddit')
-          let reducer = require('./routes/Reddit/reducers')
-          injectAsyncReducer(store,'reddit', reducer)
-
-          callback(null, Component)
-        })
-      }
-
-    },{
-      path:"*",
-      component:NotFound
-    }]
-
-  }]
-
+    return div
+  }
 }
 
-ReactDOM.render(
-
-  <Provider store={store}>
-    <IntlProvider>
-      <Router history={hashHistory} routes={rootRoute} />
-    </IntlProvider>
-  </Provider>,
-
-document.getElementById("content") )
+document.body.appendChild( new HelloWorld().render() )

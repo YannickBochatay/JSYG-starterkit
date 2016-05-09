@@ -31,7 +31,7 @@ module.exports = function (config) {
       },
       module: {
         loaders: [
-          {test: /\.jsx?$/, loader: 'babel-loader?babelrc=false,presets[]=react,presets[]=es2015,plugins[]=transform-object-rest-spread'},
+          {test: /\.jsx?$/, loader: 'babel-loader?babelrc=false,presets[]=es2015'},
           {test: /\.css$/, loader:'style-loader!css-loader!postcss-loader'},
           {test: /\.scss$/, loader:'style-loader!css-loader!sass-loader'},
           {test: /\.less$/, loader:'style-loader!css-loader!less-loader'}

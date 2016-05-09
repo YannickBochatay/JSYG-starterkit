@@ -92,6 +92,10 @@ module.exports = {
 
   resolve : {
 
+    alias : {
+      isMobile : "ismobilejs"
+    },
+
     modulesDirectories: ["web_modules", "node_modules", "bower_components"]/*,
 
     extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx", ".css", ".scss", ".less"]*/
@@ -118,7 +122,7 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel?babelrc=false,presets[]=react,presets[]=es2015,plugins[]=transform-object-rest-spread'
+        loader: 'babel?babelrc=false,presets[]=es2015'
       },
       {
         test: /\.css$/,
