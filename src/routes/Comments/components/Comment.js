@@ -1,17 +1,14 @@
 import React from "react"
-import Tile from "grommet/components/Tile"
-import Header from "grommet/components/Header"
 
-class CommentBox extends React.Component {
+export default class Comment extends React.Component {
 
     render() {
-        return(
-          <Tile wide={true} colorIndex="light-2" align="start">
-            <Header>{this.props.author}</Header>
-            {this.props.text}
-          </Tile>
-        );
+
+      return(
+        <li>
+          <header>{this.props.author}</header>
+          {this.props.text}
+        </li>
+      )
     }
 }
-
-export default CommentBox;

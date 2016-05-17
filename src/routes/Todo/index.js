@@ -3,9 +3,6 @@ import Footer from './components/Footer'
 import AddTodo from './containers/AddTodo'
 import VisibleTodoList from './containers/VisibleTodoList'
 
-import Article from "grommet/components/Article"
-import Header from "grommet/components/Header"
-import Section from "grommet/components/Section"
 import { FormattedMessage } from "react-intl"
 
 export default class Todo extends React.Component {
@@ -13,16 +10,16 @@ export default class Todo extends React.Component {
   render() {
 
     return (
-      <Article pad="medium">
-        <Header>
+      <article>
+        <header>
           <FormattedMessage id="Todo List"/>
-        </Header>
-        <Section>
+        </header>
+        <section>
           <VisibleTodoList />
           <AddTodo />
           <Footer />
-        </Section>
-      </Article>
+        </section>
+      </article>
     )
 
   }

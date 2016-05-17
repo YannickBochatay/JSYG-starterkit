@@ -1,5 +1,4 @@
 import React from 'react'
-import Anchor from "grommet/components/Anchor"
 
 class Link extends React.Component {
 
@@ -10,14 +9,14 @@ class Link extends React.Component {
     if (this.props.active) return <span>{this.props.children}</span>
 
     return (
-      <Anchor href=""
+      <a href="#"
          onClick={e => {
            e.preventDefault()
            that.props.onClick()
          }}
       >
         {this.props.children}
-      </Anchor>
+      </a>
     )
 
   }

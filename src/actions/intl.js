@@ -18,14 +18,13 @@ export function setLocaleToEnglish() {
 
     require.ensure([],(require)=>{
 
-      let messages = require("grommet/messages/en")
-      let messagesAPP = require("../localeData/en")
+      let messages = require("../localeData/en")
 
       return dispatch({
         type:"SET_LOCALE",
         data : {
           locale : "en",
-          messages :  Object.assign({},messages,messagesAPP)
+          messages : messages
         }
       })
     })

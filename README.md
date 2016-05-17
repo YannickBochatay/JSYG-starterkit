@@ -34,8 +34,6 @@
 
 * [React-redux](https://github.com/reactjs/react-redux) and [Immutable](http://facebook.github.io/immutable-js/) for state container
 
-* [Grommet](http://www.grommet.io) for ui components
-
 
 
 ### Prerequisites
@@ -56,6 +54,7 @@ npm install
 It can takes several minutes
 
 
+
 ### Get started
 ```shell
 npm start
@@ -63,11 +62,10 @@ npm start
 Build app (in memory) and launch the dev-server with hot reload.
 You have to open your browser and go to *http://localhost:8080/*.
 
-
 ```shell
 npm test
 ```
-Run tests with Karma and Jasmine. All files inside *test/* directory will be executed, with hot reload.
+Run tests with Karma and Mocha. All files inside *test/* directory will be executed, with hot reload.
 
 ```shell
 npm run build:dev
@@ -89,6 +87,16 @@ Generate documentation (in doc/ folder)
 If your app is not in the web-root folder (ex : *http://myDomain.fr/myApp/* instead of *http://myDomain.fr/* ) you'll have to change the *publicPath* property in *webpack.config.js* (ex : *publicPath : "/myApp/builds/"* instead of *publicPath : "/builds/"*).
 
 
+In some cases, you'll may encounter this error :
+```javascript
+TypeError: Cannot read property 'initial' of undefined
+```
+Then you'll have to patch the extract-text-webpack-plugin (see [issue #115](https://github.com/webpack/extract-text-webpack-plugin/issues/115#issuecomment-178026475)) :
+add the following line after line 21 in extract-text-webpack-plugin/index.js :
+```javascript
+if (typeof c === 'undefined') return
+```
+
 
 ### Install new dependencies
 
@@ -97,7 +105,7 @@ If your app is not in the web-root folder (ex : *http://myDomain.fr/myApp/* inst
 npm install --save jquery
 ```
 
-##### or bower if you prefer
+##### or bower if you prefer (but you [should not](https://webpack.github.io/docs/usage-with-bower.html))
 ```shell
 bower install --save jquery
 ```
@@ -108,5 +116,3 @@ import $ from "jquery"
 
 $("<div>").appendTo("body");
 ```
-
-That's it.

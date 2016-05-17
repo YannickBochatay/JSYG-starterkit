@@ -1,23 +1,19 @@
 import React from 'react'
-import Article from 'grommet/components/Article'
-import Header from 'grommet/components/Header'
-import Section from 'grommet/components/Section'
 import { FormattedMessage } from "react-intl"
 
-class Welcome extends React.Component {
+export default class Welcome extends React.Component {
 
   render() {
 
     return (
-      <Article pad="medium">
-        <Header>
+      <article pad="medium">
+        <header>
           <h1><FormattedMessage id="Welcome"/></h1>
-        </Header>
-        <Section>
+        </header>
+        <section>
           <p>
 
-            <FormattedMessage id="This is a very simple template built with"/>&nbsp;
-            <a href="http://www.grommet.io">grommet</a>.
+            <FormattedMessage id="This is a very simple template"/>
             <br/>
 
             <FormattedMessage id="The comments section is from the"/>&nbsp;
@@ -32,11 +28,17 @@ class Welcome extends React.Component {
             </a>.
             <br/>
 
+            <FormattedMessage id="The reddit section is from the"/>&nbsp;
+            <a href="http://redux.js.org/docs/advanced/ExampleRedditAPI.html">
+              <FormattedMessage id="advanced Redux tutorial"/>
+            </a>.
+            <br/>
+
+
+
           </p>
-        </Section>
-      </Article>
-    );
+        </section>
+      </article>
+    )
   }
 }
-
-export default Welcome;

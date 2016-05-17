@@ -1,12 +1,10 @@
 "use strict";
 
-import "grommet/grommet.min.css"
-
 import React from 'react'
 import ReactDOM from "react-dom"
 import { Router, hashHistory } from 'react-router';
 
-import App from "./components/App"
+import Main from "./components/Main"
 import NotFound from "./components/NotFound"
 
 import { createAndConfigStore, injectAsyncReducer }  from "./store"
@@ -32,7 +30,7 @@ const rootRoute = {
 
     path:"/",
 
-    component:App,
+    component:Main,
 
     childRoutes:[{
 

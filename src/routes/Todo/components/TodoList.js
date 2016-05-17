@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import Todo from './Todo'
-import List from "grommet/components/List"
 
 class TodoList extends React.Component {
 
@@ -10,7 +9,7 @@ class TodoList extends React.Component {
 
     return (
 
-      <List selectable={false}>
+      <ul style={{listStyleType:"none"}}>
         {this.props.todos.map(todo =>
 
           <Todo
@@ -20,7 +19,7 @@ class TodoList extends React.Component {
           />
 
         )}
-      </List>
+      </ul>
 
     )
 

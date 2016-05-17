@@ -1,7 +1,4 @@
 import React from "react"
-import ListItem from "grommet/components/ListItem"
-import CheckBox from "grommet/components/CheckBox"
-
 
 class Todo extends React.Component {
 
@@ -9,13 +6,17 @@ class Todo extends React.Component {
 
     return (
 
-      <ListItem>
-        <CheckBox
-          onChange={ this.props.onClick }
-          checked={this.props.completed}
-          label={this.props.text}
-          id={"checkbox"+this.props.key}/>
-      </ListItem>
+      <li>
+        <label>
+          <input
+            type="checkbox"
+            onChange={this.props.onClick}
+            checked={this.props.completed}
+            id={"checkbox"+this.props.key}
+          />
+          {this.props.text}
+        </label>
+      </li>
     )
   }
 }

@@ -1,8 +1,5 @@
 module.exports = {
 
-  //messages manquants
-  "Close  Layer" : "Close  Layer",
-
   //App messages
   "Home" : "Home",
   "Page not found" : "Page not found",
@@ -11,14 +8,17 @@ module.exports = {
   "French" : "French",
   "English" : "English",
   "Welcome" : "Welcome",
+  "Reddit":"Reddit",
   "Comments" : "Comments",
   "Leave a comment" : "Leave a comment",
   "See comments" : "See comments",
-  "This is a very simple template built with" : "This is a very simple template built with",
+  "This is a very simple template" : "This is a very simple template",
   "The comments section is from the" : "The comments section is from the",
   "The todo section is from the" : "The comments section is from the",
+  "The reddit section is from the" : "The reddit section is from the",
   "React tutorial" : "React tutorial",
   "Redux tutorial" : "Redux tutorial",
+  "advanced Redux tutorial" : "advanced Redux tutorial",
 
   "To do":"To do",
   "Todo List":"Todo List",

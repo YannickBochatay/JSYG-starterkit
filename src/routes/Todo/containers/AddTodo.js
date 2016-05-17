@@ -1,41 +1,45 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import Form from "grommet/components/Form"
-import FormField from "grommet/components/FormField"
-import Footer from "grommet/components/Footer"
-import Button from "grommet/components/Button"
 import { FormattedMessage } from "react-intl"
 
-let AddTodo = ({ dispatch }) => {
 
-  let input
+class AddTodo extends React.Component {
 
-  return (
-    <Form pad={ {horizontal:"none",vertical:"large"} }  onSubmit={e => {
-      e.preventDefault()
-      if (!input.value.trim()) {
-        return
-      }
-      dispatch(addTodo(input.value))
-      input.value = ''
-    }}>
-      <FormField htmlFor="addTodo">
-        <input type="text" id="addTodo" ref={node => {
-          input = node
-        }} />
-      </FormField>
-      <Footer pad={ { vertical:"large" } }>
+  constructor(props) {
 
-        <FormattedMessage id="Submit">{
-          (label) => (<Button type="submit" label={label} onClick={ ()=>1 }/>)
-        }
-        </FormattedMessage>
+    super(props)
 
-      </Footer>
-    </Form>
-  )
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onSubmit(e) {
+
+    e.preventDefault()
+
+    let {input} = this.refs
+
+    if (!input.value.trim()) return
+
+    this.props.dispatch( addTodo(input.value) )
+
+    input.value = ''
+  }
+
+  render() {
+
+    return (
+      <form onSubmit={ this.onSubmit }>
+        <input type="text" id="addTodo" ref="input"/>
+        <br/>
+        <button type="submit">
+          <FormattedMessage id="Submit"/>
+        </button>
+      </form>
+    )
+
+  }
+
 }
-AddTodo = connect()(AddTodo)
 
-export default AddTodo
+export default connect()(AddTodo)

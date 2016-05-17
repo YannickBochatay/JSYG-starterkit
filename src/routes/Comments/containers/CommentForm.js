@@ -2,58 +2,59 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addComment } from '../actions'
 
-import Form from "grommet/components/Form"
-import FormField from "grommet/components/FormField"
-import Button from "grommet/components/Button"
 import { FormattedMessage } from "react-intl"
 
-let CommentForm = ({ dispatch }) => {
+class CommentForm extends React.Component {
 
-  let inputAuthor
-  let inputText
+  constructor(props) {
 
-  function onSubmit(e)  {
+    super(props)
+
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onSubmit(e) {
 
     e.preventDefault();
+
+    let { inputAuthor, inputText } = this.refs
 
     let author = inputAuthor.value.trim()
     let text = inputText.value.trim()
 
     if (!text || !author) return
 
-    dispatch(addComment(author,text))
+    this.props.dispatch( addComment(author,text) )
 
     inputAuthor.value = ""
     inputText.value = ""
+
   }
 
-  return (
+  render() {
 
-    <Form pad={ {vertical:"large",horizontal:"none"} } onSubmit={onSubmit}>
+    return (
 
-      <fieldset>
-        <legend>
-          <FormattedMessage id="Leave a comment"/>
-        </legend>
+      <form onSubmit={ this.onSubmit }>
 
-        <FormField label="Name" htmlFor="inputAuthor">
-          <input id="inputAuthor" type="text" ref={node => { inputAuthor = node }}/>
-        </FormField>
+        <fieldset>
+          <legend>
+            <FormattedMessage id="Leave a comment"/>
+          </legend>
 
-        <FormField label="Say something..." htmlFor="inputText">
-          <textarea id="inputText"  ref={node => { inputText = node }}/>
-        </FormField>
+          <input id="inputAuthor" type="text" ref="inputAuthor" placeholder="name"/>
+          <br/>
+          <textarea id="inputText" ref="inputText" placeholder="write something..."/>
 
-      </fieldset>
+        </fieldset>
 
-      <FormattedMessage id="Submit">
-        {
-          (label) => ( <Button label={label} type="submit" onClick={ ()=>1 }/> )
-        }
-      </FormattedMessage>
+        <button type="submit">
+          <FormattedMessage id="Submit"/>
+        </button>
 
-    </Form>
-  )
+      </form>
+    )
+  }
 }
 
 export default connect()(CommentForm)

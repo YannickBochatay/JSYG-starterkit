@@ -18,25 +18,19 @@ export function addComments(comments) {
   }
 }
 
-export function fetchComments() {
+export const fetchComments = () => dispatch => {
 
-  return (dispatch) => {
+  fetch("src/routes/Comments/data.json")
+  .then( response => response.json() )
+  .then( comments => {
+      dispatch( addComments(comments) )
+  })
 
-    fetch("src/routes/Comments/data.json")
-    .then( response => response.json() )
-    .then( comments => {
-        dispatch( addComments(comments) )
-    })
-
-  }
 }
 
-export function fetchCommentsIfNeeded() {
+export const fetchCommentsIfNeeded = () => (dispatch, getState) => {
 
-  return (dispatch, getState) => {
+  if (!getState().comments.length) return dispatch(fetchComments())
+  else return Promise.resolve()
 
-    if (!getState().comments.length) return dispatch(fetchComments())
-    else return Promise.resolve()
-
-  }
 }

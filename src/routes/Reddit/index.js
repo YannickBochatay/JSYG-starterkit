@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Article from "grommet/components/Article"
-import Header from "grommet/components/Header"
-import Section from "grommet/components/Section"
 import { FormattedMessage } from "react-intl"
 import SearchReddit from "./containers/SearchReddit"
 import RedditList from "./containers/RedditList"
@@ -12,16 +9,16 @@ class Reddit extends React.Component {
   render() {
 
     return (
-      <Article pad="medium">
-        <Header>
+      <article pad="medium">
+        <h2>
           Reddit
-        </Header>
-        <Section>
-          <FormattedMessage id="Search on Reddit"/>
+        </h2>
+        <section>
+          <FormattedMessage id="Search on Reddit"/>&nbsp;
           <SearchReddit/>
           <RedditList/>
-        </Section>
-      </Article>
+        </section>
+      </article>
     )
 
   }
